@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'fuse_dev_tools'
+require 'fuse_dev_tools/cli'
+
+FuseDevTools::CLI.start ARGV
