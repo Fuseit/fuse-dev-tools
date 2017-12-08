@@ -2,6 +2,8 @@ require 'fuse_dev_tools/tasks/application_config'
 
 module FuseDevTools
   class CLI < Thor
+    include Thor::Actions
+
     desc :init, 'Initialize config with AWS credentials'
     def init
       require 'fuse_dev_tools/config'
