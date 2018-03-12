@@ -1,0 +1,11 @@
+inherit_from:
+  - lib/fuse_dev_tools/templates/.rubocop.yml
+  - .rubocop_todo.yml
+
+inherit_mode:
+  merge:
+    - Exclude
+
+AllCops:
+  Exclude:
+    - vendor/**/*

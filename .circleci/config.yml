@@ -1,0 +1,43 @@
+# TODO
+# - pick proper bundler version without uninstalling it, may be specific image
+# - add cache to gems
+# - investigate "Requested historical based timing, but they are not present.  Falling back to name based sorting" error
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.3.4
+        environment:
+          RAILS_ENV: test
+    steps:
+      - checkout
+      - run:
+          name: Run bundler
+          command: |
+            sudo gem uninstall bundler -a -x
+            sudo gem install bundler --version 1.16.1
+            bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
+      - run:
+          name: Create Dirs
+          command: |
+            mkdir -p ~/test_results
+      - run:
+          name: Run RSpec
+          command: |
+            FILES=$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+            bundle exec rspec --profile 5 \
+                              --format RspecJunitFormatter \
+                              --out ~/test_results/rspec.xml \
+                              --format progress \
+                              $FILES
+      - run:
+          name: Run Rubocop
+          command: |
+            junit_formatter_ruby=$(bundle show rubocop-junit-formatter)/lib/rubocop/formatter/junit_formatter.rb
+            bundle exec rubocop -L | \
+            circleci tests split --split-by=timings --timings-type=filename | \
+            xargs bundle exec rubocop -D -R -r $junit_formatter_ruby -c .rubocop.yml --format RuboCop::Formatter::JUnitFormatter --out ~/test_results/rubocop.xml --format progress
+      - store_artifacts:
+          path: ~/test_results
+      - store_test_results:
+          path: ~/test_results

@@ -1,0 +1,64 @@
+require:
+  - rubocop/rspec/focused
+
+# Seems `Exclude` block for `AllCops` not inheriting at all, despite owner said it's fixed
+# see the original issue: https://github.com/bbatsov/rubocop/issues/3744
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - vendor/**/*
+    - tmp/**/*
+    - bin/**/*
+    - db/schema.rb
+
+Documentation:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+Lint/Debugger:
+  Enabled: true
+
+Style/MethodDefParentheses:
+  EnforcedStyle: require_no_parentheses
+
+Layout/IndentHash:
+  EnforcedStyle: consistent
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/MethodMissing:
+  Enabled: false
+
+Rails/ActionFilter:
+  EnforcedStyle: filter
+  Enabled: true
+
+Metrics/ParameterLists:
+  Max: 11
+  CountKeywordArgs: false
+
+Metrics/LineLength:
+  Max: 120
+
+Style/EmptyCaseCondition:
+  Enabled: false
+
+Layout/IndentationConsistency:
+  EnforcedStyle: rails
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    default: "()"
+    "%w": "()"
+
+Style/StructInheritance:
+  Enabled: false

@@ -2,10 +2,10 @@ require 'yaml'
 
 module FuseDevTools
   class Config
-    KEYS = %w(OPSWORKS_ACCESS_KEY_ID OPSWORKS_SECRET_ACCESS_KEY)
+    KEYS = %w(OPSWORKS_ACCESS_KEY_ID OPSWORKS_SECRET_ACCESS_KEY).freeze
 
     def self.load
-      new YAML.load File.new(filename)
+      new YAML.safe_load File.new(filename)
     end
 
     def self.filename
@@ -13,7 +13,7 @@ module FuseDevTools
     end
 
     def self.exists?
-      File.exists? filename
+      File.exist? filename
     end
 
     def initialize config
