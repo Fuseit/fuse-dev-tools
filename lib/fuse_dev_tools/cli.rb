@@ -2,6 +2,7 @@ require 'fuse_dev_tools/tasks/application_config'
 require 'fuse_dev_tools/tasks/database_config'
 require 'fuse_dev_tools/tasks/git_commands/base'
 require 'thor'
+Dir[File.join(__dir__, 'tasks', '*.rb')].each(&method(:require))
 
 module FuseDevTools
   class CLI < Thor
@@ -33,5 +34,8 @@ module FuseDevTools
 
     desc 'git COMMAND', 'Commands for git'
     subcommand :git, FuseDevTools::Tasks::GitCommands::Base
+
+    desc 'changelog_generator COMMAND', 'Commands for changelog'
+    subcommand :changelog_generator, FuseDevTools::Tasks::ChangelogGenerator
   end
 end
