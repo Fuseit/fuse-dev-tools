@@ -1,5 +1,4 @@
 require 'aws-sdk'
-require 'pry'
 
 module FuseDevTools
   class ApplicationConfig

@@ -26,15 +26,21 @@ Gem::Specification.new do |spec|
   spec.require_paths = %w[lib]
   spec.executables = ['fuse-dev-tools']
 
+  spec.add_dependency 'activesupport'
   spec.add_dependency 'aws-sdk'
+  spec.add_dependency 'github_api'
   spec.add_dependency 'pry', '~> 0.11'
   spec.add_dependency 'rubocop', '~> 0.56'
   spec.add_dependency 'rubocop-rspec', '>= 1.25'
   spec.add_dependency 'rubocop-rspec-focused', '~> 1.0'
+  spec.add_dependency 'semantic'
   spec.add_dependency 'thor', '~> 0.2'
+
   spec.add_development_dependency 'bundler', '~> 1.16'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rspec_junit_formatter', '~> 0.3'
   spec.add_development_dependency 'rubocop-junit-formatter', '~> 0.1'
+  spec.add_development_dependency 'vcr'
+  spec.add_development_dependency 'webmock'
 end

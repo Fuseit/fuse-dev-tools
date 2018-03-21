@@ -1,0 +1,130 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/repos/Fuseit/FuseTube/compare/HEAD~1...HEAD?access_token=123token123
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json,application/vnd.github.beta+json;q=0.5,application/json;q=0.1
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - Github API Ruby Gem 0.18.2
+      Authorization:
+      - token 123token123
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 22 Jun 2018 15:15:51 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4958'
+      X-Ratelimit-Reset:
+      - '1529680904'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      Etag:
+      - W/"675f9a4d25e621969a62dfcb6ab2f621"
+      Last-Modified:
+      - Thu, 21 Jun 2018 07:31:32 GMT
+      X-Oauth-Scopes:
+      - repo
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Runtime-Rack:
+      - '0.116661'
+      X-Github-Request-Id:
+      - E46F:59A2:F1D394:21D6D5B:5B2D12A7
+    body:
+      encoding: ASCII-8BIT
+      string: '{"url":"https://api.github.com/repos/Fuseit/FuseTube/compare/HEAD~1...HEAD","html_url":"https://github.com/Fuseit/FuseTube/compare/HEAD~1...HEAD","permalink_url":"https://github.com/Fuseit/FuseTube/compare/Fuseit:6653d2f...Fuseit:da06380","diff_url":"https://github.com/Fuseit/FuseTube/compare/HEAD~1...HEAD.diff","patch_url":"https://github.com/Fuseit/FuseTube/compare/HEAD~1...HEAD.patch","base_commit":{"sha":"6653d2f2da641dfbe84cc88a0da1d927bf3cd355","node_id":"MDY6Q29tbWl0MTY5NTcyMDo2NjUzZDJmMmRhNjQxZGZiZTg0Y2M4OGEwZGExZDkyN2JmM2NkMzU1","commit":{"author":{"name":"Vladimir
+        Zhukov","email":"vzhukov@sphereinc.com","date":"2018-06-15T11:15:31Z"},"committer":{"name":"Vladimir
+        Zhukov","email":"vzhukov@sphereinc.com","date":"2018-06-19T13:14:43Z"},"message":"hotfix
+        FS-107 SSO Warking issue\n\nClear flash message which comes to saml from previous
+        call","tree":{"sha":"338cebf1832a9274e1f5e75f6de7443656b89fee","url":"https://api.github.com/repos/Fuseit/FuseTube/git/trees/338cebf1832a9274e1f5e75f6de7443656b89fee"},"url":"https://api.github.com/repos/Fuseit/FuseTube/git/commits/6653d2f2da641dfbe84cc88a0da1d927bf3cd355","comment_count":0,"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null}},"url":"https://api.github.com/repos/Fuseit/FuseTube/commits/6653d2f2da641dfbe84cc88a0da1d927bf3cd355","html_url":"https://github.com/Fuseit/FuseTube/commit/6653d2f2da641dfbe84cc88a0da1d927bf3cd355","comments_url":"https://api.github.com/repos/Fuseit/FuseTube/commits/6653d2f2da641dfbe84cc88a0da1d927bf3cd355/comments","author":{"login":"pironim","id":1135304,"node_id":"MDQ6VXNlcjExMzUzMDQ=","avatar_url":"https://avatars1.githubusercontent.com/u/1135304?v=4","gravatar_id":"","url":"https://api.github.com/users/pironim","html_url":"https://github.com/pironim","followers_url":"https://api.github.com/users/pironim/followers","following_url":"https://api.github.com/users/pironim/following{/other_user}","gists_url":"https://api.github.com/users/pironim/gists{/gist_id}","starred_url":"https://api.github.com/users/pironim/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/pironim/subscriptions","organizations_url":"https://api.github.com/users/pironim/orgs","repos_url":"https://api.github.com/users/pironim/repos","events_url":"https://api.github.com/users/pironim/events{/privacy}","received_events_url":"https://api.github.com/users/pironim/received_events","type":"User","site_admin":false},"committer":{"login":"pironim","id":1135304,"node_id":"MDQ6VXNlcjExMzUzMDQ=","avatar_url":"https://avatars1.githubusercontent.com/u/1135304?v=4","gravatar_id":"","url":"https://api.github.com/users/pironim","html_url":"https://github.com/pironim","followers_url":"https://api.github.com/users/pironim/followers","following_url":"https://api.github.com/users/pironim/following{/other_user}","gists_url":"https://api.github.com/users/pironim/gists{/gist_id}","starred_url":"https://api.github.com/users/pironim/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/pironim/subscriptions","organizations_url":"https://api.github.com/users/pironim/orgs","repos_url":"https://api.github.com/users/pironim/repos","events_url":"https://api.github.com/users/pironim/events{/privacy}","received_events_url":"https://api.github.com/users/pironim/received_events","type":"User","site_admin":false},"parents":[{"sha":"e981a530771fde0475c2e736849c7c42fe083e19","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/e981a530771fde0475c2e736849c7c42fe083e19","html_url":"https://github.com/Fuseit/FuseTube/commit/e981a530771fde0475c2e736849c7c42fe083e19"}]},"merge_base_commit":{"sha":"6653d2f2da641dfbe84cc88a0da1d927bf3cd355","node_id":"MDY6Q29tbWl0MTY5NTcyMDo2NjUzZDJmMmRhNjQxZGZiZTg0Y2M4OGEwZGExZDkyN2JmM2NkMzU1","commit":{"author":{"name":"Vladimir
+        Zhukov","email":"vzhukov@sphereinc.com","date":"2018-06-15T11:15:31Z"},"committer":{"name":"Vladimir
+        Zhukov","email":"vzhukov@sphereinc.com","date":"2018-06-19T13:14:43Z"},"message":"hotfix
+        FS-107 SSO Warking issue\n\nClear flash message which comes to saml from previous
+        call","tree":{"sha":"338cebf1832a9274e1f5e75f6de7443656b89fee","url":"https://api.github.com/repos/Fuseit/FuseTube/git/trees/338cebf1832a9274e1f5e75f6de7443656b89fee"},"url":"https://api.github.com/repos/Fuseit/FuseTube/git/commits/6653d2f2da641dfbe84cc88a0da1d927bf3cd355","comment_count":0,"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null}},"url":"https://api.github.com/repos/Fuseit/FuseTube/commits/6653d2f2da641dfbe84cc88a0da1d927bf3cd355","html_url":"https://github.com/Fuseit/FuseTube/commit/6653d2f2da641dfbe84cc88a0da1d927bf3cd355","comments_url":"https://api.github.com/repos/Fuseit/FuseTube/commits/6653d2f2da641dfbe84cc88a0da1d927bf3cd355/comments","author":{"login":"pironim","id":1135304,"node_id":"MDQ6VXNlcjExMzUzMDQ=","avatar_url":"https://avatars1.githubusercontent.com/u/1135304?v=4","gravatar_id":"","url":"https://api.github.com/users/pironim","html_url":"https://github.com/pironim","followers_url":"https://api.github.com/users/pironim/followers","following_url":"https://api.github.com/users/pironim/following{/other_user}","gists_url":"https://api.github.com/users/pironim/gists{/gist_id}","starred_url":"https://api.github.com/users/pironim/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/pironim/subscriptions","organizations_url":"https://api.github.com/users/pironim/orgs","repos_url":"https://api.github.com/users/pironim/repos","events_url":"https://api.github.com/users/pironim/events{/privacy}","received_events_url":"https://api.github.com/users/pironim/received_events","type":"User","site_admin":false},"committer":{"login":"pironim","id":1135304,"node_id":"MDQ6VXNlcjExMzUzMDQ=","avatar_url":"https://avatars1.githubusercontent.com/u/1135304?v=4","gravatar_id":"","url":"https://api.github.com/users/pironim","html_url":"https://github.com/pironim","followers_url":"https://api.github.com/users/pironim/followers","following_url":"https://api.github.com/users/pironim/following{/other_user}","gists_url":"https://api.github.com/users/pironim/gists{/gist_id}","starred_url":"https://api.github.com/users/pironim/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/pironim/subscriptions","organizations_url":"https://api.github.com/users/pironim/orgs","repos_url":"https://api.github.com/users/pironim/repos","events_url":"https://api.github.com/users/pironim/events{/privacy}","received_events_url":"https://api.github.com/users/pironim/received_events","type":"User","site_admin":false},"parents":[{"sha":"e981a530771fde0475c2e736849c7c42fe083e19","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/e981a530771fde0475c2e736849c7c42fe083e19","html_url":"https://github.com/Fuseit/FuseTube/commit/e981a530771fde0475c2e736849c7c42fe083e19"}]},"status":"ahead","ahead_by":1,"behind_by":0,"total_commits":1,"commits":[{"sha":"da0638070343ac5e3cbf9027dd5a60551334df98","node_id":"MDY6Q29tbWl0MTY5NTcyMDpkYTA2MzgwNzAzNDNhYzVlM2NiZjkwMjdkZDVhNjA1NTEzMzRkZjk4","commit":{"author":{"name":"Ivan
+        Ivanov","email":"ivantoniev@gmail.com","date":"2018-06-14T16:37:14Z"},"committer":{"name":"Andrey
+        Chernyshev","email":"achernyshev@sphereinc.com","date":"2018-06-21T07:31:32Z"},"message":"hotfix
+        CS-81 Add ability for executing lambdas locally\n\nWhen working locally stub
+        the lambdas so that we can have audience\nmanagement working properly without
+        developers having to struggle\nsetting it up.\nAdd the stub as an env variable
+        so the devs can choose between using\ndocker or serverless on its own.","tree":{"sha":"fa2a899dede98be9612ef9fe07d6c8836b456378","url":"https://api.github.com/repos/Fuseit/FuseTube/git/trees/fa2a899dede98be9612ef9fe07d6c8836b456378"},"url":"https://api.github.com/repos/Fuseit/FuseTube/git/commits/da0638070343ac5e3cbf9027dd5a60551334df98","comment_count":0,"verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null}},"url":"https://api.github.com/repos/Fuseit/FuseTube/commits/da0638070343ac5e3cbf9027dd5a60551334df98","html_url":"https://github.com/Fuseit/FuseTube/commit/da0638070343ac5e3cbf9027dd5a60551334df98","comments_url":"https://api.github.com/repos/Fuseit/FuseTube/commits/da0638070343ac5e3cbf9027dd5a60551334df98/comments","author":{"login":"ivantoniev","id":4310282,"node_id":"MDQ6VXNlcjQzMTAyODI=","avatar_url":"https://avatars1.githubusercontent.com/u/4310282?v=4","gravatar_id":"","url":"https://api.github.com/users/ivantoniev","html_url":"https://github.com/ivantoniev","followers_url":"https://api.github.com/users/ivantoniev/followers","following_url":"https://api.github.com/users/ivantoniev/following{/other_user}","gists_url":"https://api.github.com/users/ivantoniev/gists{/gist_id}","starred_url":"https://api.github.com/users/ivantoniev/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ivantoniev/subscriptions","organizations_url":"https://api.github.com/users/ivantoniev/orgs","repos_url":"https://api.github.com/users/ivantoniev/repos","events_url":"https://api.github.com/users/ivantoniev/events{/privacy}","received_events_url":"https://api.github.com/users/ivantoniev/received_events","type":"User","site_admin":false},"committer":{"login":"fatbeard2","id":5956619,"node_id":"MDQ6VXNlcjU5NTY2MTk=","avatar_url":"https://avatars1.githubusercontent.com/u/5956619?v=4","gravatar_id":"","url":"https://api.github.com/users/fatbeard2","html_url":"https://github.com/fatbeard2","followers_url":"https://api.github.com/users/fatbeard2/followers","following_url":"https://api.github.com/users/fatbeard2/following{/other_user}","gists_url":"https://api.github.com/users/fatbeard2/gists{/gist_id}","starred_url":"https://api.github.com/users/fatbeard2/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/fatbeard2/subscriptions","organizations_url":"https://api.github.com/users/fatbeard2/orgs","repos_url":"https://api.github.com/users/fatbeard2/repos","events_url":"https://api.github.com/users/fatbeard2/events{/privacy}","received_events_url":"https://api.github.com/users/fatbeard2/received_events","type":"User","site_admin":false},"parents":[{"sha":"6653d2f2da641dfbe84cc88a0da1d927bf3cd355","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/6653d2f2da641dfbe84cc88a0da1d927bf3cd355","html_url":"https://github.com/Fuseit/FuseTube/commit/6653d2f2da641dfbe84cc88a0da1d927bf3cd355"}]}],"files":[{"sha":"b3392306ffac421ebaaa21b17cbfa84a9a782060","filename":"CHANGELOG.md","status":"modified","additions":3,"deletions":0,"changes":3,"blob_url":"https://github.com/Fuseit/FuseTube/blob/da0638070343ac5e3cbf9027dd5a60551334df98/CHANGELOG.md","raw_url":"https://github.com/Fuseit/FuseTube/raw/da0638070343ac5e3cbf9027dd5a60551334df98/CHANGELOG.md","contents_url":"https://api.github.com/repos/Fuseit/FuseTube/contents/CHANGELOG.md?ref=da0638070343ac5e3cbf9027dd5a60551334df98","patch":"@@
+        -8,6 +8,9 @@\n * FS-42 Comprehension Assessment - Re-opening questions - Opens
+        all submitted answers\n * FS-107 SSO - Warning message - Homepage REOPENED\n
+        \n+### Technical Improvements\n+\n+* CS-81  Add ability for executing lambdas
+        locally\n \n ## v3.44.4 - 2018-06-13\n "},{"sha":"66b043fab2fdbf5a85e74084556c7674816ca973","filename":"README.markdown","status":"modified","additions":4,"deletions":0,"changes":4,"blob_url":"https://github.com/Fuseit/FuseTube/blob/da0638070343ac5e3cbf9027dd5a60551334df98/README.markdown","raw_url":"https://github.com/Fuseit/FuseTube/raw/da0638070343ac5e3cbf9027dd5a60551334df98/README.markdown","contents_url":"https://api.github.com/repos/Fuseit/FuseTube/contents/README.markdown?ref=da0638070343ac5e3cbf9027dd5a60551334df98","patch":"@@
+        -184,6 +184,10 @@ You also can get plugin for your editor that will automatically
+        load those setti\n \n For info on how we manage environment variables, please
+        read our [Wiki](https://github.com/Fuseit/FuseTube/wiki/Application-Environment-Variables).\n
+        \n+### Local lambda functions\n+\n+In the monolith we use one lambda called
+        `index_single_user`. To run it locally we use the command saved in the `index_single_user_lambda`
+        environment variable. If you wish to change how the lambda is executed, you
+        need to change the command in the environment variable. For details and setup
+        information, [check the lambdas repository](https://github.com/Fuseit/fusetube_lambdas/tree/master/index_single_user).\n+\n
+        # Servers\n \n For info on how we manage servers, please read our [Wiki](https://github.com/Fuseit/FuseTube/wiki/Servers)."},{"sha":"690e035cbec3dbd54be2cfc0b2cdbb80f35290f4","filename":"app/service_objects/aws_connectors/lambdas/index_single_user.rb","status":"modified","additions":12,"deletions":4,"changes":16,"blob_url":"https://github.com/Fuseit/FuseTube/blob/da0638070343ac5e3cbf9027dd5a60551334df98/app/service_objects/aws_connectors/lambdas/index_single_user.rb","raw_url":"https://github.com/Fuseit/FuseTube/raw/da0638070343ac5e3cbf9027dd5a60551334df98/app/service_objects/aws_connectors/lambdas/index_single_user.rb","contents_url":"https://api.github.com/repos/Fuseit/FuseTube/contents/app/service_objects/aws_connectors/lambdas/index_single_user.rb?ref=da0638070343ac5e3cbf9027dd5a60551334df98","patch":"@@
+        -9,10 +9,7 @@ def initialize user_id, index: nil, asynchronous: false\n   end\n
+        \n   def execute\n-    @lambda_response = client.invoke \\\n-      function_name:
+        lambda_function_name,\n-      payload: payload,\n-      invocation_type: (asynchronous
+        ? ''Event'' : ''RequestResponse'')\n+    @lambda_response = Rails.env.development?
+        ? local_lambda_call : lambda_call\n \n     check_for_lambda_errors unless
+        asynchronous\n     true\n@@ -28,6 +25,17 @@ def execute\n \n     attr_reader
+        :index\n \n+    def local_lambda_call\n+      system Figaro.env.index_single_user_lambda!
+        % { payload: payload }\n+    end\n+\n+    def lambda_call\n+      client.invoke
+        \\\n+        function_name: lambda_function_name,\n+        payload: payload,\n+        invocation_type:
+        (asynchronous ? ''Event'' : ''RequestResponse'')\n+    end\n+\n     def check_for_lambda_errors\n       check_lambda_successful_response\n       check_lambda_for_server_error"},{"sha":"2b10d05969c2d942387c4e262d0aa157a0c4adfd","filename":"spec/service_objects/aws_connectors/lambdas/index_single_user_spec.rb","status":"modified","additions":23,"deletions":0,"changes":23,"blob_url":"https://github.com/Fuseit/FuseTube/blob/da0638070343ac5e3cbf9027dd5a60551334df98/spec/service_objects/aws_connectors/lambdas/index_single_user_spec.rb","raw_url":"https://github.com/Fuseit/FuseTube/raw/da0638070343ac5e3cbf9027dd5a60551334df98/spec/service_objects/aws_connectors/lambdas/index_single_user_spec.rb","contents_url":"https://api.github.com/repos/Fuseit/FuseTube/contents/spec/service_objects/aws_connectors/lambdas/index_single_user_spec.rb?ref=da0638070343ac5e3cbf9027dd5a60551334df98","patch":"@@
+        -16,6 +16,29 @@\n       allow_any_instance_of(described_class).to receive(:find_lambda_config_setting!).and_return
+        :index_user_function\n     end\n \n+    context ''when indexing in different
+        environments'' do\n+      let(:stubbed_response) { succesful_response }\n+\n+      subject
+        { described_class.new(user_id, asynchronous: false) }\n+\n+      it ''calls
+        the stubbed local lambda when in development'' do\n+        allow(Rails.env).to
+        receive(:development?).and_return true\n+        allow(subject).to receive(:local_lambda_call).and_return
+        stubbed_response\n+\n+        expect(subject).to receive(:local_lambda_call)\n+\n+        subject.execute\n+      end\n+\n+      it
+        ''calls the lambda when not in development'' do\n+        allow(subject).to
+        receive(:lambda_call).and_return stubbed_response\n+\n+        expect(subject).to
+        receive(:lambda_call)\n+\n+        subject.execute\n+      end\n+    end\n+\n     context
+        ''when successfully call lambda to index users'' do\n       let(:stubbed_response)
+        { succesful_response }\n       let(:error_response)   { nil }"}]}'
+    http_version:
+  recorded_at: Fri, 22 Jun 2018 15:15:51 GMT
+recorded_with: VCR 4.0.0

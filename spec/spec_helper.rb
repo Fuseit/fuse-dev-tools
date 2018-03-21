@@ -1,8 +1,16 @@
 require 'bundler/setup'
 require 'fuse_dev_tools'
+require 'vcr'
+require 'webmock'
 require 'support/stream_capture_helper'
 
 Dir['./spec/support/**/*.rb'].sort.each { |f| require f }
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/fixtures/cassettes'
+  c.hook_into :webmock
+  c.configure_rspec_metadata!
+end
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

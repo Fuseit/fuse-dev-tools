@@ -1,6 +1,5 @@
-require 'fuse_dev_tools/tasks/application_config'
-require 'fuse_dev_tools/tasks/database_config'
 require 'thor'
+Dir[File.join(__dir__, 'tasks', '*.rb')].each(&method(:require))
 
 module FuseDevTools
   class CLI < Thor
@@ -29,5 +28,8 @@ module FuseDevTools
 
     desc 'database_config COMMAND', 'Commands for database config'
     subcommand :database_config, FuseDevTools::Tasks::DatabaseConfig
+
+    desc 'changelog_generator COMMAND', 'Commands for changelog'
+    subcommand :changelog_generator, FuseDevTools::Tasks::ChangelogGenerator
   end
 end

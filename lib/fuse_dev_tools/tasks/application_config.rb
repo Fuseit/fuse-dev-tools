@@ -1,5 +1,3 @@
-require 'thor'
-
 module FuseDevTools
   module Tasks
     class ApplicationConfig < Thor

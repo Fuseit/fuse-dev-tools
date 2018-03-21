@@ -1,0 +1,558 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/repos/Fuseit/FuseTube/releases?access_token=123token123
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json,application/vnd.github.beta+json;q=0.5,application/json;q=0.1
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - Github API Ruby Gem 0.18.2
+      Authorization:
+      - token 123token123
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 22 Jun 2018 15:15:46 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4966'
+      X-Ratelimit-Reset:
+      - '1529680904'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      Etag:
+      - W/"ab5f95da5654daca45391fde1f6df7b1"
+      X-Oauth-Scopes:
+      - repo
+      X-Accepted-Oauth-Scopes:
+      - repo
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Link:
+      - <https://api.github.com/repositories/1695720/releases?access_token=123token123
+        rel="next", <https://api.github.com/repositories/1695720/releases?access_token=123token123&page=17>;
+        rel="last"
+      Access-Control-Expose-Headers:
+      - ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Runtime-Rack:
+      - '0.074184'
+      X-Github-Request-Id:
+      - E467:599E:80C410:1346EC6:5B2D12A2
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11486051","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11486051/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/11486051/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.45-0-pre2","id":11486051,"node_id":"MDc6UmVsZWFzZTExNDg2MDUx","tag_name":"v3.45-0-pre2","target_commitish":"release-3.45","name":"v3.45.0-pre2
+        - 2018-06-14","draft":false,"author":{"login":"fatbeard2","id":5956619,"node_id":"MDQ6VXNlcjU5NTY2MTk=","avatar_url":"https://avatars1.githubusercontent.com/u/5956619?v=4","gravatar_id":"","url":"https://api.github.com/users/fatbeard2","html_url":"https://github.com/fatbeard2","followers_url":"https://api.github.com/users/fatbeard2/followers","following_url":"https://api.github.com/users/fatbeard2/following{/other_user}","gists_url":"https://api.github.com/users/fatbeard2/gists{/gist_id}","starred_url":"https://api.github.com/users/fatbeard2/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/fatbeard2/subscriptions","organizations_url":"https://api.github.com/users/fatbeard2/orgs","repos_url":"https://api.github.com/users/fatbeard2/repos","events_url":"https://api.github.com/users/fatbeard2/events{/privacy}","received_events_url":"https://api.github.com/users/fatbeard2/received_events","type":"User","site_admin":false},"prerelease":true,"created_at":"2018-06-14T16:48:39Z","published_at":"2018-06-14T19:22:19Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.45-0-pre2","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.45-0-pre2","body":"###
+        Features\r\n\r\n* SAS-59 [API] When deleting a user allow the clearing of
+        the profile data\r\n* PMI-4 Monolith to remove user ES document from MS\r\n\r\n###
+        Bugfixes\r\n\r\n* CS-70 Audience composite is not removed when audience is
+        deleted"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11467704","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11467704/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/11467704/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.44.4","id":11467704,"node_id":"MDc6UmVsZWFzZTExNDY3NzA0","tag_name":"v3.44.4","target_commitish":"release-3.44","name":"v3.44.4
+        - 2018-06-13","draft":false,"author":{"login":"ADolhov","id":9863825,"node_id":"MDQ6VXNlcjk4NjM4MjU=","avatar_url":"https://avatars3.githubusercontent.com/u/9863825?v=4","gravatar_id":"","url":"https://api.github.com/users/ADolhov","html_url":"https://github.com/ADolhov","followers_url":"https://api.github.com/users/ADolhov/followers","following_url":"https://api.github.com/users/ADolhov/following{/other_user}","gists_url":"https://api.github.com/users/ADolhov/gists{/gist_id}","starred_url":"https://api.github.com/users/ADolhov/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ADolhov/subscriptions","organizations_url":"https://api.github.com/users/ADolhov/orgs","repos_url":"https://api.github.com/users/ADolhov/repos","events_url":"https://api.github.com/users/ADolhov/events{/privacy}","received_events_url":"https://api.github.com/users/ADolhov/received_events","type":"User","site_admin":false},"prerelease":false,"created_at":"2018-06-13T18:40:38Z","published_at":"2018-06-13T19:04:36Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.44.4","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.44.4","body":"##
+        v3.44.4-pre1 - 2018-06-12\r\n\r\n### Bugfixes\r\n\r\n* CS-69 Ui issue for
+        long attendees/waiters list\r\n* CS-103 Fix flashing for attendees list on
+        occurrence page\r\n* FS-135 Import Users: Error when performing bulk user
+        import to community\r\n* FS-133 Community Admin Menu alignment is correct
+        when language is changed to German\r\n* FS-44 Views dataloader - Content -
+        Not being marked as viewed in LP after csv import\r\n* FS-279 Closing a search
+        crashes the app on touch devices\r\n* FS-261 Topic - Content - Registering
+        incorrect number of pieces\r\n* FS-300 Firefox: error when trying to transcribe
+        video\r\n* FS-107 Add flash debugging(unfinished task)\r\n* FS-413 Bad API
+        response on requesting some scorm course via mobile contents endpoint\r\n\r\n###
+        Technical Improvements\r\n\r\n* SAS-110 Fix Mass Assignment vulnerabilities
+        in controllers detected by brakeman\r\n* SAS-171 Teaspoon tests timed out"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11439471","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11439471/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/11439471/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.44.4-pre1","id":11439471,"node_id":"MDc6UmVsZWFzZTExNDM5NDcx","tag_name":"v3.44.4-pre1","target_commitish":"release-3.44","name":"v3.44.4-pre1
+        - 2018-06-12","draft":false,"author":{"login":"ADolhov","id":9863825,"node_id":"MDQ6VXNlcjk4NjM4MjU=","avatar_url":"https://avatars3.githubusercontent.com/u/9863825?v=4","gravatar_id":"","url":"https://api.github.com/users/ADolhov","html_url":"https://github.com/ADolhov","followers_url":"https://api.github.com/users/ADolhov/followers","following_url":"https://api.github.com/users/ADolhov/following{/other_user}","gists_url":"https://api.github.com/users/ADolhov/gists{/gist_id}","starred_url":"https://api.github.com/users/ADolhov/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ADolhov/subscriptions","organizations_url":"https://api.github.com/users/ADolhov/orgs","repos_url":"https://api.github.com/users/ADolhov/repos","events_url":"https://api.github.com/users/ADolhov/events{/privacy}","received_events_url":"https://api.github.com/users/ADolhov/received_events","type":"User","site_admin":false},"prerelease":true,"created_at":"2018-06-12T12:47:11Z","published_at":"2018-06-12T12:50:40Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.44.4-pre1","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.44.4-pre1","body":"###
+        Bugfixes\r\n\r\n* CS-69 Ui issue for long attendees/waiters list\r\n* CS-103
+        Fix flashing for attendees list on occurrence page\r\n* FS-135 Import Users:
+        Error when performing bulk user import to community\r\n* FS-133 Community
+        Admin Menu alignment is correct when language is changed to German\r\n* FS-137
+        CSV import - Deactivate users - Not functioning\r\n* FS-44 Views dataloader
+        - Content - Not being marked as viewed in LP after csv import\r\n* FS-279
+        Closing a search crashes the app on touch devices\r\n* FS-261 Topic - Content
+        - Registering incorrect number of pieces\r\n* FS-300 Firefox: error when trying
+        to transcribe video\r\n\r\n### Technical Improvements\r\n\r\n* SAS-110 Fix
+        Mass Assignment vulnerabilities in controllers detected by brakeman\r\n* SAS-171
+        Teaspoon tests timed out"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11377317","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11377317/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/11377317/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.45-0-pre1","id":11377317,"node_id":"MDc6UmVsZWFzZTExMzc3MzE3","tag_name":"v3.45-0-pre1","target_commitish":"release-3.45","name":"v3.45-0-pre1
+        - 2018-06-07","draft":false,"author":{"login":"fatbeard2","id":5956619,"node_id":"MDQ6VXNlcjU5NTY2MTk=","avatar_url":"https://avatars1.githubusercontent.com/u/5956619?v=4","gravatar_id":"","url":"https://api.github.com/users/fatbeard2","html_url":"https://github.com/fatbeard2","followers_url":"https://api.github.com/users/fatbeard2/followers","following_url":"https://api.github.com/users/fatbeard2/following{/other_user}","gists_url":"https://api.github.com/users/fatbeard2/gists{/gist_id}","starred_url":"https://api.github.com/users/fatbeard2/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/fatbeard2/subscriptions","organizations_url":"https://api.github.com/users/fatbeard2/orgs","repos_url":"https://api.github.com/users/fatbeard2/repos","events_url":"https://api.github.com/users/fatbeard2/events{/privacy}","received_events_url":"https://api.github.com/users/fatbeard2/received_events","type":"User","site_admin":false},"prerelease":true,"created_at":"2018-06-07T18:54:02Z","published_at":"2018-06-07T18:56:45Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.45-0-pre1","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.45-0-pre1","body":"###
+        Features\r\n\r\n* PMI-117 Implement audience composite for learning plans(Added
+        new sidekiq queue)\r\n* PMI-118 Ability to select audiences from a list\r\n*
+        PMI-119 Persist selecting audiences for a learning plan\r\n* PMI-111 [Community
+        admin] Ability to create an audience within a community\r\n* PMI-75 [UI] Changes
+        to community admin UI\r\n* PMI-122 List all audiences for a company\r\n* APP-3386
+        API: update \"learning_plans/{id}\" call to include content IDs\r\n* APP-3383
+        API: update \"my_learning_plan\" call to include content IDs\r\n* CS-9 [UI]
+        Changes to learning plans UI in community admin\r\n* CS-10 If old community
+        layout is disabled then hide Custom tab option in community admin\r\n* PMI-144
+        Add audiences usage support for learning plan assigned audiences\r\n* SAS-58
+        [ADMIN] Disable a user but do not delete all the users dependant relationships
+        immediately\r\n* CS-22 Ability to click on an audience item and see list of
+        members\r\n* CS-37 Ability to manage community admin via API\r\n* APP-3281
+        Push notifications opening notifications page\r\n* CS-83 Ui changes to event
+        page\r\n* CS-38 Ability to manage members of an admin group via API\r\n* CS-68
+        [Download] Update fields shown in Download CSV on an occurrence\r\n* APP-3422
+        change get my communities endpoint\r\n* CS-102 Show list of users on the waitlist\r\n*
+        CS-49 Ability to take attendance for an event as soon as the event begins\r\n*
+        CS-79 Improve ui states for audiences\r\n\r\n### Technical improvements\r\n\r\n*
+        CS-72 Remove code for breadcrumbs on community admin\r\n\r\n### Bugfixes\r\n\r\n*
+        CS-33 - Audience doesnt autoupdate for datetime filter(requires reindex migration)\r\n*
+        SAS-67 Brakeman''s Security Warnings (HIGH severity)"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11265022","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11265022/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/11265022/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.44.3","id":11265022,"node_id":"MDc6UmVsZWFzZTExMjY1MDIy","tag_name":"v3.44.3","target_commitish":"release-3.44","name":"v3.44.3
+        - 2018-05-31","draft":false,"author":{"login":"ADolhov","id":9863825,"node_id":"MDQ6VXNlcjk4NjM4MjU=","avatar_url":"https://avatars3.githubusercontent.com/u/9863825?v=4","gravatar_id":"","url":"https://api.github.com/users/ADolhov","html_url":"https://github.com/ADolhov","followers_url":"https://api.github.com/users/ADolhov/followers","following_url":"https://api.github.com/users/ADolhov/following{/other_user}","gists_url":"https://api.github.com/users/ADolhov/gists{/gist_id}","starred_url":"https://api.github.com/users/ADolhov/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ADolhov/subscriptions","organizations_url":"https://api.github.com/users/ADolhov/orgs","repos_url":"https://api.github.com/users/ADolhov/repos","events_url":"https://api.github.com/users/ADolhov/events{/privacy}","received_events_url":"https://api.github.com/users/ADolhov/received_events","type":"User","site_admin":false},"prerelease":false,"created_at":"2018-05-31T16:31:34Z","published_at":"2018-05-31T16:37:45Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.44.3","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.44.3","body":"###
+        Technical improvements\r\n\r\n* FS-266 - Reduce db load by moving scorm processing
+        jobs to separate queue\r\n\r\n### Bugfixes\r\n\r\n* FS-48 Digital Signature-Can''t
+        be Removed from articles\r\n* FS-103 Topic: Special characters in topic description\r\n*
+        CS-73 Events Admin page - User gets en error message after trying to save
+        the event occurrence\r\n* FS-282 MAINTENANCE - Change Scorm Uploading Logic\r\n*
+        FS-273 SCORM-Courses Are still Processes\r\n* FS-49 UI Language Translation
+        - ''Next, Previous'' Are Not Translated\r\n* FS-50 Language Translation -
+        Pop-Up Calendar Appears In Incorrect Language\r\n* FS-51 UI Language Translation
+        - Labels on Communities Page Are Not Translated\r\n* FS-52 Content: Last updated
+        value not updating\r\n* FS-125 Add highest score percentage for assessment
+        result response\r\n* FS-47 Users unable to transcribe videos on Merck Production\r\n*
+        FS-267 LP: When you click continue, its continued in the incorrect order\r\n*
+        FS-268 Video - Transcribing - No subtitles - Can''t transcribe again\r\n*
+        FS-46 Email notifications - Content links - Direct to topic and not direct
+        to content\r\n* Add jQuery UI dependency to sign in app\r\n* Escape empty
+        content description in sharing decorator\r\n* FS-263 Topic/LP progress isnt
+        correct while `use_highest_result` turned on in topic settings\r\n* CS-94
+        Filter type is not displayed correctly"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11227174","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11227174/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/11227174/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.44.3-pre1","id":11227174,"node_id":"MDc6UmVsZWFzZTExMjI3MTc0","tag_name":"v3.44.3-pre1","target_commitish":"release-3.44","name":"v3.44.3-pre1
+        - 2018-05-29","draft":false,"author":{"login":"ADolhov","id":9863825,"node_id":"MDQ6VXNlcjk4NjM4MjU=","avatar_url":"https://avatars3.githubusercontent.com/u/9863825?v=4","gravatar_id":"","url":"https://api.github.com/users/ADolhov","html_url":"https://github.com/ADolhov","followers_url":"https://api.github.com/users/ADolhov/followers","following_url":"https://api.github.com/users/ADolhov/following{/other_user}","gists_url":"https://api.github.com/users/ADolhov/gists{/gist_id}","starred_url":"https://api.github.com/users/ADolhov/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ADolhov/subscriptions","organizations_url":"https://api.github.com/users/ADolhov/orgs","repos_url":"https://api.github.com/users/ADolhov/repos","events_url":"https://api.github.com/users/ADolhov/events{/privacy}","received_events_url":"https://api.github.com/users/ADolhov/received_events","type":"User","site_admin":false},"prerelease":true,"created_at":"2018-05-29T19:42:45Z","published_at":"2018-05-29T19:45:00Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.44.3-pre1","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.44.3-pre1","body":"###
+        Technical improvements\r\n\r\n* FS-266 - Reduce db load by moving scorm processing
+        jobs to separate queue\r\n\r\n### Bugfixes\r\n\r\n* FS-48 Digital Signature-Can''t
+        be Removed from articles\r\n* FS-103 Topic: Special characters in topic description\r\n*
+        CS-73 Events Admin page - User gets en error message after trying to save
+        the event occurrence\r\n* FS-282 MAINTENANCE - Change Scorm Uploading Logic\r\n*
+        FS-273 SCORM-Courses Are still Processes\r\n* FS-49 UI Language Translation
+        - ''Next, Previous'' Are Not Translated\r\n* FS-50 Language Translation -
+        Pop-Up Calendar Appears In Incorrect Language\r\n* FS-51 UI Language Translation
+        - Labels on Communities Page Are Not Translated\r\n* FS-52 Content: Last updated
+        value not updating\r\n* FS-125 Add highest score percentage for assessment
+        result response\r\n* FS-47 Users unable to transcribe videos on Merck Production\r\n*
+        FS-267 LP: When you click continue, its continued in the incorrect order\r\n*
+        FS-268 Video - Transcribing - No subtitles - Can''t transcribe again\r\n*
+        FS-46 Email notifications - Content links - Direct to topic and not direct
+        to content\r\n* Add jQuery UI dependency to sign in app\r\n* Escape empty
+        content description in sharing decorator\r\n* FS-263 Topic/LP progress isnt
+        correct while `use_highest_result` turned on in topic settings\r\n* CS-94
+        Filter type is not displayed correctly"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11179915","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11179915/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/11179915/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.44.2","id":11179915,"node_id":"MDc6UmVsZWFzZTExMTc5OTE1","tag_name":"v3.44.2","target_commitish":"release-3.44","name":"v3.44.2
+        - 2018-05-25","draft":false,"author":{"login":"ADolhov","id":9863825,"node_id":"MDQ6VXNlcjk4NjM4MjU=","avatar_url":"https://avatars3.githubusercontent.com/u/9863825?v=4","gravatar_id":"","url":"https://api.github.com/users/ADolhov","html_url":"https://github.com/ADolhov","followers_url":"https://api.github.com/users/ADolhov/followers","following_url":"https://api.github.com/users/ADolhov/following{/other_user}","gists_url":"https://api.github.com/users/ADolhov/gists{/gist_id}","starred_url":"https://api.github.com/users/ADolhov/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ADolhov/subscriptions","organizations_url":"https://api.github.com/users/ADolhov/orgs","repos_url":"https://api.github.com/users/ADolhov/repos","events_url":"https://api.github.com/users/ADolhov/events{/privacy}","received_events_url":"https://api.github.com/users/ADolhov/received_events","type":"User","site_admin":false},"prerelease":false,"created_at":"2018-05-25T14:44:12Z","published_at":"2018-05-25T14:47:37Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.44.2","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.44.2","body":"##
+        v3.44.2-pre2 - 2018-05-25\r\n\r\n### Bugfixes\r\n\r\n* Fix cookies consent
+        expiry date\r\n\r\n\r\n## v3.44.2-pre1 - 2018-05-25\r\n\r\n### Bugfixes\r\n\r\n*
+        FS-302 Show cookie consent banner on log-in pages\r\n* FS-309 Show cookie
+        consent to all users if they have not accepted"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11179093","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11179093/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/11179093/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.44.2-pre2","id":11179093,"node_id":"MDc6UmVsZWFzZTExMTc5MDkz","tag_name":"v3.44.2-pre2","target_commitish":"release-3.44","name":"v3.44.2-pre2
+        - 2018-05-25","draft":false,"author":{"login":"ADolhov","id":9863825,"node_id":"MDQ6VXNlcjk4NjM4MjU=","avatar_url":"https://avatars3.githubusercontent.com/u/9863825?v=4","gravatar_id":"","url":"https://api.github.com/users/ADolhov","html_url":"https://github.com/ADolhov","followers_url":"https://api.github.com/users/ADolhov/followers","following_url":"https://api.github.com/users/ADolhov/following{/other_user}","gists_url":"https://api.github.com/users/ADolhov/gists{/gist_id}","starred_url":"https://api.github.com/users/ADolhov/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ADolhov/subscriptions","organizations_url":"https://api.github.com/users/ADolhov/orgs","repos_url":"https://api.github.com/users/ADolhov/repos","events_url":"https://api.github.com/users/ADolhov/events{/privacy}","received_events_url":"https://api.github.com/users/ADolhov/received_events","type":"User","site_admin":false},"prerelease":true,"created_at":"2018-05-25T14:07:36Z","published_at":"2018-05-25T14:09:31Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.44.2-pre2","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.44.2-pre2","body":"###
+        Bugfixes\r\n\r\n* Fix cookies consent expiry date"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11175506","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11175506/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/11175506/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.44.2-pre1","id":11175506,"node_id":"MDc6UmVsZWFzZTExMTc1NTA2","tag_name":"v3.44.2-pre1","target_commitish":"release-3.44","name":"v3.44.2-pre1
+        - 2018-05-25","draft":false,"author":{"login":"ADolhov","id":9863825,"node_id":"MDQ6VXNlcjk4NjM4MjU=","avatar_url":"https://avatars3.githubusercontent.com/u/9863825?v=4","gravatar_id":"","url":"https://api.github.com/users/ADolhov","html_url":"https://github.com/ADolhov","followers_url":"https://api.github.com/users/ADolhov/followers","following_url":"https://api.github.com/users/ADolhov/following{/other_user}","gists_url":"https://api.github.com/users/ADolhov/gists{/gist_id}","starred_url":"https://api.github.com/users/ADolhov/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ADolhov/subscriptions","organizations_url":"https://api.github.com/users/ADolhov/orgs","repos_url":"https://api.github.com/users/ADolhov/repos","events_url":"https://api.github.com/users/ADolhov/events{/privacy}","received_events_url":"https://api.github.com/users/ADolhov/received_events","type":"User","site_admin":false},"prerelease":true,"created_at":"2018-05-25T10:25:11Z","published_at":"2018-05-25T10:33:18Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.44.2-pre1","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.44.2-pre1","body":"###
+        Bugfixes\r\n\r\n* FS-302 Show cookie consent banner on log-in pages\r\n* FS-309
+        Show cookie consent to all users if they have not accepted"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11134748","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11134748/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/11134748/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.44.1","id":11134748,"node_id":"MDc6UmVsZWFzZTExMTM0NzQ4","tag_name":"v3.44.1","target_commitish":"release-3.44","name":"v3.44.1
+        - 2018-05-23","draft":false,"author":{"login":"ADolhov","id":9863825,"node_id":"MDQ6VXNlcjk4NjM4MjU=","avatar_url":"https://avatars3.githubusercontent.com/u/9863825?v=4","gravatar_id":"","url":"https://api.github.com/users/ADolhov","html_url":"https://github.com/ADolhov","followers_url":"https://api.github.com/users/ADolhov/followers","following_url":"https://api.github.com/users/ADolhov/following{/other_user}","gists_url":"https://api.github.com/users/ADolhov/gists{/gist_id}","starred_url":"https://api.github.com/users/ADolhov/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ADolhov/subscriptions","organizations_url":"https://api.github.com/users/ADolhov/orgs","repos_url":"https://api.github.com/users/ADolhov/repos","events_url":"https://api.github.com/users/ADolhov/events{/privacy}","received_events_url":"https://api.github.com/users/ADolhov/received_events","type":"User","site_admin":false},"prerelease":false,"created_at":"2018-05-23T12:21:32Z","published_at":"2018-05-23T12:32:21Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.44.1","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.44.1","body":"###
+        Features\r\n\r\n* Policy privacy  update\r\n\r\n### Bugfixes\r\n\r\n* SAS-134
+        [STMI TESTS] ActiveRecord::StatementInvalid\r\n* SAS-138 [STMI TESTS] ActionView::MissingTemplate\r\n\r\n###
+        Technical improvements\r\n\r\n* PMI-142 Update wait_for_ajax condition\r\n*
+        SAS-133 Fix the Cucumber::Ambiguous problem"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11031795","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/11031795/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/11031795/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.44.0","id":11031795,"node_id":"MDc6UmVsZWFzZTExMDMxNzk1","tag_name":"v3.44.0","target_commitish":"release-3.44","name":"v3.44.0
+        - 2018-05-16","draft":false,"author":{"login":"ADolhov","id":9863825,"node_id":"MDQ6VXNlcjk4NjM4MjU=","avatar_url":"https://avatars3.githubusercontent.com/u/9863825?v=4","gravatar_id":"","url":"https://api.github.com/users/ADolhov","html_url":"https://github.com/ADolhov","followers_url":"https://api.github.com/users/ADolhov/followers","following_url":"https://api.github.com/users/ADolhov/following{/other_user}","gists_url":"https://api.github.com/users/ADolhov/gists{/gist_id}","starred_url":"https://api.github.com/users/ADolhov/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ADolhov/subscriptions","organizations_url":"https://api.github.com/users/ADolhov/orgs","repos_url":"https://api.github.com/users/ADolhov/repos","events_url":"https://api.github.com/users/ADolhov/events{/privacy}","received_events_url":"https://api.github.com/users/ADolhov/received_events","type":"User","site_admin":false},"prerelease":false,"created_at":"2018-05-16T15:38:15Z","published_at":"2018-05-16T16:51:23Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.44.0","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.44.0","body":"##
+        v3.44.0-pre8 - 2018-05-14\r\n\r\n### Bugfixes\r\n\r\n* BUGS-1478 Learning
+        Plan progress not changed on update\r\n\r\n\r\n## v3.44.0-pre7 - 2018-05-07\r\n\r\n###
+        Features\r\n\r\n* PMI-129 Create feature flag in HAP\r\n* PMI-116 Implement
+        ''Audience'' tab\r\n* PMI-46 Add counters to tab titiles\r\n* PMI-140 Add
+        tab counters for event host, creator and specified approver (separate page)\r\n*
+        PMI-121 Create ''Audiences'' tab in community admin sidebar\r\n* PMI-42 [Admin]
+        Ability to filter user lists by name\r\n\r\n### Bugfixes\r\n\r\n* PMI-91 User
+        is able to apply for event even when already in waitlist\r\n\r\n### Technical
+        improvements\r\n\r\n* PMI-141 Add tests for \"add users\" on applicants page\r\n*
+        SAS-118 Create generator for new notification types\r\n* BUGS-1246 update
+        pdfjs up to 2.0.491\r\n* SAS-127 Rename incorrectly named test files\r\n*
+        BUGS-1307 Add fonts to Content Security Policy for correct PDF fonts\r\n\r\n\r\n##
+        v3.44.0-pre6 - 2018-04-26\r\n\r\n### Features\r\n\r\n* PMI-89 [NOTIFICATION]
+        Notify user when they are added to the waitlist\r\n* PMI-30 [NOTIFICATION]
+        Add notification for when user have been added to an event via waiting list\r\n*
+        PMI-62 Move waiters to applicants when \"Add waiters\" dialog saved\r\n* PMI-63
+        Create \"Add all waiters\" dialog\r\n* PMI-59 Create new notification type
+        - user leaving an event\r\n* PMI-108 Create feature flag for waitlist\r\n*
+        PMI-98 Update logic for counting \"Spaces taken\" for occurrence\r\n* PMI-68
+        Fill applicants list from waitlist when admin increases number of seats\r\n*
+        PMI-64 Send notifications to the users that were moved from waitlist\r\n*
+        PMI-60 Notify the event creator & Approvers when a user leaves the attendees
+        list\r\n* PMI-87 Send notification to the manager when the user removes themselves
+        from the event attendees list\r\n* PMI-88 Send notification to the event approvers
+        when the user removes themselves from the event attendees list\r\n* APP-3292
+        Add (web and mobile) next to Language on WEB settings\r\n* PMI-77 [ADMIN]
+        Ability to manage waitlist as event creator/host/specified approver\r\n* PMI-61
+        Create \"Add waiter\" dialog\r\n* PMI-115 Move old layout to new layout for
+        learning plan visibility\r\n* PMI-125 Create new settings for learning plan
+        visibility\r\n* APP-3348 Add Get recent communities endpoint\r\n\r\n### Bugfixes\r\n\r\n*
+        PMI-109 Events - \"Leave waitlist\" button doesn''t render on IE 10\r\n* PMI-138
+        Waitlist/Applicants dialog styles are broken\r\n* PMI-139 Improving Message
+        for \"Add waiters\"\r\n* APP-3349 API V3.0 GET /topic_contents is not retrieving
+        comments\r\n\r\n### Technical improvements\r\n\r\n* SAS-45 Replace sidetiq
+        gem with sidekiq-scheduler in fusetube\r\n\r\n\r\n## v3.44.0-pre5 - 2018-04-12\r\n\r\n###
+        Features\r\n\r\n* SFE-1481 New \"event creation\" page - Survey adding - Incorrect
+        backward re-direct from survey to the event page\r\n* SFE-1470 New event admin
+        - Applicants tab - Pre-requisite learning box is displayed when pre-requisite
+        is disabled\r\n* SFE-1489 Time picker shows times with 10 minutes interval\r\n*
+        SFE-1491 [Events] Make add to calendar button more prominent\r\n* SFE-1493
+        [Events] Change date format on events page\r\n* SFE-1496 Events on the all
+        events page should be ordered by upcoming first\r\n* SFE-1509 Admin Groups
+        - Rename permission title for the event permission in admin groups and update
+        the description\r\n* APP-3325 My Learning Plans Endpoint: Add contents count
+        for topics\r\n* SFE-1510 Disable event''s actions on events admin when user
+        can''t use it\r\n* SFE-1512 Add occurrence policy for the CREATE option\r\n*
+        SFE-1511 Disable occurrence''s actions on events admin when user can''t use
+        it\r\n* PMI-45 Create waitlist tables/models\r\n* PMI-23 [Events] Ability
+        to provide reason for Approval decline\r\n* APP-3331 Topic Contents Endpoint\r\n*
+        PMI-48 Add waitlist tab and table\r\n* PMI-55 Add icon link to waitlist tab
+        on occurrence actions panel\r\n* SFE-1487 Remove the report date from the
+        designs and add frequency selection to Step 2\r\n* SFE-1486 Add all customisable
+        user profile fields in the field\r\n* SFE-1513 Add complete date column to
+        learning plans expiry report\r\n* PMI-31 Ability to turn on a waitlist for
+        an event\r\n* PMI-47 Add infinite scroll component to applicants and waitlist
+        tabs\r\n* PMI-28 [USER] Ability to join a waitlist for an event\r\n* PMI-29
+        [USER] Ability to remove myself from the waitlist\r\n* PMI-49 Create \"Notify
+        waiters\" dialog\r\n* PMI-67 Fill applicants list from waitlist when admin
+        removes applicant(requires sidekiq stack settings changes)\r\n* PMI-66 Fill
+        applicants list from waitlist when user leaves an event\r\n* PMI-56 Create
+        new notification type for notifying people in waitlist\r\n* PMI-69 [ADMIN]
+        Ability to remove user from waitlist\r\n* PMI-70 [ADMIN] Ability to notify
+        single waiter\r\n\r\n### Bugfixes\r\n\r\n* SFE-1478 Community admin should
+        have ability to create new occurrence from the new events page\r\n* SFE-1483
+        As an community admin I want to delete occurrence\r\n* APP-3247 Add images
+        on assessment questions\r\n* SFE-1505 Event tile on ''all events'' page -
+        Location overlaps with ''View'' button when screen is re-sized to the small
+        one\r\n* APP-3313 MyLearningPlan V3 Endpoint: Return LP Progress, thumbnail
+        URL and correct model in documentation.\r\n* SFE-1517 Expiry report notification
+        email has incorrect title\r\n* APP-3339 MyLearningPlans Endpoint: Returns
+        LP Item ID instead of Content ID\r\n* BUGS-1711 Chat popup closes itself after
+        sending a message\r\n\r\n### Technical improvements\r\n\r\n* SFE-1473 Add
+        ability to serve dragonfly assets from CDN\r\n* Update sidekiq-unique-jobs
+        gem\r\n* APP-3293 Surface users locale in users endpoint\r\n* APP-3239 Optimise
+        GET communities endpoint\r\n* SAS-42 Restructure teaspoon tests to use suites,
+        which removes blink tests\r\n* BUGS-1562 Fix events JavaScript specs\r\n*
+        SAS-15 4.3 Investigate PHPSessionID\r\n\r\n\r\n## v3.44.0-pre4 - 2018-03-05\r\n\r\n###
+        Features\r\n\r\n* SFE-1243 Create an LP report showing which users are compliant
+        for expiry and deadlines on a specific date\r\n* SFE-1472 Ability to show
+        generated reports of disabled types\r\n* SFE-1454 Scheduling on \"Learning
+        Plan Expiry and Deadline Status\" report\r\n* SFE-1476 Show only report date
+        column in report files table on reports page for Learning Plans Expiry & Deadline
+        report\r\n* SFE-1477 Regeneration popup should contain only report date input
+        for Learning Plans Expiry & Deadline report\r\n\r\n\r\n## v3.44.0-pre3 - 2018-03-02\r\n\r\n###
+        Features\r\n\r\n* SFE-1456 Ability to create events in any community on the
+        instance\r\n* SFE-1467 Community admin can manage events for their community
+        in the new admin page\r\n* SFE-1459 Community admin has access to the new
+        events admin page for their community\r\n* SFE-1475 Community admin - Event
+        creation - Hide community component on the event creation page\r\n\r\n\r\n##
+        v3.44.0-pre2 - 2018-02-26\r\n\r\n### Features\r\n\r\n* APP-3236 Files for
+        Deep Linking\r\n\r\n### Technical improvements\r\n\r\n* DO-187 Deploy Datadog
+        APM agent and deprecate New Relic\r\n\r\n\r\n## v3.44.0-pre1 - 2018-02-15\r\n\r\n###
+        Features\r\n\r\n* SFE-1368 [Event approvals] Ability to access approval screen
+        from the event page\r\n* SFE-1443 [Approvals] Apply Event permissions to the
+        Event Creator role\r\n* SFE-1444 [Approvals] Apply Event permissions for the
+        Event host\r\n* SFE-1447 [Approvals] Apply Event permissions for the Specified
+        User\r\n* APP-3159 Add updated_at timestamp to V3 Contents API.\r\n* SFE-1351
+        [Event attachments] Ability to add resources to an event\r\n* SFE-1350 [Event
+        attachments] Ability to add pre requisite learning for an event\r\n* SFE-1446
+        [Approvals] Apply Event permissions for the Community Admin\r\n* APP-3183
+        Create HAP toggle for Offline Functionality\r\n* SFE-1457 Ability to filter
+        event list by community\r\n* SFE-1465 New event admin - Pre-requisite learning
+        and content attachments during event creation should be selected from communities
+        accessible for the end user\r\n* APP-3216 Add the scorm course status in the
+        response\r\n* APP-3171 Create My Learning Plans Endpoint\r\n\r\n### Bugfixes\r\n\r\n*
+        SFE-1452 New event admin - ''Back'' button isn''t displayed on the page with
+        steps 3-4\r\n* SFE-1462 New event admin - survey section is displayed when
+        survey option disabled in higher admin panel\r\n* APP-3194 Support HEIF image
+        format in backend\r\n* BUGS-1165 Comprehension Assessment - No notification
+        received on manager signoff\r\n* QUACK-153 Community Mapping: Admin added
+        by dynamic audience cannot be removed.\r\n\r\n### Technical improvements\r\n\r\n*
+        APP-3244 Optimise GET contents endpoint"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10983409","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10983409/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/10983409/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.44.0-pre8","id":10983409,"node_id":"MDc6UmVsZWFzZTEwOTgzNDA5","tag_name":"v3.44.0-pre8","target_commitish":"release-3.44","name":"v3.44.0-pre8
+        - 2018-05-14","draft":false,"author":{"login":"clearision","id":1748560,"node_id":"MDQ6VXNlcjE3NDg1NjA=","avatar_url":"https://avatars1.githubusercontent.com/u/1748560?v=4","gravatar_id":"","url":"https://api.github.com/users/clearision","html_url":"https://github.com/clearision","followers_url":"https://api.github.com/users/clearision/followers","following_url":"https://api.github.com/users/clearision/following{/other_user}","gists_url":"https://api.github.com/users/clearision/gists{/gist_id}","starred_url":"https://api.github.com/users/clearision/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/clearision/subscriptions","organizations_url":"https://api.github.com/users/clearision/orgs","repos_url":"https://api.github.com/users/clearision/repos","events_url":"https://api.github.com/users/clearision/events{/privacy}","received_events_url":"https://api.github.com/users/clearision/received_events","type":"User","site_admin":false},"prerelease":true,"created_at":"2018-05-14T09:56:38Z","published_at":"2018-05-14T10:03:16Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.44.0-pre8","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.44.0-pre8","body":"###
+        Bugfixes\r\n\r\n* BUGS-1478 Learning Plan progress not changed on update"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10879226","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10879226/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/10879226/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.44.0-pre7","id":10879226,"node_id":"MDc6UmVsZWFzZTEwODc5MjI2","tag_name":"v3.44.0-pre7","target_commitish":"release-3.44","name":"v3.44.0-pre7
+        - 2018-05-07","draft":false,"author":{"login":"ADolhov","id":9863825,"node_id":"MDQ6VXNlcjk4NjM4MjU=","avatar_url":"https://avatars3.githubusercontent.com/u/9863825?v=4","gravatar_id":"","url":"https://api.github.com/users/ADolhov","html_url":"https://github.com/ADolhov","followers_url":"https://api.github.com/users/ADolhov/followers","following_url":"https://api.github.com/users/ADolhov/following{/other_user}","gists_url":"https://api.github.com/users/ADolhov/gists{/gist_id}","starred_url":"https://api.github.com/users/ADolhov/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ADolhov/subscriptions","organizations_url":"https://api.github.com/users/ADolhov/orgs","repos_url":"https://api.github.com/users/ADolhov/repos","events_url":"https://api.github.com/users/ADolhov/events{/privacy}","received_events_url":"https://api.github.com/users/ADolhov/received_events","type":"User","site_admin":false},"prerelease":true,"created_at":"2018-05-07T10:36:33Z","published_at":"2018-05-07T10:40:05Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.44.0-pre7","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.44.0-pre7","body":"###
+        Features\r\n\r\n* PMI-129 Create feature flag in HAP\r\n* PMI-116 Implement
+        ''Audience'' tab\r\n* PMI-46 Add counters to tab titiles\r\n* PMI-140 Add
+        tab counters for event host, creator and specified approver (separate page)\r\n*
+        PMI-121 Create ''Audiences'' tab in community admin sidebar\r\n* PMI-42 [Admin]
+        Ability to filter user lists by name\r\n\r\n### Bugfixes\r\n\r\n* PMI-91 User
+        is able to apply for event even when already in waitlist\r\n\r\n### Technical
+        improvements\r\n\r\n* PMI-141 Add tests for \"add users\" on applicants page\r\n*
+        BUGS-1246 update pdfjs up to 2.0.491\r\n"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10836277","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10836277/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/10836277/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.43.8","id":10836277,"node_id":"MDc6UmVsZWFzZTEwODM2Mjc3","tag_name":"v3.43.8","target_commitish":"release-3.43","name":"v3.43.8
+        - 2018-05-03","draft":false,"author":{"login":"ADolhov","id":9863825,"node_id":"MDQ6VXNlcjk4NjM4MjU=","avatar_url":"https://avatars3.githubusercontent.com/u/9863825?v=4","gravatar_id":"","url":"https://api.github.com/users/ADolhov","html_url":"https://github.com/ADolhov","followers_url":"https://api.github.com/users/ADolhov/followers","following_url":"https://api.github.com/users/ADolhov/following{/other_user}","gists_url":"https://api.github.com/users/ADolhov/gists{/gist_id}","starred_url":"https://api.github.com/users/ADolhov/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ADolhov/subscriptions","organizations_url":"https://api.github.com/users/ADolhov/orgs","repos_url":"https://api.github.com/users/ADolhov/repos","events_url":"https://api.github.com/users/ADolhov/events{/privacy}","received_events_url":"https://api.github.com/users/ADolhov/received_events","type":"User","site_admin":false},"prerelease":false,"created_at":"2018-05-03T15:05:20Z","published_at":"2018-05-03T15:06:46Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.43.8","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.43.8","body":"###
+        Bugfixes\r\n\r\n* BUGS-1300 Allow user to resume assessment if topic changed\r\n\r\n###
+        Technical Improvements\r\n\r\n* APP-3293 Surface users locale in users endpoint\r\n\r\n###
+        Features\r\n\r\n* APP-3353 Get user communities by query\r\n* APP-3348 Add
+        Get recent communities endpoint\r\n"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10779998","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10779998/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/10779998/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.43.8-pre1","id":10779998,"node_id":"MDc6UmVsZWFzZTEwNzc5OTk4","tag_name":"v3.43.8-pre1","target_commitish":"release-3.43","name":"v3.43.8-pre1
+        - 2018-04-30","draft":false,"author":{"login":"ivlavrik","id":9872663,"node_id":"MDQ6VXNlcjk4NzI2NjM=","avatar_url":"https://avatars1.githubusercontent.com/u/9872663?v=4","gravatar_id":"","url":"https://api.github.com/users/ivlavrik","html_url":"https://github.com/ivlavrik","followers_url":"https://api.github.com/users/ivlavrik/followers","following_url":"https://api.github.com/users/ivlavrik/following{/other_user}","gists_url":"https://api.github.com/users/ivlavrik/gists{/gist_id}","starred_url":"https://api.github.com/users/ivlavrik/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ivlavrik/subscriptions","organizations_url":"https://api.github.com/users/ivlavrik/orgs","repos_url":"https://api.github.com/users/ivlavrik/repos","events_url":"https://api.github.com/users/ivlavrik/events{/privacy}","received_events_url":"https://api.github.com/users/ivlavrik/received_events","type":"User","site_admin":false},"prerelease":true,"created_at":"2018-04-30T10:34:46Z","published_at":"2018-04-30T11:02:02Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.43.8-pre1","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.43.8-pre1","body":"###
+        Bugfixes\r\n\r\n* BUGS-1687 Fix flashing user search test\r\n* BUGS-1689 Add
+        highest score percentage for assessment result response\r\n* BUGS-1397 Date
+        format incorrect for En-US - add I18n support to datepicker\r\n* BUGS-1702
+        Recreate previews with none or failed state\r\n* BUGS-1499 Fix company favicon
+        when previewing PDF\r\n* BUGS-1300 Formal assessments cannot be resumed by
+        user when edited\r\n\r\n### Technical Improvements\r\n\r\n* SAS-2 Update known
+        gem vulnerabilities\r\n* SAS-70 Fix Cross site scripting vulnerability in
+        the Scorm Course view\r\n* SAS-108 Update rails-html-sanitizer gem to fix
+        CVE-2018-3741 vulnerability\r\n* BUGS-1550 Reimplement comprehension question
+        posting cucumber test\r\n\r\n### Features\r\n\r\n* APP-3292 Add (web and mobile)
+        next to Language on WEB settings"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10740972","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10740972/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/10740972/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.44.0-pre6","id":10740972,"node_id":"MDc6UmVsZWFzZTEwNzQwOTcy","tag_name":"v3.44.0-pre6","target_commitish":"release-3.44","name":"v3.44.0-pre6
+        - 2018-04-26","draft":false,"author":{"login":"fatbeard2","id":5956619,"node_id":"MDQ6VXNlcjU5NTY2MTk=","avatar_url":"https://avatars1.githubusercontent.com/u/5956619?v=4","gravatar_id":"","url":"https://api.github.com/users/fatbeard2","html_url":"https://github.com/fatbeard2","followers_url":"https://api.github.com/users/fatbeard2/followers","following_url":"https://api.github.com/users/fatbeard2/following{/other_user}","gists_url":"https://api.github.com/users/fatbeard2/gists{/gist_id}","starred_url":"https://api.github.com/users/fatbeard2/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/fatbeard2/subscriptions","organizations_url":"https://api.github.com/users/fatbeard2/orgs","repos_url":"https://api.github.com/users/fatbeard2/repos","events_url":"https://api.github.com/users/fatbeard2/events{/privacy}","received_events_url":"https://api.github.com/users/fatbeard2/received_events","type":"User","site_admin":false},"prerelease":true,"created_at":"2018-04-26T18:06:53Z","published_at":"2018-04-26T18:08:02Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.44.0-pre6","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.44.0-pre6","body":"###
+        Features\r\n\r\n* PMI-89 [NOTIFICATION] Notify user when they are added to
+        the waitlist\r\n* PMI-30 [NOTIFICATION] Add notification for when user have
+        been added to an event via waiting list\r\n* PMI-62 Move waiters to applicants
+        when \"Add waiters\" dialog saved\r\n* PMI-63 Create \"Add all waiters\" dialog\r\n*
+        PMI-59 Create new notification type - user leaving an event\r\n* PMI-108 Create
+        feature flag for waitlist\r\n* PMI-98 Update logic for counting \"Spaces taken\"
+        for occurrence\r\n* PMI-68 Fill applicants list from waitlist when admin increases
+        number of seats\r\n* PMI-64 Send notifications to the users that were moved
+        from waitlist\r\n* PMI-60 Notify the event creator & Approvers when a user
+        leaves the attendees list\r\n* PMI-87 Send notification to the manager when
+        the user removes themselves from the event attendees list\r\n* PMI-88 Send
+        notification to the event approvers when the user removes themselves from
+        the event attendees list\r\n* APP-3292 Add (web and mobile) next to Language
+        on WEB settings\r\n* PMI-77 [ADMIN] Ability to manage waitlist as event creator/host/specified
+        approver\r\n* PMI-61 Create \"Add waiter\" dialog\r\n* PMI-115 Move old layout
+        to new layout for learning plan visibility\r\n* PMI-125 Create new settings
+        for learning plan visibility\r\n\r\n### Bugfixes\r\n\r\n* PMI-109 Events -
+        \"Leave waitlist\" button doesn''t render on IE 10\r\n* PMI-138 Waitlist/Applicants
+        dialog styles are broken\r\n* PMI-139 Improving Message for \"Add waiters\""},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10627383","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10627383/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/10627383/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.43.7","id":10627383,"node_id":"MDc6UmVsZWFzZTEwNjI3Mzgz","tag_name":"v3.43.7","target_commitish":"release-3.43","name":"v3.43.7
+        - 2018-04-19","draft":false,"author":{"login":"pironim","id":1135304,"node_id":"MDQ6VXNlcjExMzUzMDQ=","avatar_url":"https://avatars1.githubusercontent.com/u/1135304?v=4","gravatar_id":"","url":"https://api.github.com/users/pironim","html_url":"https://github.com/pironim","followers_url":"https://api.github.com/users/pironim/followers","following_url":"https://api.github.com/users/pironim/following{/other_user}","gists_url":"https://api.github.com/users/pironim/gists{/gist_id}","starred_url":"https://api.github.com/users/pironim/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/pironim/subscriptions","organizations_url":"https://api.github.com/users/pironim/orgs","repos_url":"https://api.github.com/users/pironim/repos","events_url":"https://api.github.com/users/pironim/events{/privacy}","received_events_url":"https://api.github.com/users/pironim/received_events","type":"User","site_admin":false},"prerelease":false,"created_at":"2018-04-19T15:46:04Z","published_at":"2018-04-19T15:51:10Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.43.7","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.43.7","body":"###
+        Bugfixes\r\n\r\n* PMI-97 Learning plan versions are not created sometimes\r\n*
+        SAS-49 [API] Add event logger for DELETE /token\r\n* BUGS-1371 Scorm not displaying
+        as completed under user profile\r\n* BUGS-1700 server error - 500 for content
+        preview\r\n* BUGS-1516 Scorm Course - Not rendering - After being uploaded
+        to Fuse\r\n* BUGS-1551 Reimplement attach survey to event spec\r\n* BUGS-1558
+        Reimplement flashing article iframe view teaspoon spec\r\n* Return forbidden
+        status when posting to not allowed communities\r\n\r\n### Technical Improvements\r\n\r\n*
+        BUGS-1663 Fix flashing video_playback_progress_spec\r\n* Deprecated 360 after_create
+        callback on User models\r\n* BUGS-1553 Reimplement resending user welcome
+        email cucumber test\r\n* BUGS-1657 Fix flashing searches_controller_spec\r\n*
+        SAS-68 Brakeman Protect from forgery\r\n* Remove 2015 and older data migrations"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10599480","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10599480/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/10599480/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.43.7-pre1","id":10599480,"node_id":"MDc6UmVsZWFzZTEwNTk5NDgw","tag_name":"v3.43.7-pre1","target_commitish":"release-3.43","name":"v3.43.7-pre1
+        - 2018-04-18","draft":false,"author":{"login":"ADolhov","id":9863825,"node_id":"MDQ6VXNlcjk4NjM4MjU=","avatar_url":"https://avatars3.githubusercontent.com/u/9863825?v=4","gravatar_id":"","url":"https://api.github.com/users/ADolhov","html_url":"https://github.com/ADolhov","followers_url":"https://api.github.com/users/ADolhov/followers","following_url":"https://api.github.com/users/ADolhov/following{/other_user}","gists_url":"https://api.github.com/users/ADolhov/gists{/gist_id}","starred_url":"https://api.github.com/users/ADolhov/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ADolhov/subscriptions","organizations_url":"https://api.github.com/users/ADolhov/orgs","repos_url":"https://api.github.com/users/ADolhov/repos","events_url":"https://api.github.com/users/ADolhov/events{/privacy}","received_events_url":"https://api.github.com/users/ADolhov/received_events","type":"User","site_admin":false},"prerelease":true,"created_at":"2018-04-18T08:52:04Z","published_at":"2018-04-18T08:55:01Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.43.7-pre1","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.43.7-pre1","body":"###
+        Bugfixes\r\n\r\n* PMI-97 Learning plan versions are not created sometimes\r\n*
+        SAS-49 [API] Add event logger for DELETE /token\r\n* BUGS-1371 Scorm not displaying
+        as completed under user profile\r\n* BUGS-1700 server error - 500 for content
+        preview\r\n* BUGS-1516 Scorm Course - Not rendering - After being uploaded
+        to Fuse\r\n* BUGS-1551 Reimplement attach survey to event spec\r\n* BUGS-1558
+        Reimplement flashing article iframe view teaspoon spec\r\n* Return forbidden
+        status when posting to not allowed communities\r\n\r\n### Technical Improvements\r\n\r\n*
+        BUGS-1663 Fix flashing video_playback_progress_spec\r\n* Deprecated 360 after_create
+        callback on User models\r\n* BUGS-1553 Reimplement resending user welcome
+        email cucumber test\r\n* BUGS-1657 Fix flashing searches_controller_spec\r\n*
+        SAS-68 Brakeman Protect from forgery\r\n* Remove 2015 and older data migrations"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10520906","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10520906/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/10520906/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.44.0-pre5","id":10520906,"node_id":"MDc6UmVsZWFzZTEwNTIwOTA2","tag_name":"v3.44.0-pre5","target_commitish":"release-3.44","name":"v3.44.0-pre5
+        - 2018-04-12","draft":false,"author":{"login":"ADolhov","id":9863825,"node_id":"MDQ6VXNlcjk4NjM4MjU=","avatar_url":"https://avatars3.githubusercontent.com/u/9863825?v=4","gravatar_id":"","url":"https://api.github.com/users/ADolhov","html_url":"https://github.com/ADolhov","followers_url":"https://api.github.com/users/ADolhov/followers","following_url":"https://api.github.com/users/ADolhov/following{/other_user}","gists_url":"https://api.github.com/users/ADolhov/gists{/gist_id}","starred_url":"https://api.github.com/users/ADolhov/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ADolhov/subscriptions","organizations_url":"https://api.github.com/users/ADolhov/orgs","repos_url":"https://api.github.com/users/ADolhov/repos","events_url":"https://api.github.com/users/ADolhov/events{/privacy}","received_events_url":"https://api.github.com/users/ADolhov/received_events","type":"User","site_admin":false},"prerelease":true,"created_at":"2018-04-12T17:16:32Z","published_at":"2018-04-12T17:22:00Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.44.0-pre5","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.44.0-pre5","body":"###
+        Features\r\n\r\n* SFE-1481 New \"event creation\" page - Survey adding - Incorrect
+        backward re-direct from survey to the event page\r\n* SFE-1470 New event admin
+        - Applicants tab - Pre-requisite learning box is displayed when pre-requisite
+        is disabled\r\n* SFE-1489 Time picker shows times with 10 minutes interval\r\n*
+        SFE-1491 [Events] Make add to calendar button more prominent\r\n* SFE-1493
+        [Events] Change date format on events page\r\n* SFE-1496 Events on the all
+        events page should be ordered by upcoming first\r\n* SFE-1509 Admin Groups
+        - Rename permission title for the event permission in admin groups and update
+        the description\r\n* APP-3325 My Learning Plans Endpoint: Add contents count
+        for topics\r\n* SFE-1510 Disable event''s actions on events admin when user
+        can''t use it\r\n* SFE-1512 Add occurrence policy for the CREATE option\r\n*
+        SFE-1511 Disable occurrence''s actions on events admin when user can''t use
+        it\r\n* PMI-45 Create waitlist tables/models\r\n* PMI-23 [Events] Ability
+        to provide reason for Approval decline\r\n* APP-3331 Topic Contents Endpoint\r\n*
+        PMI-48 Add waitlist tab and table\r\n* PMI-55 Add icon link to waitlist tab
+        on occurrence actions panel\r\n* SFE-1487 Remove the report date from the
+        designs and add frequency selection to Step 2\r\n* SFE-1486 Add all customisable
+        user profile fields in the field\r\n* SFE-1513 Add complete date column to
+        learning plans expiry report\r\n* PMI-31 Ability to turn on a waitlist for
+        an event\r\n* PMI-47 Add infinite scroll component to applicants and waitlist
+        tabs\r\n* PMI-28 [USER] Ability to join a waitlist for an event\r\n* PMI-29
+        [USER] Ability to remove myself from the waitlist\r\n* PMI-49 Create \"Notify
+        waiters\" dialog\r\n* PMI-67 Fill applicants list from waitlist when admin
+        removes applicant(requires sidekiq stack settings changes)\r\n* PMI-66 Fill
+        applicants list from waitlist when user leaves an event\r\n* PMI-56 Create
+        new notification type for notifying people in waitlist\r\n* PMI-69 [ADMIN]
+        Ability to remove user from waitlist\r\n* PMI-70 [ADMIN] Ability to notify
+        single waiter\r\n\r\n### Bugfixes\r\n\r\n* SFE-1478 Community admin should
+        have ability to create new occurrence from the new events page\r\n* SFE-1483
+        As an community admin I want to delete occurrence\r\n* APP-3247 Add images
+        on assessment questions\r\n* SFE-1505 Event tile on ''all events'' page -
+        Location overlaps with ''View'' button when screen is re-sized to the small
+        one\r\n* APP-3313 MyLearningPlan V3 Endpoint: Return LP Progress, thumbnail
+        URL and correct model in documentation.\r\n* SFE-1517 Expiry report notification
+        email has incorrect title\r\n* APP-3339 MyLearningPlans Endpoint: Returns
+        LP Item ID instead of Content ID\r\n\r\n### Technical improvements\r\n\r\n*
+        SFE-1473 Add ability to serve dragonfly assets from CDN\r\n* Update sidekiq-unique-jobs
+        gem\r\n* APP-3293 Surface users locale in users endpoint\r\n* APP-3239 Optimise
+        GET communities endpoint\r\n* SAS-42 Restructure teaspoon tests to use suites,
+        which removes blink tests\r\n* BUGS-1562 Fix events JavaScript specs\r\n*
+        SAS-15 4.3 Investigate PHPSessionID"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10519797","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10519797/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/10519797/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.43.6","id":10519797,"node_id":"MDc6UmVsZWFzZTEwNTE5Nzk3","tag_name":"v3.43.6","target_commitish":"release-3.43","name":"v3.43.6
+        - 2018-04-12","draft":false,"author":{"login":"ADolhov","id":9863825,"node_id":"MDQ6VXNlcjk4NjM4MjU=","avatar_url":"https://avatars3.githubusercontent.com/u/9863825?v=4","gravatar_id":"","url":"https://api.github.com/users/ADolhov","html_url":"https://github.com/ADolhov","followers_url":"https://api.github.com/users/ADolhov/followers","following_url":"https://api.github.com/users/ADolhov/following{/other_user}","gists_url":"https://api.github.com/users/ADolhov/gists{/gist_id}","starred_url":"https://api.github.com/users/ADolhov/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ADolhov/subscriptions","organizations_url":"https://api.github.com/users/ADolhov/orgs","repos_url":"https://api.github.com/users/ADolhov/repos","events_url":"https://api.github.com/users/ADolhov/events{/privacy}","received_events_url":"https://api.github.com/users/ADolhov/received_events","type":"User","site_admin":false},"prerelease":false,"created_at":"2018-04-12T16:17:34Z","published_at":"2018-04-12T16:19:30Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.43.6","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.43.6","body":"###
+        Bugfixes\r\n\r\n* BUGS-1578 fix flashing searches spec\r\n* BUGS-1541 Correct
+        French translation for Event registration\r\n* SAS-12 Destroy user access
+        token endpoints\r\n* BUGS-1561 Fix flashing 121 session page tests\r\n* BUGS-1525
+        Language change - Can''t access certain content\r\n* BUGS-1117 Unresponsive
+        thumbnails IE11 and IE Edge\r\n* BUGS-1667 Fix flashing share decorator test\r\n*
+        BUGS-1543 Evidence Portfolio: Fails to load\r\n* BUGS-1668 User is able to
+        post to a community he doesn''t belong to\r\n\r\n### Technical improvements\r\n\r\n*
+        BUGS-1549 Fix flashing event occurrences tests\r\n* BUGS-1569 Fix flashing
+        completeness jobs spec\r\n* BUGS-1620 Fix notification_view_spec\r\n* BUGS-1579
+        Fix flashing test for keywords search\r\n* BUGS-1554 Reimplement my activity
+        widget cucumber test\r\n* Optimize chat digest\r\n* BUGS-1557 Reimplement
+        occurrence models teaspoon test\r\n* chore replace factory girl with factory
+        bot\r\n* BUGS-1555 Reimplement v11 users api rspec test\r\n* BUGS-1123 Site
+        Moderation displaying dismiss issue\r\n* PMI-81 Remove css_splitter tests\r\n*
+        chore Fix username spec failure\r\n* BUGS-1615 Re-implement topic article
+        teaspoon\r\n* SAS-27 Create a rake task which will reindex users in Elasticsearch
+        when triggered\r\n* chore Update Webmock to 3.3.0 version\r\n* BUGS-1659 Fix
+        flashing completeness shared examples\r\n* Speed up decorator tests by replacing
+        `create` with `build_stubbed` where possible\r\n* SAS-69 Brakeman model attributes
+        restriction\r\n* BUGS-1556 reimplement item flagged email decorator spec\r\n*
+        Add new fuseuniversal.com email addresses to allowed email domains"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10480787","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10480787/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/10480787/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.43.6-pre1","id":10480787,"node_id":"MDc6UmVsZWFzZTEwNDgwNzg3","tag_name":"v3.43.6-pre1","target_commitish":"release-3.43","name":"v3.43.6-pre1
+        - 2018-04-10","draft":false,"author":{"login":"ADolhov","id":9863825,"node_id":"MDQ6VXNlcjk4NjM4MjU=","avatar_url":"https://avatars3.githubusercontent.com/u/9863825?v=4","gravatar_id":"","url":"https://api.github.com/users/ADolhov","html_url":"https://github.com/ADolhov","followers_url":"https://api.github.com/users/ADolhov/followers","following_url":"https://api.github.com/users/ADolhov/following{/other_user}","gists_url":"https://api.github.com/users/ADolhov/gists{/gist_id}","starred_url":"https://api.github.com/users/ADolhov/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ADolhov/subscriptions","organizations_url":"https://api.github.com/users/ADolhov/orgs","repos_url":"https://api.github.com/users/ADolhov/repos","events_url":"https://api.github.com/users/ADolhov/events{/privacy}","received_events_url":"https://api.github.com/users/ADolhov/received_events","type":"User","site_admin":false},"prerelease":true,"created_at":"2018-04-10T17:20:51Z","published_at":"2018-04-10T17:26:46Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.43.6-pre1","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.43.6-pre1","body":"###
+        Bugfixes\r\n\r\n* BUGS-1578 fix flashing searches spec\r\n* BUGS-1541 Correct
+        French translation for Event registration\r\n* SAS-12 Destroy user access
+        token endpoints\r\n* BUGS-1561 Fix flashing 121 session page tests\r\n* BUGS-1525
+        Language change - Can''t access certain content\r\n* BUGS-1117 Unresponsive
+        thumbnails IE11 and IE Edge\r\n* BUGS-1667 Fix flashing share decorator test\r\n*
+        BUGS-1543 Evidence Portfolio: Fails to load\r\n* BUGS-1668 User is able to
+        post to a community he doesn''t belong to\r\n\r\n### Technical improvements\r\n\r\n*
+        BUGS-1549 Fix flashing event occurrences tests\r\n* BUGS-1569 Fix flashing
+        completeness jobs spec\r\n* BUGS-1620 Fix notification_view_spec\r\n* BUGS-1579
+        Fix flashing test for keywords search\r\n* BUGS-1554 Reimplement my activity
+        widget cucumber test\r\n* Optimize chat digest\r\n* BUGS-1557 Reimplement
+        occurrence models teaspoon test\r\n* chore replace factory girl with factory
+        bot\r\n* BUGS-1555 Reimplement v11 users api rspec test\r\n* BUGS-1123 Site
+        Moderation displaying dismiss issue\r\n* PMI-81 Remove css_splitter tests\r\n*
+        chore Fix username spec failure\r\n* BUGS-1615 Re-implement topic article
+        teaspoon\r\n* SAS-27 Create a rake task which will reindex users in Elasticsearch
+        when triggered\r\n* chore Update Webmock to 3.3.0 version\r\n* BUGS-1659 Fix
+        flashing completeness shared examples\r\n* Speed up decorator tests by replacing
+        `create` with `build_stubbed` where possible\r\n* SAS-69 Brakeman model attributes
+        restriction\r\n* BUGS-1556 reimplement item flagged email decorator spec\r\n*
+        Add new fuseuniversal.com email addresses to allowed email domains"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10303222","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10303222/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/10303222/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/3.43.5","id":10303222,"node_id":"MDc6UmVsZWFzZTEwMzAzMjIy","tag_name":"3.43.5","target_commitish":"release-3.43","name":"3.43.5
+        - 2018-03-28","draft":false,"author":{"login":"ADolhov","id":9863825,"node_id":"MDQ6VXNlcjk4NjM4MjU=","avatar_url":"https://avatars3.githubusercontent.com/u/9863825?v=4","gravatar_id":"","url":"https://api.github.com/users/ADolhov","html_url":"https://github.com/ADolhov","followers_url":"https://api.github.com/users/ADolhov/followers","following_url":"https://api.github.com/users/ADolhov/following{/other_user}","gists_url":"https://api.github.com/users/ADolhov/gists{/gist_id}","starred_url":"https://api.github.com/users/ADolhov/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ADolhov/subscriptions","organizations_url":"https://api.github.com/users/ADolhov/orgs","repos_url":"https://api.github.com/users/ADolhov/repos","events_url":"https://api.github.com/users/ADolhov/events{/privacy}","received_events_url":"https://api.github.com/users/ADolhov/received_events","type":"User","site_admin":false},"prerelease":false,"created_at":"2018-03-28T17:49:39Z","published_at":"2018-03-28T17:54:11Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/3.43.5","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/3.43.5","body":"###
+        Bugfixes\r\n\r\n* QUACK-164 Airbrake error for dynamic membership job\r\n*
+        APP-3247 Add images on assessment questions\r\n* QUACK-179 Community Mapping
+        HAP buttons duplicated\r\n* BUGS-1505 Learning Plan banner distorted\r\n*
+        SFE-1498 [Events] Do not show social share for an event if it is not in a
+        public community\r\n* QUACK-130 AM - Members Page - text overlapping for a
+        long email address\r\n* BUGS-1330 Event-Logging not capturing correct information\r\n*
+        SFE-1497 [Events] Notify user email shows body in the subject line\r\n* Fix
+        sidekiq errors getting tracked to Airbrake twice\r\n* QUACK-129 Handle server
+        errors more gracefully on the Frontend when creating an audience fails\r\n*
+        BUGS-1494 API - A user is able to upload a file to a community he is not a
+        part off\r\n* SAS-10 CKEDITOR Browser server button removed\r\n* PMI-2 Fix
+        \"Missing required parameter: script\" error\r\n* SFE-1488 Add proper integration
+        with learning plan audiences(for fuse_courses)\r\n* BUGS-1481 Transcribing
+        is not working\r\n* BUGS-1169/BUGS-1456 Fix iframe placeholder in Gmail\r\n*
+        BUGS-1580 Added sanitization to content name, custom html and keywords form\r\n*
+        BUGS-1590 Update Slo field\r\n* chore remove should from rspec titles\r\n*
+        chore Fix Teaspoon Flying Specs\r\n* BUGS-1405 correct Dutch translation for
+        Survey times taken\r\n* BUGS-1600 When Reveal User Information Is disabled,
+        API Endpoints still show Given_name and Family_name\r\n* BUGS-1581 Security
+        Issue - Need file type upload whitelist\r\n* BUGS-1338 Recover and rearchitect
+        chat digest\r\n\r\n### Technical improvements\r\n\r\n* Add skip tag to disable
+        old data migrations\r\n* SFE-1490 Avoid N+1 query in occurrence policy for
+        new events admin\r\n* Fix flashing import UserEntry tests\r\n* Trace Grape
+        and Faraday with DataDog\r\n* BUGS-1570 Fix flashing user import tests"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10266358","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10266358/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/10266358/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/3.43.5-pre1","id":10266358,"node_id":"MDc6UmVsZWFzZTEwMjY2MzU4","tag_name":"3.43.5-pre1","target_commitish":"release-3.43","name":"3.43.5-pre1
+        - 2018-03-26","draft":false,"author":{"login":"ADolhov","id":9863825,"node_id":"MDQ6VXNlcjk4NjM4MjU=","avatar_url":"https://avatars3.githubusercontent.com/u/9863825?v=4","gravatar_id":"","url":"https://api.github.com/users/ADolhov","html_url":"https://github.com/ADolhov","followers_url":"https://api.github.com/users/ADolhov/followers","following_url":"https://api.github.com/users/ADolhov/following{/other_user}","gists_url":"https://api.github.com/users/ADolhov/gists{/gist_id}","starred_url":"https://api.github.com/users/ADolhov/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ADolhov/subscriptions","organizations_url":"https://api.github.com/users/ADolhov/orgs","repos_url":"https://api.github.com/users/ADolhov/repos","events_url":"https://api.github.com/users/ADolhov/events{/privacy}","received_events_url":"https://api.github.com/users/ADolhov/received_events","type":"User","site_admin":false},"prerelease":true,"created_at":"2018-03-26T19:34:57Z","published_at":"2018-03-26T19:36:21Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/3.43.5-pre1","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/3.43.5-pre1","body":"###
+        Bugfixes\r\n\r\n* QUACK-164 Airbrake error for dynamic membership job\r\n*
+        APP-3247 Add images on assessment questions\r\n* QUACK-179 Community Mapping
+        HAP buttons duplicated\r\n* BUGS-1505 Learning Plan banner distorted\r\n*
+        SFE-1498 [Events] Do not show social share for an event if it is not in a
+        public community\r\n* QUACK-130 AM - Members Page - text overlapping for a
+        long email address\r\n* BUGS-1330 Event-Logging not capturing correct information\r\n*
+        SFE-1497 [Events] Notify user email shows body in the subject line\r\n* Fix
+        sidekiq errors getting tracked to Airbrake twice\r\n* QUACK-129 Handle server
+        errors more gracefully on the Frontend when creating an audience fails\r\n*
+        BUGS-1494 API - A user is able to upload a file to a community he is not a
+        part off\r\n* SAS-10 CKEDITOR Browser server button removed\r\n* PMI-2 Fix
+        \"Missing required parameter: script\" error\r\n* SFE-1488 Add proper integration
+        with learning plan audiences(for fuse_courses)\r\n* BUGS-1481 Transcribing
+        is not working\r\n* BUGS-1169/BUGS-1456 Fix iframe placeholder in Gmail\r\n*
+        BUGS-1580 Added sanitization to content name, custom html and keywords form\r\n*
+        BUGS-1590 Update Slo field\r\n* chore remove should from rspec titles\r\n*
+        chore Fix Teaspoon Flying Specs\r\n* BUGS-1405 correct Dutch translation for
+        Survey times taken\r\n* BUGS-1600 When Reveal User Information Is disabled,
+        API Endpoints still show Given_name and Family_name\r\n* BUGS-1581 Security
+        Issue - Need file type upload whitelist\r\n* BUGS-1338 Recover and rearchitect
+        chat digest\r\n\r\n### Technical improvements\r\n\r\n* Add skip tag to disable
+        old data migrations\r\n* SFE-1490 Avoid N+1 query in occurrence policy for
+        new events admin\r\n* Fix flashing import UserEntry tests\r\n* Trace Grape
+        and Faraday with DataDog\r\n* BUGS-1570 Fix flashing user import tests"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10003425","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/10003425/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/10003425/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.43.4","id":10003425,"node_id":"MDc6UmVsZWFzZTEwMDAzNDI1","tag_name":"v3.43.4","target_commitish":"master","name":"v3.43.4
+        - 2018-03-08","draft":false,"author":{"login":"Bazay","id":4166088,"node_id":"MDQ6VXNlcjQxNjYwODg=","avatar_url":"https://avatars2.githubusercontent.com/u/4166088?v=4","gravatar_id":"","url":"https://api.github.com/users/Bazay","html_url":"https://github.com/Bazay","followers_url":"https://api.github.com/users/Bazay/followers","following_url":"https://api.github.com/users/Bazay/following{/other_user}","gists_url":"https://api.github.com/users/Bazay/gists{/gist_id}","starred_url":"https://api.github.com/users/Bazay/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Bazay/subscriptions","organizations_url":"https://api.github.com/users/Bazay/orgs","repos_url":"https://api.github.com/users/Bazay/repos","events_url":"https://api.github.com/users/Bazay/events{/privacy}","received_events_url":"https://api.github.com/users/Bazay/received_events","type":"User","site_admin":false},"prerelease":false,"created_at":"2018-03-08T18:11:32Z","published_at":"2018-03-08T18:14:15Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.43.4","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.43.4","body":"##
+        v3.43.4-pre2 - 2018-03-08\r\n\r\n### Technical improvements\r\n\r\n* QUACK-186
+        Improve manage/users API call performance\r\n* Add index on report_id to managers_reports
+        table\r\n\r\n\r\n## v3.43.4-pre1 - 2018-03-07\r\n\r\n### Bugfixes\r\n\r\n*
+        BUGS-1357 When trying to delete a specific user, an error message pops up
+        and the deletion fails\r\n* hotfix BUGS-1169/BUGS-1456 Emails - New email
+        layout is broken by iframes\r\n* QUACK-166 Investigate Airbrake error all_user_ids"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/9997889","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/9997889/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/9997889/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.43.4-pre2","id":9997889,"node_id":"MDc6UmVsZWFzZTk5OTc4ODk=","tag_name":"v3.43.4-pre2","target_commitish":"master","name":"v3.43.4-pre2
+        - 2018-03-08","draft":false,"author":{"login":"fatbeard2","id":5956619,"node_id":"MDQ6VXNlcjU5NTY2MTk=","avatar_url":"https://avatars1.githubusercontent.com/u/5956619?v=4","gravatar_id":"","url":"https://api.github.com/users/fatbeard2","html_url":"https://github.com/fatbeard2","followers_url":"https://api.github.com/users/fatbeard2/followers","following_url":"https://api.github.com/users/fatbeard2/following{/other_user}","gists_url":"https://api.github.com/users/fatbeard2/gists{/gist_id}","starred_url":"https://api.github.com/users/fatbeard2/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/fatbeard2/subscriptions","organizations_url":"https://api.github.com/users/fatbeard2/orgs","repos_url":"https://api.github.com/users/fatbeard2/repos","events_url":"https://api.github.com/users/fatbeard2/events{/privacy}","received_events_url":"https://api.github.com/users/fatbeard2/received_events","type":"User","site_admin":false},"prerelease":true,"created_at":"2018-03-08T13:21:45Z","published_at":"2018-03-08T13:22:22Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.43.4-pre2","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.43.4-pre2","body":"###
+        Technical improvements\r\n\r\n* QUACK-186 Improve manage/users API call performance\r\n*
+        Add index on report_id to managers_reports table"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/9977379","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/9977379/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/9977379/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.43.4-pre1","id":9977379,"node_id":"MDc6UmVsZWFzZTk5NzczNzk=","tag_name":"v3.43.4-pre1","target_commitish":"master","name":"v3.43.4-pre1
+        - 2018-03-07","draft":false,"author":{"login":"Bazay","id":4166088,"node_id":"MDQ6VXNlcjQxNjYwODg=","avatar_url":"https://avatars2.githubusercontent.com/u/4166088?v=4","gravatar_id":"","url":"https://api.github.com/users/Bazay","html_url":"https://github.com/Bazay","followers_url":"https://api.github.com/users/Bazay/followers","following_url":"https://api.github.com/users/Bazay/following{/other_user}","gists_url":"https://api.github.com/users/Bazay/gists{/gist_id}","starred_url":"https://api.github.com/users/Bazay/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Bazay/subscriptions","organizations_url":"https://api.github.com/users/Bazay/orgs","repos_url":"https://api.github.com/users/Bazay/repos","events_url":"https://api.github.com/users/Bazay/events{/privacy}","received_events_url":"https://api.github.com/users/Bazay/received_events","type":"User","site_admin":false},"prerelease":true,"created_at":"2018-03-07T11:52:55Z","published_at":"2018-03-07T11:54:52Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.43.4-pre1","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.43.4-pre1","body":"###
+        Bugfixes\r\n\r\n* BUGS-1357 When trying to delete a specific user, an error
+        message pops up and the deletion fails\r\n* hotfix BUGS-1169/BUGS-1456 Emails
+        - New email layout is broken by iframes\r\n* QUACK-166 Investigate Airbrake
+        error all_user_ids\r\n\r\n### Technical improvements\r\n\r\n* Allow to add
+        spinner only once for base sync module\r\n* QUACK-178 Remove flashing tests\r\n*
+        QUACK-176 Stub any unstubbed network connections in tests\r\n* QUACK-163 Fix
+        Faraday warning shown when starting rails console"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/9936502","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/9936502/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/9936502/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.44.0-pre4","id":9936502,"node_id":"MDc6UmVsZWFzZTk5MzY1MDI=","tag_name":"v3.44.0-pre4","target_commitish":"dev","name":"v3.44.0-pre4
+        - 2018-03-05","draft":false,"author":{"login":"cheef","id":27950,"node_id":"MDQ6VXNlcjI3OTUw","avatar_url":"https://avatars1.githubusercontent.com/u/27950?v=4","gravatar_id":"","url":"https://api.github.com/users/cheef","html_url":"https://github.com/cheef","followers_url":"https://api.github.com/users/cheef/followers","following_url":"https://api.github.com/users/cheef/following{/other_user}","gists_url":"https://api.github.com/users/cheef/gists{/gist_id}","starred_url":"https://api.github.com/users/cheef/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/cheef/subscriptions","organizations_url":"https://api.github.com/users/cheef/orgs","repos_url":"https://api.github.com/users/cheef/repos","events_url":"https://api.github.com/users/cheef/events{/privacy}","received_events_url":"https://api.github.com/users/cheef/received_events","type":"User","site_admin":false},"prerelease":true,"created_at":"2018-03-05T09:24:17Z","published_at":"2018-03-05T09:25:03Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.44.0-pre4","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.44.0-pre4","body":"###
+        Features\r\n\r\n* SFE-1243 Create an LP report showing which users are compliant
+        for expiry and deadlines on a specific date\r\n* SFE-1472 Ability to show
+        generated reports of disabled types\r\n* SFE-1454 Scheduling on \"Learning
+        Plan Expiry and Deadline Status\" report\r\n* SFE-1476 Show only report date
+        column in report files table on reports page for Learning Plans Expiry & Deadline
+        report\r\n* SFE-1477 Regeneration popup should contain only report date input
+        for Learning Plans Expiry & Deadline report\r\n"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/9913250","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/9913250/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/9913250/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.44.0-pre3","id":9913250,"node_id":"MDc6UmVsZWFzZTk5MTMyNTA=","tag_name":"v3.44.0-pre3","target_commitish":"release-3.44","name":"v3.44.0-pre3
+        - 2018-03-02","draft":false,"author":{"login":"Bazay","id":4166088,"node_id":"MDQ6VXNlcjQxNjYwODg=","avatar_url":"https://avatars2.githubusercontent.com/u/4166088?v=4","gravatar_id":"","url":"https://api.github.com/users/Bazay","html_url":"https://github.com/Bazay","followers_url":"https://api.github.com/users/Bazay/followers","following_url":"https://api.github.com/users/Bazay/following{/other_user}","gists_url":"https://api.github.com/users/Bazay/gists{/gist_id}","starred_url":"https://api.github.com/users/Bazay/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Bazay/subscriptions","organizations_url":"https://api.github.com/users/Bazay/orgs","repos_url":"https://api.github.com/users/Bazay/repos","events_url":"https://api.github.com/users/Bazay/events{/privacy}","received_events_url":"https://api.github.com/users/Bazay/received_events","type":"User","site_admin":false},"prerelease":true,"created_at":"2018-03-02T15:07:54Z","published_at":"2018-03-02T15:10:31Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.44.0-pre3","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.44.0-pre3","body":"##
+        v3.44.0-pre3 - 2018-03-02\r\n\r\n### Features\r\n\r\n* SFE-1456 Ability to
+        create events in any community on the instance\r\n* SFE-1467 Community admin
+        can manage events for their community in the new admin page\r\n* SFE-1459
+        Community admin has access to the new events admin page for their community\r\n*
+        SFE-1475 Community admin - Event creation - Hide community component on the
+        event creation page"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/9878303","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/9878303/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/9878303/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.43.3","id":9878303,"node_id":"MDc6UmVsZWFzZTk4NzgzMDM=","tag_name":"v3.43.3","target_commitish":"master","name":"
+        v3.43.3 - 2018-02-28","draft":false,"author":{"login":"cheef","id":27950,"node_id":"MDQ6VXNlcjI3OTUw","avatar_url":"https://avatars1.githubusercontent.com/u/27950?v=4","gravatar_id":"","url":"https://api.github.com/users/cheef","html_url":"https://github.com/cheef","followers_url":"https://api.github.com/users/cheef/followers","following_url":"https://api.github.com/users/cheef/following{/other_user}","gists_url":"https://api.github.com/users/cheef/gists{/gist_id}","starred_url":"https://api.github.com/users/cheef/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/cheef/subscriptions","organizations_url":"https://api.github.com/users/cheef/orgs","repos_url":"https://api.github.com/users/cheef/repos","events_url":"https://api.github.com/users/cheef/events{/privacy}","received_events_url":"https://api.github.com/users/cheef/received_events","type":"User","site_admin":false},"prerelease":false,"created_at":"2018-02-28T17:11:36Z","published_at":"2018-02-28T17:12:51Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.43.3","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.43.3","body":"###
+        Bugfixes\r\n\r\n* BUGS-1451 Percentage watched not on report\r\n* BUGS-1257
+        Notification email - User Import - Fields missing in CSV\r\n* BUGS-1272 Admin-Fuse
+        Emails-Search is not working\r\n* BUGS-1162 SSO - Sign out - Session cookie
+        delete request\r\n* BUGS-1531 - Update Danish Locales\r\n* BUGS-1335 Formal
+        Assessment results(Reopen)\r\n* BUGS-1396 User profile - Edit - Returns Validation
+        failed\r\n* BUGS-1377 Spelling error when creating report for a survey\r\n\r\n###
+        Technical improvements\r\n\r\n* QUACK-169 Remove HTTParty gem\r\n* SFE-1471
+        Add ability to provide separate instance of redis for caching\r\n* QUACK-181
+        Remove unused performance folder\r\n* DO-187 Deploy Datadog APM agent and
+        deprecate New Relic"},{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/9871454","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/9871454/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/9871454/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.43.3-pre4","id":9871454,"node_id":"MDc6UmVsZWFzZTk4NzE0NTQ=","tag_name":"v3.43.3-pre4","target_commitish":"master","name":"v3.43.3-pre4
+        - 2018-02-28","draft":false,"author":{"login":"cheef","id":27950,"node_id":"MDQ6VXNlcjI3OTUw","avatar_url":"https://avatars1.githubusercontent.com/u/27950?v=4","gravatar_id":"","url":"https://api.github.com/users/cheef","html_url":"https://github.com/cheef","followers_url":"https://api.github.com/users/cheef/followers","following_url":"https://api.github.com/users/cheef/following{/other_user}","gists_url":"https://api.github.com/users/cheef/gists{/gist_id}","starred_url":"https://api.github.com/users/cheef/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/cheef/subscriptions","organizations_url":"https://api.github.com/users/cheef/orgs","repos_url":"https://api.github.com/users/cheef/repos","events_url":"https://api.github.com/users/cheef/events{/privacy}","received_events_url":"https://api.github.com/users/cheef/received_events","type":"User","site_admin":false},"prerelease":true,"created_at":"2018-02-28T10:47:20Z","published_at":"2018-02-28T10:50:08Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.43.3-pre4","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.43.3-pre4","body":"###
+        Bugfixes\r\n\r\n* BUGS-1377 Spelling error when creating report for a survey\r\n\r\n###
+        Technical improvements\r\n\r\n* QUACK-181 Remove unused performance folder\r\n*
+        DO-187 Deploy Datadog APM agent and deprecate New Relic"}]'
+    http_version:
+  recorded_at: Fri, 22 Jun 2018 15:15:46 GMT
+recorded_with: VCR 4.0.0
