@@ -1,0 +1,20 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  pool: 5
+  username: root
+  password:
+  socket: <%= config[:socket] %>
+
+development:
+  <<: *default
+  database: <%= config[:application].to_s.downcase %>_development
+
+test:
+  <<: *default
+  database: <%= config[:application].to_s.downcase %>_test
+
+production:
+  <<: *default
+  database: <%= config[:application].to_s.downcase %>_production

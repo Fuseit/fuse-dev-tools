@@ -9,3 +9,7 @@ inherit_mode:
 AllCops:
   Exclude:
     - vendor/**/*
+
+Metrics/BlockLength:
+  Exclude:
+    - fuse-dev-tools.gemspec

@@ -1,5 +1,6 @@
 require:
   - rubocop/rspec/focused
+  - rubocop-rspec
 
 # Seems `Exclude` block for `AllCops` not inheriting at all, despite owner said it's fixed
 # see the original issue: https://github.com/bbatsov/rubocop/issues/3744
@@ -10,55 +11,79 @@ AllCops:
     - tmp/**/*
     - bin/**/*
     - db/schema.rb
+  TargetRubyVersion: 2.3.4
 
 Documentation:
   Enabled: false
 
-Rails:
-  Enabled: true
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
 
-Lint/Debugger:
-  Enabled: true
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
 
-Style/MethodDefParentheses:
-  EnforcedStyle: require_no_parentheses
+Layout/IndentationConsistency:
+  EnforcedStyle: rails
 
 Layout/IndentHash:
   EnforcedStyle: consistent
 
-Layout/AlignParameters:
-  EnforcedStyle: with_fixed_indentation
+Layout/SpaceInLambdaLiteral:
+  EnforcedStyle: require_space
 
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
-Style/MethodMissing:
-  Enabled: false
-
-Rails/ActionFilter:
-  EnforcedStyle: filter
+Lint/Debugger:
   Enabled: true
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*_spec.rb
+    - db/schema.rb
+    - app/api/**/*.rb
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/ModuleLength:
+  Exclude:
+    - spec/**/*_spec.rb
 
 Metrics/ParameterLists:
   Max: 11
   CountKeywordArgs: false
 
-Metrics/LineLength:
-  Max: 120
+Rails:
+  Enabled: true
+
+Rails/ActionFilter:
+  EnforcedStyle: filter
+  Enabled: true
+
+RSpec/Focused:
+  Enabled: true
+
+RSpec/LetSetup:
+  Enabled: false
 
 Style/EmptyCaseCondition:
   Enabled: false
 
-Layout/IndentationConsistency:
-  EnforcedStyle: rails
+Style/FrozenStringLiteralComment:
+  Enabled: false
 
-Layout/EndAlignment:
-  EnforcedStyleAlignWith: variable
+Style/MethodCalledOnDoEndBlock:
+  Enabled: true
+
+Style/MethodDefParentheses:
+  EnforcedStyle: require_no_parentheses
+
+Style/MethodMissing:
+  Enabled: false
 
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
     default: "()"
     "%w": "()"
+    "%i": ()
 
 Style/StructInheritance:
   Enabled: false

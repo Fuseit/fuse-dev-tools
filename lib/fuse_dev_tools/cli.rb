@@ -1,4 +1,6 @@
 require 'fuse_dev_tools/tasks/application_config'
+require 'fuse_dev_tools/tasks/database_config'
+require 'thor'
 
 module FuseDevTools
   class CLI < Thor
@@ -24,5 +26,8 @@ module FuseDevTools
 
     desc 'application_config COMMAND', 'Commands for application config'
     subcommand :application_config, FuseDevTools::Tasks::ApplicationConfig
+
+    desc 'database_config COMMAND', 'Commands for database config'
+    subcommand :database_config, FuseDevTools::Tasks::DatabaseConfig
   end
 end
