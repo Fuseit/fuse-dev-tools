@@ -64,6 +64,9 @@ RSpec/Focused:
 RSpec/LetSetup:
   Enabled: false
 
+RSpec/NestedGroups:
+  Max: 5
+
 Style/EmptyCaseCondition:
   Enabled: false
 
@@ -76,7 +79,7 @@ Style/MethodCalledOnDoEndBlock:
 Style/MethodDefParentheses:
   EnforcedStyle: require_no_parentheses
 
-Style/MethodMissing:
+Style/MethodMissingSuper:
   Enabled: false
 
 Style/PercentLiteralDelimiters:
