@@ -1,0 +1,47 @@
+# STYLE COPS
+# This file contains changes to the default config provided by Rubocop
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+# TODO: Add to FuseTube
+# Style/ClassAndModuleChildren:
+#   Exclude:
+#     - app/api/**/*.rb
+# Less searchable keywords are better in my opinion, but happy with either of these.
+Style/CommentAnnotation:
+  Keywords:
+    - TODO
+    - FIXME
+    - NOTE
+Style/Documentation:
+  Enabled: false
+Style/DoubleNegation:
+  Enabled: false
+Style/EmptyCaseCondition:
+  Enabled: false
+# Consider re-enabling when upgrading to Ruby 3.0 or if we want to support it.
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/HashSyntax:
+  EnforcedStyle: ruby19_no_mixed_keys
+Style/InlineComment:
+  Enabled: true
+Style/MethodCalledOnDoEndBlock:
+  Enabled: true
+# NOTE: Default is to require parentheses, however due to legacy decisions we set to require none...
+Style/MethodDefParentheses:
+  EnforcedStyle: require_no_parentheses
+Style/NonNilCheck:
+  IncludeSemanticChanges: true
+# Only allowed keyword is `options`
+Style/OptionHash:
+  Enabled: true
+  SuspiciousParamNames:
+    - opts
+    - args
+    - params
+    - parameters
+Style/SymbolArray:
+  MinSize: 1
+Style/WordArray:
+  MinSize: 1

@@ -1,92 +1,20 @@
-require:
-  - rubocop/rspec/focused
-  - rubocop-rspec
+inherit_from:
+  - .rubocop_rspec.yml
+  - rubocop/cops_bundler.yml
+  - rubocop/cops_gemspec.yml
+  - rubocop/cops_layout.yml
+  - rubocop/cops_linting.yml
+  - rubocop/cops_metrics.yml
+  - rubocop/cops_naming.yml
+  - rubocop/cops_performance.yml
+  - rubocop/cops_rails.yml
+  - rubocop/cops_security.yml
+  - rubocop/cops_style.yml
 
-# Seems `Exclude` block for `AllCops` not inheriting at all, despite owner said it's fixed
-# see the original issue: https://github.com/bbatsov/rubocop/issues/3744
 AllCops:
   DisplayCopNames: true
   Exclude:
-    - vendor/**/*
-    - tmp/**/*
-    - bin/**/*
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - 'bin/**/*'
     - db/schema.rb
-  TargetRubyVersion: 2.3.4
-
-Documentation:
-  Enabled: false
-
-Layout/AlignParameters:
-  EnforcedStyle: with_fixed_indentation
-
-Layout/EndAlignment:
-  EnforcedStyleAlignWith: variable
-
-Layout/IndentationConsistency:
-  EnforcedStyle: rails
-
-Layout/IndentHash:
-  EnforcedStyle: consistent
-
-Layout/SpaceInLambdaLiteral:
-  EnforcedStyle: require_space
-
-Lint/Debugger:
-  Enabled: true
-
-Metrics/BlockLength:
-  Exclude:
-    - spec/**/*_spec.rb
-    - db/schema.rb
-    - app/api/**/*.rb
-
-Metrics/LineLength:
-  Max: 120
-
-Metrics/ModuleLength:
-  Exclude:
-    - spec/**/*_spec.rb
-
-Metrics/ParameterLists:
-  Max: 11
-  CountKeywordArgs: false
-
-Rails:
-  Enabled: true
-
-Rails/ActionFilter:
-  EnforcedStyle: filter
-  Enabled: true
-
-RSpec/Focused:
-  Enabled: true
-
-RSpec/LetSetup:
-  Enabled: false
-
-RSpec/NestedGroups:
-  Max: 5
-
-Style/EmptyCaseCondition:
-  Enabled: false
-
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
-Style/MethodCalledOnDoEndBlock:
-  Enabled: true
-
-Style/MethodDefParentheses:
-  EnforcedStyle: require_no_parentheses
-
-Style/MethodMissingSuper:
-  Enabled: false
-
-Style/PercentLiteralDelimiters:
-  PreferredDelimiters:
-    default: "()"
-    "%w": "()"
-    "%i": ()
-
-Style/StructInheritance:
-  Enabled: false

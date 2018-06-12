@@ -10,10 +10,10 @@ module FuseDevTools
 
       config = FuseDevTools::Config.load
 
-      self.access_key_id     = config.opsworks_access_key_id
+      self.access_key_id = config.opsworks_access_key_id
       self.access_key_secret = config.opsworks_secret_access_key
-      self.bucket_region     = bucket_region
-      self.bucket_name       = bucket_name
+      self.bucket_region = bucket_region
+      self.bucket_name = bucket_name
     end
 
     def download name:, destination:, application: nil
@@ -31,7 +31,7 @@ module FuseDevTools
     private
 
       def bucket
-        Aws.config.update region: bucket_region, credentials: access_credentials
+        Aws.config.update! region: bucket_region, credentials: access_credentials
         Aws::S3::Resource.new.bucket bucket_name
       end
 

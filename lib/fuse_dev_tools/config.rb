@@ -2,7 +2,7 @@ require 'yaml'
 
 module FuseDevTools
   class Config
-    KEYS = %w(OPSWORKS_ACCESS_KEY_ID OPSWORKS_SECRET_ACCESS_KEY).freeze
+    KEYS = %w[OPSWORKS_ACCESS_KEY_ID OPSWORKS_SECRET_ACCESS_KEY].freeze
 
     def self.load
       new YAML.safe_load File.new(filename)

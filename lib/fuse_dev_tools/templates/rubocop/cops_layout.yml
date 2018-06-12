@@ -1,0 +1,70 @@
+# LAYOUT COPS
+# This file contains changes to the default config provided by Rubocop
+
+Layout/AlignArray:
+  Enabled: false
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+Layout/BlockAlignment:
+  EnforcedStyleAlignWith: start_of_block
+Layout/CaseIndentation:
+  EnforcedStyle: end
+Layout/ClassStructure:
+  Categories:
+    module_inclusion:
+      - extend
+      - include
+      - prepend
+    ExpectedOrder:
+      - module_inclusion
+      - constants
+      - initializer
+      - public_class_methods
+      - public_methods
+      - protected_methods
+      - private_methods
+# Appears most similar to our current implementation but could be worth another opinion...
+# http://rubocop.readthedocs.io/en/latest/cops_layout/#layoutendalignment
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+# Might not be necessary...
+Layout/EndOfLine:
+  EnforcedStyle: lf
+Layout/ExtraSpacing:
+  AllowForAlignment: false
+# Layout/FirstParameterIndentation
+# Needs better documentation. Preferred implementation below, consider disabling until can investigate further...
+#
+# some_method(
+#   first_param,
+#   second_param
+# )
+Layout/FirstParameterIndentation:
+  EnforcedStyle: consistent
+Layout/FirstHashElementLineBreak:
+  Enabled: true
+Layout/IndentArray:
+  EnforcedStyle: consistent
+Layout/IndentHash:
+  EnforcedStyle: consistent
+# This value can be overriden in projects that are not Rails projects. Alternatively, we can adopt this style everywhere...
+Layout/IndentationConsistency:
+  EnforcedStyle: rails
+# Open for debate, but appears to be most similar to current usage...
+Layout/MultilineArrayBraceLayout:
+  EnforcedStyle: new_line
+# May want to set this up, however, for now it's disabled by default...
+# Layout/MultilineAssignmentLayout:
+#   EnforcedStyle: new_line | same_line
+Layout/MultilineHashBraceLayout:
+  EnforcedStyle: new_line
+Layout/MultilineMethodCallBraceLayout:
+  EnforcedStyle: new_line
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+Layout/MultilineMethodDefinitionBraceLayout:
+  EnforcedStyle: new_line
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+Layout/Tab:
+  IndentationWidth: 2

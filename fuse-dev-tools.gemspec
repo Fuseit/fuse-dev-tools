@@ -4,14 +4,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'fuse_dev_tools/version'
 
 Gem::Specification.new do |spec|
-  spec.name        = 'fuse-dev-tools'
-  spec.version     = FuseDevTools::VERSION
-  spec.authors     = ['Ivan Garmatenko']
-  spec.email       = %w(igarmatenko@sphereinc.com)
+  spec.name = 'fuse-dev-tools'
+  spec.version = FuseDevTools::VERSION
+  spec.authors = ['Ivan Garmatenko', 'Baron Bloomer']
+  spec.email = %w[igarmatenko@sphereinc.com baron.bloomer@fuseuniversal.com]
 
-  spec.summary     = 'Gem contains dev tools and tasks'
+  spec.summary = 'Gem contains dev tools and tasks'
   spec.description = 'Gem contains dev tools and tasks'
-  spec.homepage    = 'https://github.com/Fuseit/fuse-dev-tools'
+  spec.homepage = 'https://github.com/Fuseit/fuse-dev-tools'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
     f.match %r{^(test|spec|features)/}
   end
 
-  spec.require_paths = %w(lib)
+  spec.require_paths = %w[lib]
   spec.executables = ['fuse-dev-tools']
 
   spec.add_dependency 'aws-sdk'
