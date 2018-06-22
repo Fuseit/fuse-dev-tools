@@ -1,7 +1,3 @@
-Rails/Output:
-  Exclude:
-    - lib/fuse_dev_tools/tasks/application_config.rb
-
 Security/Eval:
   Exclude:
     - spec/support/stream_capture_helper.rb

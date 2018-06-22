@@ -1,0 +1,42 @@
+# METRICS COPS
+# This file contains changes to the default config provided by Rubocop
+
+# What do we think are good values for these cops i.e. default ones or something custom?
+Metrics/AbcSize:
+  Enabled: false
+  Max: 15 # Default
+
+Metrics/BlockLength:
+  Max: 25 # Default
+  Exclude:
+    - spec/**/*.rb
+    - db/schema.rb
+    - app/api/**/*.rb
+
+Metrics/BlockNesting:
+  CountBlocks: false # Default
+  Max: 5 # Default = 3
+
+# Should this be enabled?
+Metrics/ClassLength:
+  Enabled: false
+  Max: 100 # Default
+
+Metrics/LineLength:
+  IgnoreCopDirectives: true
+  Max: 120
+
+# Should this be enabled?
+Metrics/MethodLength:
+  Enabled: true
+  Max: 10
+
+# Should this be enabled?
+Metrics/ModuleLength:
+  Enabled: false
+  Max: 100 # Default
+
+# 11 seems like a lot of arguments... Perhaps should consider passing options hash instead
+Metrics/ParameterLists:
+  Max: 11 # Default = 5
+  CountKeywordArgs: false

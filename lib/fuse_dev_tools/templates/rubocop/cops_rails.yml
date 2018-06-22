@@ -1,0 +1,19 @@
+# RAILS COPS
+# This file contains changes to the default config provided by Rubocop
+
+# Please remember to set TargetRailsVersion in repository!
+# Rails/HttpPositionalArguments:
+#   Enabled: true
+Rails/Output:
+  # TODO: Define in FuseTube
+  Exclude:
+    - lib/**/*.rb
+# Open to suggestion, however I do not prefer the implicitness of this cop
+Rails/RedundantReceiverInWithOptions:
+  Enabled: false
+Rails/SafeNavigation:
+  ConvertTry: true
+Rails/SaveBang:
+  Enabled: true
+Rails/SkipsModelValidations:
+  Enabled: false

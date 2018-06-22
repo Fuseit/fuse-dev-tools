@@ -1,0 +1,5 @@
+# LINT COPS
+# This file contains changes to the default config provided by Rubocop
+
+Lint/Void:
+  CheckForMethodsWithNoSideEffects: true

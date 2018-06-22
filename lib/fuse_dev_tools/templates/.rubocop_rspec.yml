@@ -1,0 +1,28 @@
+# RUBOCOP RSPEC
+require:
+  - rubocop-rspec
+
+# Available cops
+# https://github.com/rubocop-rspec/rubocop-rspec/tree/master/lib/rubocop/cop/rspec
+RSpec/AnyInstance:
+  Enabled: false
+RSpec/ContextWording:
+  Prefixes:
+    - when
+    - with
+    - without
+    - and
+    - but
+RSpec/ExampleLength:
+  Max: 3
+  Exclude:
+    - 'spec/features/**/*_spec.rb'
+    - 'spec/requests/**/*_spec.rb'
+RSpec/ExampleWithoutDescription:
+  EnforcedStyle: single_line_only
+RSpec/ExpectChange:
+  EnforcedStyle: block
+RSpec/NestedGroups:
+  Max: 5
+RSpec/ReturnFromStub:
+  Enabled: false
