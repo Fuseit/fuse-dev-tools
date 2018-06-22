@@ -1,6 +1,5 @@
 inherit_from:
   - lib/fuse_dev_tools/templates/.rubocop.yml
-  - .rubocop_todo.yml
 
 inherit_mode:
   merge:
@@ -13,3 +12,11 @@ AllCops:
 Metrics/BlockLength:
   Exclude:
     - fuse-dev-tools.gemspec
+
+Security/Eval:
+  Exclude:
+    - spec/support/stream_capture_helper.rb
+
+Style/EvalWithLocation:
+  Exclude:
+    - spec/support/stream_capture_helper.rb

@@ -1,7 +1,0 @@
-Security/Eval:
-  Exclude:
-    - spec/support/stream_capture_helper.rb
-
-Style/EvalWithLocation:
-  Exclude:
-    - spec/support/stream_capture_helper.rb
