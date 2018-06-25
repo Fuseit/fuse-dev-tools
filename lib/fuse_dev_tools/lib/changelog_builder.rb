@@ -32,21 +32,24 @@ class ChangelogBuilder
         message = commit['message']
 
         formatted_message = format_commit_message message, commit['sha']
-
-        case message.split(' ').first
-        when 'feature'
-          categorized[:features] << formatted_message
-        when 'hotfix', 'fix'
-          categorized[:fixes] << formatted_message
-        when 'chore', 'refactor', 'test'
-          categorized[:technical_improvements] << formatted_message
-        else
-          categorized[:not_categorised] << formatted_message
-        end
+        categorize_by_message_type formatted_message, message.split(' ').first
       end
     end
 
     def format_commit_message message, sha
       '* ' + message.split(' ').drop(1).join(' ') + " ##{sha}"
+    end
+
+    def categorize_by_message_type message, type
+      case type
+      when 'feature'
+        categorized[:features] << message
+      when 'hotfix', 'fix'
+        categorized[:fixes] << message
+      when 'chore', 'refactor', 'test'
+        categorized[:technical_improvements] << message
+      else
+        categorized[:not_categorised] << message
+      end
     end
 end

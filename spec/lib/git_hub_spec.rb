@@ -62,11 +62,11 @@ RSpec.describe GitHub, vcr: true do
   end
 
   describe '.compare' do
-    subject { described_class.compare organisation, repo, head_minus_one, head }
+    subject(:compare) { described_class.compare organisation, repo, head_minus_one, head }
 
     let(:number_of_commits) { 1 }
 
-    it { expect(subject.commits.size).to eq number_of_commits }
+    it { expect(compare.commits.size).to eq number_of_commits }
   end
 
   describe '.comparison_message_commits_count' do
