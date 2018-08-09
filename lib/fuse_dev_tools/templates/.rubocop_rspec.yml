@@ -13,6 +13,11 @@ RSpec/ContextWording:
     - without
     - and
     - but
+RSpec/DescribeClass:
+  Exclude:
+    - spec/lib/tasks/**/*.rake_spec.rb
+    - spec/requests/**/*_spec.rb
+    - spec/views/**/*_spec.rb
 RSpec/ExampleLength:
   Max: 3
   Exclude:
