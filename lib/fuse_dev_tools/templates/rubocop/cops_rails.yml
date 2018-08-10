@@ -2,8 +2,8 @@
 # This file contains changes to the default config provided by Rubocop
 
 # Please remember to set TargetRailsVersion in repository!
-# Rails/HttpPositionalArguments:
-#   Enabled: true
+Rails/HttpPositionalArguments:
+  Enabled: true
 Rails/Output:
   # TODO: Define in FuseTube
   Exclude:
