@@ -17,6 +17,6 @@ Rails/SaveBang:
   Enabled: true
 Rails/SkipsModelValidations:
   Enabled: false
-Rails/ApplicationRecord
+Rails/ApplicationRecord:
   Exclude:
     - spec/**/*.rb
