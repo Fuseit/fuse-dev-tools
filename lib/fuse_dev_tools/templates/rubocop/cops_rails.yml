@@ -20,3 +20,5 @@ Rails/SkipsModelValidations:
 Rails/ApplicationRecord:
   Exclude:
     - spec/**/*.rb
+    - db/**/*.rb
+    - app/lib/migrators/*.rb
