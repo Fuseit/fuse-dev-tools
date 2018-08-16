@@ -1,5 +1,6 @@
 require 'fuse_dev_tools/tasks/application_config'
 require 'fuse_dev_tools/tasks/database_config'
+require 'fuse_dev_tools/tasks/git_commands/base'
 require 'thor'
 
 module FuseDevTools
@@ -29,5 +30,8 @@ module FuseDevTools
 
     desc 'database_config COMMAND', 'Commands for database config'
     subcommand :database_config, FuseDevTools::Tasks::DatabaseConfig
+
+    desc 'git COMMAND', 'Commands for git'
+    subcommand :git, FuseDevTools::Tasks::GitCommands::Base
   end
 end

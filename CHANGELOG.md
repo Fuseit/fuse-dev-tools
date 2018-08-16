@@ -1,3 +1,10 @@
+## v0.6.0
+
+## Features
+
+* Add CommitMessage validation
+
+
 ## v0.5.0
 
 ## Features

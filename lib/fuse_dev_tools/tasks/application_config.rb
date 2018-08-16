@@ -1,4 +1,5 @@
 require 'thor'
+require 'fuse_dev_tools/application_config'
 
 module FuseDevTools
   module Tasks
