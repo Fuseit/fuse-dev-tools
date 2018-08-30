@@ -1,3 +1,10 @@
+## v0.6.1
+
+## Bugfixes
+
+* Fix CommitMessage validation to read from working directory
+
+
 ## v0.6.0
 
 ## Features
