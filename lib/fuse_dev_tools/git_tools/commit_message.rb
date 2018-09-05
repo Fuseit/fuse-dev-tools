@@ -15,24 +15,18 @@ module FuseDevTools
 
       VALID_TYPES = %w[feature fix hotfix chore refactor build test].freeze
 
-      validates :type, inclusion: { in: VALID_TYPES }, unless: :skip_validations?
-      validates :message, :task_description, presence: true, allow_blank: false, unless: :skip_validations?
-      validate :task_id_validations, :task_description_validations, :commit_description_validations,
-        unless: :skip_validations?
+      with_options unless: :skip_validations? do
+        validates :type, inclusion: { in: VALID_TYPES }
+        validates :message, :task_description, presence: true, allow_blank: false
+        validate :validate_task_id_format, if: :task_id
+        validate :validate_task_description_format, if: :task_description
+        validate :validate_commit_description_format, if: :commit_description
+      end
 
       def parse
-        matched_message = message.match(message_regex)
-        raise_error! if matched_message.nil?
+        matched_message = message&.match message_regex
 
-        @type = matched_message[1]
-        @task_id = matched_message[2]
-        @task_description = matched_message[3]
-        @commit_description = matched_message[4]
-
-        self
-      rescue ArgumentError
-        errors.add(:message)
-        self
+        _message, @type, @task_id, @task_description, @commit_description = matched_message.to_a
       end
 
       def warning_message
@@ -44,21 +38,20 @@ module FuseDevTools
       private
 
         def message_regex
-          # TODO: Consider joining regex method definitions in this method for greater clarity
           # Matching positions
           # 1 - type
           # 2 - task_id (optional, defaults to nil)
           # 3 - task_description
           # 4 - commit_description (optional, defaults to nil)
-          /^(#{VALID_TYPES.join('|')}){1}?(?:\s?([\d\w]+-[\d\w]+))?(?:\s([\w]+.*))(\n\n?([\w\d\s[:punct:]]+))?/
+          /\A(#{type_regex}) (?:(#{task_id_regex}) )?(#{task_description_regex})(?:\n\n(#{commit_description_regex}))?\Z/m
         end
 
         def type_regex
-          /^(#{VALID_TYPES.join('|')}){1}/
+          Regexp.union VALID_TYPES
         end
 
         def task_id_regex
-          /(?:\s?([\d\w]+-[\d\w]+))/
+          /[\d\w]+-[\d\w]+/
         end
 
         def strict_task_id_regex
@@ -66,35 +59,35 @@ module FuseDevTools
         end
 
         def task_description_regex
-          /(?:\s([\w]+.*))/
+          /[\w]+.*(?<!\n\n)/m
         end
 
         def commit_description_regex
-          /(\n\n?([\w\d\s[:punct:]]+))?/
-        end
-
-        def raise_error!
-          raise ArgumentError
+          /[\w\d\s[:punct:]]+/m
         end
 
         def valid_message_format
           "\n    <type> <task_id> <task_description>\n\n    <commit_description>\n"
         end
 
-        def task_id_validations
-          errors.add(:task_id) if task_id.presence && task_id.match(strict_task_id_regex).nil?
+        def validate_task_id_format
+          errors.add(:task_id) if does_not_match_format?(task_id, strict_task_id_regex)
         end
 
-        def task_description_validations
-          errors.add(:task_description) if task_description.presence && task_description.match(task_id_regex)
+        def validate_task_description_format
+          errors.add(:task_description) if does_not_match_format?(task_description, task_description_regex)
         end
 
-        def commit_description_validations
-          errors.add(:commit_description) if commit_description.presence && !commit_description.start_with?("\n\n")
+        def validate_commit_description_format
+          errors.add(:commit_description) unless commit_description.start_with?("\n\n")
         end
 
         def skip_validations?
-          message.presence && message.start_with?('Merge branch')
+          message&.start_with?('Merge branch')
+        end
+
+        def does_not_match_format? string, format
+          string !~ /\A#{format}\z/
         end
     end
   end
