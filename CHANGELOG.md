@@ -1,3 +1,10 @@
+## v0.6.2
+
+## Bugfixes
+
+* Fix CommitMessage validation to pass a merge message with a type prefix
+
+
 ## v0.6.1
 
 ## Bugfixes
