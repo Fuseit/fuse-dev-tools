@@ -39,6 +39,12 @@ RSpec.describe FuseDevTools::GitTools::CommitMessage do
       it { is_expected.to be_valid }
     end
 
+    context 'when message about branch merging was changed by a committer' do
+      let(:message) { "chore Merge branch 'hotfix/TASK-100500-master-issue' into fix/all-time-fixed_version" }
+
+      it { is_expected.to be_valid }
+    end
+
     context 'when :type is not provided' do
       let(:message) { [task_id, task_description].join(' ') + commit_description }
 
