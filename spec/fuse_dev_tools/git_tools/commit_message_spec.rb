@@ -39,6 +39,12 @@ RSpec.describe FuseDevTools::GitTools::CommitMessage do
       it { is_expected.to be_valid }
     end
 
+    context 'when message is automated via pull request merging' do
+      let(:message) { 'Merge pull request #100500 from Repo/fix/final-changes-11' }
+
+      it { is_expected.to be_valid }
+    end
+
     context 'when message about branch merging was changed by a committer' do
       let(:message) { "chore Merge branch 'hotfix/TASK-100500-master-issue' into fix/all-time-fixed_version" }
 

@@ -3,6 +3,7 @@
 ## Bugfixes
 
 * Fix CommitMessage validation to pass a merge message with a type prefix
+* Add CommitMessage validation for a pull request merge
 
 
 ## v0.6.1
