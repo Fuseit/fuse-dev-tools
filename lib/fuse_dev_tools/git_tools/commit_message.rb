@@ -68,7 +68,7 @@ module FuseDevTools
         end
 
         def skip_validations?
-          message.presence && message.start_with?('Merge branch')
+          message.presence && message =~ /^Merge (?:branch|pull request)/
         end
     end
   end
