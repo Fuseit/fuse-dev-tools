@@ -1,5 +1,9 @@
 ## v0.6.2
 
+## Features
+
+* Disable RSpec/DescribeClass cop for tasks, requests and view specs
+
 ## Bugfixes
 
 * Fix CommitMessage validation to pass a merge message with a type prefix
