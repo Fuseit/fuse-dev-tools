@@ -4,6 +4,10 @@
 
 * Disable RSpec/DescribeClass cop for tasks, requests and view specs
 
+## Technical improvements
+
+* Remove unused rubocop-rspec-focused dependency
+
 ## Bugfixes
 
 * Fix CommitMessage validation to pass a merge message with a type prefix
