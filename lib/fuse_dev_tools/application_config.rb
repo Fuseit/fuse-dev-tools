@@ -31,7 +31,7 @@ module FuseDevTools
     private
 
       def bucket
-        Aws.config.update! region: bucket_region, credentials: access_credentials
+        Aws.config.update region: bucket_region, credentials: access_credentials
         Aws::S3::Resource.new.bucket bucket_name
       end
 

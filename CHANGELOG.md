@@ -1,3 +1,14 @@
+## v0.6.3
+
+## Technical improvements
+
+* Remove extra rails cop when running rubocop on circleci
+
+## Bugfixes
+
+* Fix updating aws config credentials for accessing a bucket
+
+
 ## v0.6.2
 
 ## Features
