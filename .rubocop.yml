@@ -9,15 +9,3 @@ inherit_mode:
 AllCops:
   Exclude:
     - vendor/**/*
-
-Metrics/BlockLength:
-  Exclude:
-    - fuse-dev-tools.gemspec
-
-Metrics/MethodLength:
-  Exclude:
-    - lib/fuse_dev_tools/tasks/git_commands/commit_messages.rb
-
-Rails/Exit:
-  Exclude:
-    - lib/fuse_dev_tools/tasks/git_commands/*.rb

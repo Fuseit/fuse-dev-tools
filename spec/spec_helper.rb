@@ -1,6 +1,5 @@
 require 'bundler/setup'
 require 'fuse_dev_tools'
-require 'support/stream_capture_helper'
 require 'rspec/its'
 
 Dir['./spec/support/**/*.rb'].sort.each { |f| require f }

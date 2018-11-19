@@ -28,6 +28,9 @@ module FuseDevTools
       MESSAGE_REGEX = \
         /^(#{TYPE_REGEX})?(?: ?(#{TASK_ID_REGEX}))?(?: (#{TASK_DESCRIPTION_REGEX})?)#{COMMIT_DESCRIPTION_REGEX}/.freeze
 
+      BUMP_VERSION_REGEX = /^(?:chore )*([Bb]ump [Vv]ersion|[Vv]ersion [Bb]ump)/.freeze
+      MERGE_COMMIT_REGEX = /^(?:chore )*Merge (?:branch|pull request)/.freeze
+
       validates :type, inclusion: { in: VALID_TYPES }, unless: :skip_validations?
       validates :message, :task_description, presence: true, allow_blank: false, unless: :skip_validations?
       validate :task_id_validations, :task_description_validations, :commit_description_validations,
@@ -43,6 +46,14 @@ module FuseDevTools
         "Please ensure your commit message has the following format:\n" +
           valid_message_format +
           "\nMore info: https://fuseuniversal.atlassian.net/wiki/spaces/FD/pages/354942977/Commit+message+formatting"
+      end
+
+      def bump_version_commit?
+        message.presence && message =~ BUMP_VERSION_REGEX
+      end
+
+      def merge_commit?
+        message.presence && message =~ MERGE_COMMIT_REGEX
       end
 
       private
@@ -68,7 +79,7 @@ module FuseDevTools
         end
 
         def skip_validations?
-          message.presence && message =~ /^Merge (?:branch|pull request)/
+          merge_commit?
         end
     end
   end

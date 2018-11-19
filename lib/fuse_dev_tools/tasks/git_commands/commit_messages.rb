@@ -1,4 +1,5 @@
 require 'fuse_dev_tools/git_tools/commit_message'
+require 'fuse_dev_tools/git_tools/commit_checker'
 require 'fuse_dev_tools/shared_methods/git_methods'
 require 'active_support'
 require 'colorize'

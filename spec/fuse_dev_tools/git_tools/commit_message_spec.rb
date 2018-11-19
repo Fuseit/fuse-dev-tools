@@ -135,4 +135,31 @@ RSpec.describe FuseDevTools::GitTools::CommitMessage do
       end
     end
   end
+
+  describe '#bump_version_commit?' do
+    subject { commit_message.bump_version_commit? }
+
+    [
+      'chore Bump version', 'chore bump version', 'chore version bump', 'chore Version bump',
+      'Bump version', 'bump version', 'version bump', 'Version bump', 'Bump Version', 'bump Version',
+      "chore Bump version 'v3.47.0'", 'Bump version v3.47.0'
+    ].each do |string_message|
+      let(:message) { string_message }
+
+      it { is_expected.to be_truthy }
+    end
+  end
+
+  describe '#merge_commit?' do
+    subject { commit_message.merge_commit? }
+
+    [
+      'chore Merge branch', 'chore Merge pull request', 'Merge branch', 'Merge pull request',
+      "chore Merge branch 'hotfix/my-branch'", 'Merge pull request (#1)'
+    ].each do |string_message|
+      let(:message) { string_message }
+
+      it { is_expected.to be_truthy }
+    end
+  end
 end
