@@ -11,12 +11,19 @@ jobs:
           RAILS_ENV: test
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - fuse-dev-tools-bundle-{{ arch }}-{{ .Branch }}-{{ checksum "fuse-dev-tools.gemspec" }}
       - run:
           name: Run bundler
           command: |
             sudo gem uninstall bundler -a -x
             sudo gem install bundler --version 1.16.1
-            bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
+            bundle install --path=vendor/bundle --retry=3
+      - save_cache:
+          key: fuse-dev-tools-bundle-{{ arch }}-{{ .Branch }}-{{ checksum "fuse-dev-tools.gemspec" }}
+          paths:
+            - vendor/bundle
       - run:
           name: Create Dirs
           command: |

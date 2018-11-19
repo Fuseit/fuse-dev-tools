@@ -15,10 +15,10 @@ module FuseDevTools
 
       VALID_TYPES = %w[feature fix hotfix chore refactor build test].freeze
       TYPE_REGEX = Regexp.union VALID_TYPES
-      TASK_ID_REGEX = /[\w]+\-[\w]+/
-      STRICT_TASK_ID_REGEX = /[A-Z]+\-\d+/
-      TASK_DESCRIPTION_REGEX = /[\w]+.*/
-      COMMIT_DESCRIPTION_REGEX = /(\n\n?([\w\s[:punct:]]+))?/
+      TASK_ID_REGEX = /[\w]+\-[\w]+/.freeze
+      STRICT_TASK_ID_REGEX = /[A-Z]+\-\d+/.freeze
+      TASK_DESCRIPTION_REGEX = /[\w]+.*/.freeze
+      COMMIT_DESCRIPTION_REGEX = /(\n\n?([\w\s[:punct:]]+))?/.freeze
 
       # NOTE: Matching positions
       # 1 - type
@@ -26,7 +26,7 @@ module FuseDevTools
       # 3 - task_description
       # 4 - commit_description (optional, defaults to nil)
       MESSAGE_REGEX = \
-        /^(#{TYPE_REGEX})?(?: ?(#{TASK_ID_REGEX}))?(?: (#{TASK_DESCRIPTION_REGEX})?)#{COMMIT_DESCRIPTION_REGEX}/
+        /^(#{TYPE_REGEX})?(?: ?(#{TASK_ID_REGEX}))?(?: (#{TASK_DESCRIPTION_REGEX})?)#{COMMIT_DESCRIPTION_REGEX}/.freeze
 
       validates :type, inclusion: { in: VALID_TYPES }, unless: :skip_validations?
       validates :message, :task_description, presence: true, allow_blank: false, unless: :skip_validations?

@@ -3,6 +3,7 @@
 ## Technical improvements
 
 * Remove extra rails cop when running rubocop on circleci
+* Broken CircleCI bundler caching
 
 ## Bugfixes
 
