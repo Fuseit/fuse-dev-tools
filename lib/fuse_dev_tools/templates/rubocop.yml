@@ -1,0 +1,20 @@
+inherit_from:
+  - rubocop_rspec.yml
+  - rubocop/cops_bundler.yml
+  - rubocop/cops_gemspec.yml
+  - rubocop/cops_layout.yml
+  - rubocop/cops_linting.yml
+  - rubocop/cops_metrics.yml
+  - rubocop/cops_naming.yml
+  - rubocop/cops_performance.yml
+  - rubocop/cops_rails.yml
+  - rubocop/cops_security.yml
+  - rubocop/cops_style.yml
+
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - 'bin/**/*'
+    - db/schema.rb
