@@ -1,6 +1,8 @@
 Metrics/BlockLength:
   Exclude:
     - fuse-dev-tools.gemspec
+    - spec/fuse_dev_tools/git_tools/commit_message_spec.rb
+    - spec/fuse_dev_tools/git_tools/pull_request_validator_spec.rb
 
 Metrics/MethodLength:
   Exclude:
