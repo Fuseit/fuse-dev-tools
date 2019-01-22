@@ -1,6 +1,6 @@
 require 'fuse_dev_tools/git_tools/pull_request_validator'
 require 'active_support'
-require 'colorize'
+require 'rainbow'
 require 'thor'
 
 module FuseDevTools
@@ -13,10 +13,10 @@ module FuseDevTools
           desc :validate_pull_request, 'Ensure pull requests conform to rules and requirements'
           def validate_pull_request
             if validator.valid?
-              say 'Pull request passed validation'.colorize(:green)
+              say Rainbow('Pull request passed validation').green
               exit 0
             else
-              say 'You Pull Request is invalid! Please check the following errors:'.colorize(:red)
+              say Rainbow('Your Pull Request is invalid! Please check the following errors:').red
               say_errors validator
               exit 1
             end
@@ -30,7 +30,7 @@ module FuseDevTools
 
             def say_errors object
               object.errors.full_messages.each do |message|
-                say "- #{message}".colorize(:red)
+                say Rainbow("- #{message}").red
               end
             end
         end

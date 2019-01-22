@@ -1,3 +1,10 @@
+## v0.7.1
+
+### Technical improvements
+
+* PLAT-1030 Replace `colorize` with `rainbow` gem
+
+
 ## v0.7.0
 
 ### Features
