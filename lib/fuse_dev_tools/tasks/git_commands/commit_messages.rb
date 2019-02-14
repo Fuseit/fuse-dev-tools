@@ -25,7 +25,7 @@ module FuseDevTools
               say Rainbow('Commit message valid!').green
               exit 0
             else
-              say validator.warning_message.yellow
+              say Rainbow(validator.warning_message).yellow
               say Rainbow('Commit message invalid!').red
               exit 1
             end
