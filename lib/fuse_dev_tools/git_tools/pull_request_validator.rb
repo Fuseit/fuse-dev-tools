@@ -15,7 +15,8 @@ module FuseDevTools
 
         def validate_changelog_exclusion
           current_commit = git.gcommit(git.current_branch)
-          parent = git.log.drop_while { |object| object.name.include? git.current_branch }.first
+          parent = current_commit.parent
+
           errors.add(:base, 'CHANGELOG change detected! Please do not add a CHANGELOG entry in your Pull Request') \
             if commit_checker.file_changed?(parent.sha, current_commit.sha, 'CHANGELOG.md')
         end
