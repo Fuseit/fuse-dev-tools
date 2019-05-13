@@ -39,13 +39,13 @@ Layout/ExtraSpacing:
 #   first_param,
 #   second_param
 # )
-Layout/FirstParameterIndentation:
+Layout/IndentFirstArgument:
   EnforcedStyle: consistent
 Layout/FirstHashElementLineBreak:
   Enabled: true
-Layout/IndentArray:
+Layout/IndentFirstArrayElement:
   EnforcedStyle: consistent
-Layout/IndentHash:
+Layout/IndentFirstHashElement:
   EnforcedStyle: consistent
 # This value can be overriden in projects that are not Rails projects. Alternatively, we can adopt this style everywhere...
 Layout/IndentationConsistency:
