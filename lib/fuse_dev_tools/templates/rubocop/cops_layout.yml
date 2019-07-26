@@ -49,7 +49,7 @@ Layout/IndentFirstHashElement:
   EnforcedStyle: consistent
 # This value can be overriden in projects that are not Rails projects. Alternatively, we can adopt this style everywhere...
 Layout/IndentationConsistency:
-  EnforcedStyle: rails
+  EnforcedStyle: indented_internal_methods
 # Open for debate, but appears to be most similar to current usage...
 Layout/MultilineArrayBraceLayout:
   EnforcedStyle: new_line
