@@ -17,8 +17,11 @@ module FuseDevTools
           current_commit = git.gcommit(git.current_branch)
           parent = current_commit.parent
 
-          errors.add(:base, 'CHANGELOG change detected! Please do not add a CHANGELOG entry in your Pull Request') \
-            if commit_checker.file_changed?(parent.sha, current_commit.sha, 'CHANGELOG.md')
+          return unless commit_checker.file_changed?(parent.sha, current_commit.sha, 'CHANGELOG.md')
+
+          errors.add(:base, 'CHANGELOG change detected! Please do not add a CHANGELOG entry in your Pull Request. ' \
+            'Branch might be behind master making the changelog look different, try rebasing.'
+          )
         end
 
         def skip_ensure_changelog_exclusion?
