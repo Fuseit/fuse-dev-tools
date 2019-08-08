@@ -18,17 +18,7 @@ module FuseDevTools
           parent = git.log.drop_while { |object| object.name.include? git.current_branch }.first
           return unless commit_checker.file_changed?(parent.sha, current_commit.sha, 'CHANGELOG.md')
 
-          error_message = <<~HEREDOC
-          CHANGELOG change detected! Please do not add a CHANGELOG entry in your Pull Request.
-          Branch might be behind master making the changelog look different, try rebasing.
-          Commit SHA: #{current_commit.sha}
-          Parent SHA: #{parent.sha}
-
-          Changelog diff:
-          #{changelog_diff(parent.sha, current_commit.sha)}
-          HEREDOC
-
-          errors.add(:base, error_message)
+          errors.add(:base, error_message_for(current_commit, parent))
         end
 
         def skip_ensure_changelog_exclusion?
@@ -44,6 +34,18 @@ module FuseDevTools
         def commit_message_info
           @commit_message_info ||= ::FuseDevTools::GitTools::CommitMessage.new(message: latest_commit_message) \
             .parse
+        end
+
+        def error_message_for current_commit, parent_commit
+          <<~HEREDOC
+          CHANGELOG change detected! Please do not add a CHANGELOG entry in your Pull Request.
+          Branch might be behind master making the changelog look different, try rebasing.
+
+          Commit SHA: #{current_commit.sha}
+          Parent SHA: #{parent_commit.sha}
+          Changelog diff:
+          #{changelog_diff(parent_commit.sha, current_commit.sha)}
+          HEREDOC
         end
 
         def changelog_diff earlier_commit_sha, latter_commit_sha
