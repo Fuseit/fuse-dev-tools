@@ -5,8 +5,8 @@ RSpec.describe FuseDevTools::GitTools::PullRequestValidator do
 
   let(:stubbed_commit_checker) do
     instance_double '::FuseDevTools::GitTools::CommitChecker',
-                    file_changed?: changelog_changed,
-                    pull_request?: is_pull_request
+      file_changed?: changelog_changed,
+      pull_request?: is_pull_request
   end
   let(:changelog_changed) { true }
   let(:is_pull_request) { false }
