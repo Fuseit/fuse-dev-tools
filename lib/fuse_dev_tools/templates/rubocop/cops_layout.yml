@@ -39,17 +39,17 @@ Layout/ExtraSpacing:
 #   first_param,
 #   second_param
 # )
-Layout/IndentFirstArgument:
+Layout/FirstParameterIndentation:
   EnforcedStyle: consistent
 Layout/FirstHashElementLineBreak:
   Enabled: true
-Layout/IndentFirstArrayElement:
+Layout/IndentArray:
   EnforcedStyle: consistent
-Layout/IndentFirstHashElement:
+Layout/IndentHash:
   EnforcedStyle: consistent
 # This value can be overriden in projects that are not Rails projects. Alternatively, we can adopt this style everywhere...
 Layout/IndentationConsistency:
-  EnforcedStyle: indented_internal_methods
+  EnforcedStyle: rails
 # Open for debate, but appears to be most similar to current usage...
 Layout/MultilineArrayBraceLayout:
   EnforcedStyle: new_line
