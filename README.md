@@ -27,6 +27,15 @@ inherit_gem:
   fuse-dev-tools: lib/fuse_dev_tools/templates/.rubocop.yml
 ```
 
+## Changelog generator
+
+Generate a Github personal access token with read-only access to all repos [here](https://github.com/settings/tokens)
+
+Example usage:
+```
+GITHUB_ACCESS_TOKEN=a9123012839018239123089123 fuse-dev-tools changelog_generator preview --repo FuseTube
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies.

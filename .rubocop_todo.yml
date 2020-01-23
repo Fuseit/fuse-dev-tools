@@ -3,10 +3,14 @@ Metrics/BlockLength:
     - fuse-dev-tools.gemspec
     - spec/fuse_dev_tools/git_tools/commit_message_spec.rb
     - spec/fuse_dev_tools/git_tools/pull_request_validator_spec.rb
+    - spec/lib/changelog_builder_spec.rb
+    - lib/fuse_dev_tools/tasks/changelog_generator.rb
+    - spec/lib/git_hub_spec.rb
 
 Metrics/MethodLength:
   Exclude:
     - lib/fuse_dev_tools/tasks/git_commands/commit_messages.rb
+    - lib/fuse_dev_tools/lib/git_hub.rb
 
 Rails/Exit:
   Exclude:
