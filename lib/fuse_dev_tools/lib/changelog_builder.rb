@@ -1,6 +1,8 @@
 require 'active_support/core_ext/string'
 
 class ChangelogBuilder
+  JIRA_URL = 'https://fuseuniversal.atlassian.net'.freeze
+
   def initialize commits
     @commits = commits
   end
@@ -37,8 +39,10 @@ class ChangelogBuilder
       end
     end
 
-    def format_commit_message message, sha
-      '* ' + message.split(' ').drop(1).join(' ') + " ##{sha}"
+    def format_commit_message line, sha
+      split_line = line.split(' ')
+      _, jira_ticket = split_line.shift(2)
+      "* [#{jira_ticket}](#{JIRA_URL}/browse/#{jira_ticket}): #{split_line.join(' ')} ##{sha}"
     end
 
     def categorize_by_message_type message, type

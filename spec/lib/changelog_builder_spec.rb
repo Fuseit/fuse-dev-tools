@@ -16,7 +16,7 @@ RSpec.describe ChangelogBuilder do
     let(:message) { 'fix TEST-1 First thingy' }
     let(:sha) { '123asewq' }
 
-    it { is_expected.to eq '* TEST-1 First thingy #123asewq' }
+    it { is_expected.to eq "* [TEST-1](#{described_class::JIRA_URL}/browse/TEST-1): First thingy #123asewq" }
   end
 
   describe '#categorize_commits' do
@@ -56,8 +56,11 @@ RSpec.describe ChangelogBuilder do
   describe '#build' do
     subject(:build) { builder.build }
 
+    before do
+      allow(builder).to receive(:categorize_commits).and_call_original
+    end
+
     it 'builds categorised changelod string' do
-      allow(builder).to receive(:categorize_commits)
       build
       expect(builder).to have_received(:categorize_commits)
     end
