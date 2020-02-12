@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+set -e
+
+APPLICATION="$1"
+VERSION="$2"
+
+if [ "$APPLICATION" == '' ] || [ "$VERSION" == '' ]; then
+  echo -e "Error, argument is missing. Usage:\n\n bin/create-release <application> <version>\n\n"
+  exit 1
+fi
+
+tempfile=$(mktemp)
+
+echo Generating the new changelog entries
+./bin/fuse-dev-tools changelog_generator preview --repo "$APPLICATION" --version "$VERSION" > $tempfile
+echo ">>>>>>>>>>>>>>>>>>>>"
+
+cd "../$APPLICATION" || exit
+
+echo Checking out into the master branch
+git checkout master
+echo ">>>>>>>>>>>>>>>>>>>>"
+
+echo Pulling in the latest changes
+git pull -r
+echo ">>>>>>>>>>>>>>>>>>>>"
+
+echo Adding the new changelog entries to the CHANGELOG.md file
+cat $tempfile CHANGELOG.md > new.txt
+rm CHANGELOG.md
+mv new.txt CHANGELOG.md
+echo ">>>>>>>>>>>>>>>>>>>>"
+
+echo Updating the version in the VERSION file
+echo "v$VERSION" > VERSION
+echo ">>>>>>>>>>>>>>>>>>>>"
+
+echo Creating a bump version commit
+git commit -a -m "chore Bump version to $VERSION"
+echo ">>>>>>>>>>>>>>>>>>>>"
+
+echo Pushing to the Repository
+git push
+echo ">>>>>>>>>>>>>>>>>>>>"
