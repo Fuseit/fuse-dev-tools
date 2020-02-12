@@ -16,7 +16,7 @@ RSpec.describe ChangelogBuilder do
     let(:message) { 'fix TEST-1 First thingy' }
     let(:sha) { '123asewq' }
 
-    it { is_expected.to eq "* [TEST-1](#{described_class::JIRA_URL}/browse/TEST-1): First thingy #123asewq" }
+    it { is_expected.to eq "* [TEST-1](#{described_class::JIRA_URL}/browse/TEST-1): First thingy 123asewq" }
   end
 
   describe '#categorize_commits' do
