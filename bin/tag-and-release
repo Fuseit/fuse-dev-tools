@@ -11,7 +11,16 @@ tag_and_release() {
     RUBYOPT="-W0" ./bin/fuse-dev-tools changelog_generator preview --repo $application > $tempfile1
     sed "1s/.*/$version/" $tempfile1 > $tempfile2
 
+    echo "Moving to ${application} folder"
     cd "../$application" || exit
+
+    echo "Updating the ${application} repository"
+    git checkout master
+    git pull -r
+
+    echo "Creating and pushing 'release-${version:1}' branch"
+    git checkout -b release-${version:1}
+    git push origin release-${version:1}
 
     echo "Tagging ${application} ${version}"
     git tag -a $version -m $version || exit
@@ -23,6 +32,11 @@ tag_and_release() {
 cleanup() {
   echo "Removing temporary files"
   rm  -r $tempfile1 $tempfile2
+
+  echo "Deleting local 'release-${version:1}' artifacts"
+  git checkout master
+  git branch -D release-${version:1}
+  git tag -D $version
 }
 
 trap cleanup EXIT
@@ -42,7 +56,6 @@ while getopts "a:v:?h" o; do
 done
 
 shift $((OPTIND-1))
-
 
 if [ -z "${application}" ] || [ -z "${version}" ]; then
     usage
