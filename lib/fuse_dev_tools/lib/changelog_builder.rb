@@ -42,7 +42,7 @@ class ChangelogBuilder
     def format_commit_message line, sha
       split_line = line.split(' ')
       _, jira_ticket = split_line.shift(2)
-      "* [#{jira_ticket}](#{JIRA_URL}/browse/#{jira_ticket}): #{split_line.join(' ')} ##{sha}"
+      "* [#{jira_ticket}](#{JIRA_URL}/browse/#{jira_ticket}): #{split_line.join(' ')} #{sha}"
     end
 
     def categorize_by_message_type message, type
