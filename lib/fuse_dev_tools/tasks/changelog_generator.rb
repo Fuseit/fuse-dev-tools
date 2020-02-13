@@ -7,6 +7,7 @@ module FuseDevTools
       desc :preview, 'Previews changelog entries based on GitHub history'
       option 'bump', desc: 'Bump: patch, minor, major', default: 'patch'
       option 'repo', desc: 'Repo name if different than current'
+      option 'version', desc: 'Full version number of the release'
       def preview
         @repo ||= options['repo']
         puts format_changelog options['bump'].to_sym
@@ -58,9 +59,18 @@ module FuseDevTools
 
         def format_changelog bump
           builder = ChangelogBuilder.new commits
-          next_ver = next_release_version bump
 
-          "## #{next_ver} - #{Time.now}\n\n#{builder.build}\n\n"
+          if options['version'] && options['version'] <= previous_release_version
+            raise ArgumentError, 'Please provide a version higher than the previous version'
+          end
+
+          next_version = if options['version']
+            "v#{options['version']}"
+          else
+            next_release_version(bump)
+          end
+
+          "## #{next_version} - #{Time.now}\n\n#{builder.build}\n\n"
         end
 
         def changelog_file
