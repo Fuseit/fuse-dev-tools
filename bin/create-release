@@ -1,45 +1,147 @@
 #!/usr/bin/env bash
-
 set -e
 
-APPLICATION="$1"
-VERSION="$2"
+usage() { echo "Usage: $0 [-a <application>] [-b <bump>]" 1>&2; exit 1; }
 
-if [ "$APPLICATION" == '' ] || [ "$VERSION" == '' ]; then
-  echo -e "Error, argument is missing. Usage:\n\n bin/create-release <application> <version>\n\n"
-  exit 1
+validate_command_exists() {
+    if ! [ -x "$(command -v $1)" ]; then
+        echo "Error: $1 is not installed." >&2
+        exit 1
+    fi
+}
+
+validate_command_exists hub
+
+generate_changelog() {
+    markdown_changelog=$(mktemp)
+
+    echo Generating changelog...
+    RUBYOPT="-W0" ./bin/fuse-dev-tools changelog_generator preview --repo "$1" --version "$2" > $markdown_changelog
+}
+
+move_to_directory_and_update() {
+    echo "Moving to $1..."
+    cd "../$1" || exit
+    echo Stashing current changes
+    git stash
+    git checkout master
+    git pull -r
+}
+
+prepend_changelog_and_bump_version() {
+    echo Adding the new changelog entries to the CHANGELOG.md file
+    cat $markdown_changelog CHANGELOG.md > prepended_changelog.md
+    mv prepended_changelog.md CHANGELOG.md
+
+    echo "v$1" > VERSION
+}
+
+commit_to_master() {
+    echo Creating a bump version commit
+    git commit -a -m "chore Bump version to $1"
+    echo Pushing to the master
+    git push
+}
+
+tag_and_release() {
+    tempfile2=$(mktemp)
+
+    sed "1s/.*/v$2/" $markdown_changelog > $tempfile2
+
+    echo "Updating the ${application} repository"
+    git checkout master
+    git pull -r
+
+    echo release-$2
+
+    echo "Creating and pushing 'release-$2' branch"
+    git checkout -b release-$2
+    git push origin release-$2
+
+    echo "Tagging $1 $2"
+    git tag -a $2 -m $2 || exit
+
+    echo "Releasing $1 $2"
+    hub release create $2 --file $tempfile2 || exit
+}
+
+generate_commit_tag_and_release() {
+    generate_changelog $1 $2
+    move_to_directory_and_update $1
+    prepend_changelog_and_bump_version $2
+    commit_to_master $2
+    tag_and_release $1 $2
+}
+
+while getopts "a:b:?h" o; do
+    case "${o}" in
+        a)
+            application=${OPTARG}
+            ;;
+        b)
+            bump=${OPTARG}
+            ;;
+        h)
+            usage
+            ;;
+    esac
+done
+
+shift $((OPTIND-1))
+
+if [ -z "${application}" ] || [ -z "${bump}" ]; then
+    usage
 fi
 
-tempfile=$(mktemp)
+get_current_version() {
+    # go to github and check latest release:
+    cd ../$application
 
-echo Generating the new changelog entries
-./bin/fuse-dev-tools changelog_generator preview --repo "$APPLICATION" --version "$VERSION" > $tempfile
-echo ">>>>>>>>>>>>>>>>>>>>"
+    version=$(hub release -L 1)
 
-cd "../$APPLICATION" || exit
+    cd ../fuse-dev-tools
+    echo $version
+}
 
-echo Checking out into the master branch
-git checkout master
-echo ">>>>>>>>>>>>>>>>>>>>"
+calculate_new_version() {
+  local major=$(echo ${1:1} | cut -d. -f1)
+  local minor=$(echo ${1:1} | cut -d. -f2)
+  local patch=$(echo ${1:1} | cut -d. -f3)
 
-echo Pulling in the latest changes
-git pull -r
-echo ">>>>>>>>>>>>>>>>>>>>"
+  case $2 in
+    "major")
+      major=$((major+1))
+      minor=0
+      patch=0
+      ;;
+    "minor")
+      minor=$((minor+1))
+      patch=0
+      ;;
+    "patch")
+      patch=$((patch+1))
+      ;;
+  esac
 
-echo Adding the new changelog entries to the CHANGELOG.md file
-cat $tempfile CHANGELOG.md > new.txt
-rm CHANGELOG.md
-mv new.txt CHANGELOG.md
-echo ">>>>>>>>>>>>>>>>>>>>"
+  new_version="${major}.${minor}.${patch}"
+  echo $new_version
+}
 
-echo Updating the version in the VERSION file
-echo "v$VERSION" > VERSION
-echo ">>>>>>>>>>>>>>>>>>>>"
+current_version=$(get_current_version $application)
+new_version=$(calculate_new_version $current_version $bump)
 
-echo Creating a bump version commit
-git commit -a -m "chore Bump version to $VERSION"
-echo ">>>>>>>>>>>>>>>>>>>>"
+echo "The application is ${application} and the version is ${new_version}"
 
-echo Pushing to the Repository
-git push
-echo ">>>>>>>>>>>>>>>>>>>>"
+read -p "Continue (y/n)? " choice
+case "$choice" in
+    y|Y ) generate_commit_tag_and_release $application $new_version;;
+    n|N ) exit 0;;
+    * ) echo "invalid";;
+esac
+
+cleanup() {
+  echo "Removing temporary files"
+  rm  -r $markdown_changelog $tempfile2
+}
+
+trap cleanup EXIT
