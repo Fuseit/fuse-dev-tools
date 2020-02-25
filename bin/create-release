@@ -16,7 +16,7 @@ generate_changelog() {
     markdown_changelog=$(mktemp)
 
     echo Generating changelog...
-    RUBYOPT="-W0" ./bin/fuse-dev-tools changelog_generator preview --repo "$1" --version "$2" > $markdown_changelog
+    RUBYOPT="-W0" ./bin/fuse-dev-tools changelog_generator preview --repo $1 --version $2 > $markdown_changelog
 }
 
 move_to_directory_and_update() {
@@ -38,7 +38,7 @@ prepend_changelog_and_bump_version() {
 
 commit_to_master() {
     echo Creating a bump version commit
-    git commit -a -m "chore Bump version to $1"
+    git commit -a -m "chore Bump version to v$1"
     echo Pushing to the master
     git push
 }
@@ -48,7 +48,7 @@ tag_and_release() {
 
     sed "1s/.*/v$2/" $markdown_changelog > $tempfile2
 
-    echo "Updating the ${application} repository"
+    echo "Updating ${application} repository"
     git checkout master
     git pull -r
 
@@ -59,7 +59,7 @@ tag_and_release() {
     git push origin release-$2
 
     echo "Tagging $1 $2"
-    git tag -a $2 -m $2 || exit
+    git tag -a "v$2" -m "Release v$2" || exit
 
     echo "Releasing $1 $2"
     hub release create $2 --file $tempfile2 || exit
