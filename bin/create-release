@@ -4,7 +4,9 @@ set -e
 usage() { echo "Usage: $0 [-a <application>] [-b <bump>]" 1>&2; exit 1; }
 
 validate_command_exists() {
-    if ! [ -x "$(command -v $1)" ]; then
+    local cmd=$1
+
+    if ! [ -x "$(command -v $cmd)" ]; then
         echo "Error: $1 is not installed." >&2
         exit 1
     fi
@@ -13,15 +15,19 @@ validate_command_exists() {
 validate_command_exists hub
 
 generate_changelog() {
+    local application=$1
+    local version=$2
     markdown_changelog=$(mktemp)
 
     echo Generating changelog...
-    RUBYOPT="-W0" ./bin/fuse-dev-tools changelog_generator preview --repo $1 --version $2 > $markdown_changelog
+    RUBYOPT="-W0" ./bin/fuse-dev-tools changelog_generator preview --repo $application --version $version > $markdown_changelog
 }
 
 move_to_directory_and_update() {
-    echo "Moving to $1..."
-    cd "../$1" || exit
+    local application=$1
+
+    echo "Moving to $application..."
+    cd "../$application" || exit
     echo Stashing current changes
     git stash
     git checkout master
@@ -29,48 +35,58 @@ move_to_directory_and_update() {
 }
 
 prepend_changelog_and_bump_version() {
+    local version=$1
+
     echo Adding the new changelog entries to the CHANGELOG.md file
     cat $markdown_changelog CHANGELOG.md > prepended_changelog.md
     mv prepended_changelog.md CHANGELOG.md
 
-    echo "v$1" > VERSION
+    echo "v$version" > VERSION
 }
 
 commit_to_master() {
+    local version=$1
+
     echo Creating a bump version commit
-    git commit -a -m "chore Bump version to v$1"
+    git commit -a -m "chore Bump version to v$version"
     echo Pushing to the master
     git push
 }
 
 tag_and_release() {
+    local application=$1
+    local version=$2
+
     tempfile2=$(mktemp)
 
-    sed "1s/.*/v$2/" $markdown_changelog > $tempfile2
+    sed "1s/.*/v$version/" $markdown_changelog > $tempfile2
 
     echo "Updating ${application} repository"
     git checkout master
     git pull -r
 
-    echo release-$2
+    echo release-$version
 
-    echo "Creating and pushing 'release-$2' branch"
-    git checkout -b release-$2
-    git push origin release-$2
+    echo "Creating and pushing 'release-$version' branch"
+    git checkout -b release-$version
+    git push origin release-$version
 
-    echo "Tagging $1 $2"
-    git tag -a "v$2" -m "Release v$2" || exit
+    echo "Tagging $application $version"
+    git tag -a "v$version" -m "Release v$version" || exit
 
-    echo "Releasing $1 $2"
-    hub release create $2 --file $tempfile2 || exit
+    echo "Releasing $application $version"
+    hub release create $version --file $tempfile2 || exit
 }
 
 generate_commit_tag_and_release() {
-    generate_changelog $1 $2
-    move_to_directory_and_update $1
-    prepend_changelog_and_bump_version $2
-    commit_to_master $2
-    tag_and_release $1 $2
+    local application=$1
+    local version=$2
+
+    generate_changelog $application $version
+    move_to_directory_and_update $application
+    prepend_changelog_and_bump_version $version
+    commit_to_master $version
+    tag_and_release $application $version
 }
 
 while getopts "a:b:?h" o; do
@@ -94,21 +110,24 @@ if [ -z "${application}" ] || [ -z "${bump}" ]; then
 fi
 
 get_current_version() {
+    local application=$1
     # go to github and check latest release:
     cd ../$application
 
-    version=$(hub release -L 1)
+    local version=$(hub release -L 1)
 
     cd ../fuse-dev-tools
     echo $version
 }
 
 calculate_new_version() {
-  local major=$(echo ${1:1} | cut -d. -f1)
-  local minor=$(echo ${1:1} | cut -d. -f2)
-  local patch=$(echo ${1:1} | cut -d. -f3)
+  local current=$1
+  local bump=$2
+  local major=$(echo ${current:1} | cut -d. -f1)
+  local minor=$(echo ${current:1} | cut -d. -f2)
+  local patch=$(echo ${current:1} | cut -d. -f3)
 
-  case $2 in
+  case $bump in
     "major")
       major=$((major+1))
       minor=0
@@ -123,7 +142,7 @@ calculate_new_version() {
       ;;
   esac
 
-  new_version="${major}.${minor}.${patch}"
+  local new_version="${major}.${minor}.${patch}"
   echo $new_version
 }
 
