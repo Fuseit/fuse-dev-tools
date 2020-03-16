@@ -75,7 +75,7 @@ tag_and_release() {
     git tag -a "v$version" -m "Release v$version" || exit
 
     echo "Releasing $application $version"
-    hub release create $version --file $tempfile2 || exit
+    hub release create "v$version" --file $tempfile2 || exit
 }
 
 generate_commit_tag_and_release() {
