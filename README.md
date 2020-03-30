@@ -36,6 +36,14 @@ Example usage:
 GITHUB_ACCESS_TOKEN=a9123012839018239123089123 fuse-dev-tools changelog_generator preview --repo FuseTube
 ```
 
+## Creating a release
+
+To create a release you must type in the command below using the arguments `-a` being the repository name from github you want to release 
+and `-b` for the version increase of the application, which supports the values major, minor and patch 
+
+Example usage:
+`./bin/create-release -a fuse_courses -b patch`
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies.
