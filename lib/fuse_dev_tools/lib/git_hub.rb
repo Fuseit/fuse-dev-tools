@@ -52,4 +52,12 @@ class GitHub
     commits.select! { |c| c.parents.length == 1 }
     commits.size
   end
+
+  def self.fetch_remote_file_contents username, repo, ref, file_path
+    Base64.decode64(client.contents("#{username}/#{repo}", path: file_path).content)
+  end
+
+  # def self.create_branch username, repo,  name, branch_from = 'master'
+  #   client.create_ref("#{username}/#{repo}", "heads/#{name}", )
+  # end
 end

@@ -37,5 +37,8 @@ module FuseDevTools
 
     desc 'changelog_generator COMMAND', 'Commands for changelog'
     subcommand :changelog_generator, FuseDevTools::Tasks::ChangelogGenerator
+
+    desc 'release_generator COMMAND', 'Commands for release'
+    subcommand :release_generator, FuseDevTools::Tasks::ReleaseGenerator
   end
 end
