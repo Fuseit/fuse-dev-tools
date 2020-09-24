@@ -7,13 +7,9 @@ class GitHub
   end
 
   def self.previous_release_version username, repo
-    # for now we use tags since releases are not up-to-date
-    tags = client.tags("#{username}/#{repo}")
-    tag_names = tags.map { |tag| tag[:name] }
-    version_tags = tag_names.select { |tag| tag =~ /^v[0-9]/i }
-    version_numbers = version_tags.map { |tag| tag.sub(/^v/i, '') }
-    semvers = version_numbers.map { |version| Semantic::Version.new(version) }
-    semvers.max
+    latest_release = client.latest_release("#{username}/#{repo}")[:name]
+    latest_release.slice!(0)
+    Semantic::Version.new(latest_release)
   end
 
   def self.next_release_version username, repo, bump
