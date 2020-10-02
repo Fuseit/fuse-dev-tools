@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.github.com/repos/Fuseit/FuseTube/tags
+    uri: https://api.github.com/repos/Fuseit/FuseTube/releases/latest
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.github.v3+json
       User-Agent:
-      - Octokit Ruby Gem 4.15.0
+      - Octokit Ruby Gem 4.18.0
       Content-Type:
       - application/json
       Authorization:
@@ -23,7 +23,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 21 Jan 2020 07:20:25 GMT
+      - Thu, 24 Sep 2020 13:38:50 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -32,34 +32,34 @@ http_interactions:
       - GitHub.com
       Status:
       - 200 OK
-      X-Ratelimit-Limit:
-      - '5000'
-      X-Ratelimit-Remaining:
-      - '4980'
-      X-Ratelimit-Reset:
-      - '1579594353'
       Cache-Control:
       - private, max-age=60, s-maxage=60
       Vary:
       - Accept, Authorization, Cookie, X-GitHub-OTP
       - Accept-Encoding
+      - Accept-Encoding, Accept, X-Requested-With
       Etag:
-      - W/"64387d1fed3aa6795372120460071a7b"
+      - W/"365832f0fd86b27276827a33ce342833db0a0032ae08bb698b5c573d17856808"
       Last-Modified:
-      - Mon, 20 Jan 2020 16:37:28 GMT
+      - Wed, 16 Sep 2020 11:29:19 GMT
       X-Oauth-Scopes:
       - repo
       X-Accepted-Oauth-Scopes:
-      - ''
+      - repo
       X-Github-Media-Type:
       - github.v3; format=json
-      Link:
-      - <https://api.github.com/repositories/1695720/tags?page=2>; rel="next", <https://api.github.com/repositories/1695720/tags?page=25>;
-        rel="last"
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4991'
+      X-Ratelimit-Reset:
+      - '1600956106'
+      X-Ratelimit-Used:
+      - '9'
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
-        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
-        X-GitHub-Media-Type
+        X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+        X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset
       Access-Control-Allow-Origin:
       - "*"
       Strict-Transport-Security:
@@ -75,10 +75,10 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - C86D:29C49:634834:757051:5E26A638
+      - 0DF4:D398:9CC7D2:BC5756:5F6CA16A
     body:
       encoding: ASCII-8BIT
-      string: '[{"name":"v3.57.1-pre.1","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.57.1-pre.1","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.57.1-pre.1","commit":{"sha":"db651dd2e0fcb0e9367a08ac73a312fd9e4db448","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/db651dd2e0fcb0e9367a08ac73a312fd9e4db448"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41Ny4xLXByZS4x"},{"name":"v3.57.0-pre.0","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.57.0-pre.0","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.57.0-pre.0","commit":{"sha":"4a487dc41b32548aa953239b6050e96e042fa749","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/4a487dc41b32548aa953239b6050e96e042fa749"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41Ny4wLXByZS4w"},{"name":"v3.56.8","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.56.8","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.56.8","commit":{"sha":"2a93cd6b038bb55ba0fc5ca9338616126dc8185f","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/2a93cd6b038bb55ba0fc5ca9338616126dc8185f"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41Ni44"},{"name":"v3.56.8-pre.0","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.56.8-pre.0","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.56.8-pre.0","commit":{"sha":"bfe10844ffc2af2a38159901a8db75a07e217a44","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/bfe10844ffc2af2a38159901a8db75a07e217a44"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41Ni44LXByZS4w"},{"name":"v3.56.7","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.56.7","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.56.7","commit":{"sha":"7fe748f639ffb2cea4fd7b295d551087fa7491a2","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/7fe748f639ffb2cea4fd7b295d551087fa7491a2"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41Ni43"},{"name":"v3.56.7-pre.0","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.56.7-pre.0","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.56.7-pre.0","commit":{"sha":"ae28ae09a66ee84548236a9015f3dfb6d6df9896","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/ae28ae09a66ee84548236a9015f3dfb6d6df9896"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41Ni43LXByZS4w"},{"name":"v3.56.6","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.56.6","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.56.6","commit":{"sha":"00d2547a745e4da95ff96183579de6792b4a1da5","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/00d2547a745e4da95ff96183579de6792b4a1da5"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41Ni42"},{"name":"v3.56.6-pre.0","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.56.6-pre.0","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.56.6-pre.0","commit":{"sha":"0091c6c7a50ebd27a1c384e8d73694069dccf898","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/0091c6c7a50ebd27a1c384e8d73694069dccf898"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41Ni42LXByZS4w"},{"name":"v3.56.5-pre.1","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.56.5-pre.1","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.56.5-pre.1","commit":{"sha":"5262833b0a66ad15fe42d206d5c543adcbb2dc9a","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/5262833b0a66ad15fe42d206d5c543adcbb2dc9a"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41Ni41LXByZS4x"},{"name":"v3.56.4-pre.1","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.56.4-pre.1","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.56.4-pre.1","commit":{"sha":"fee3bf1c6d0f449e2e17108ad3e86b46c1469b40","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/fee3bf1c6d0f449e2e17108ad3e86b46c1469b40"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41Ni40LXByZS4x"},{"name":"v3.56.3-pre.1","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.56.3-pre.1","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.56.3-pre.1","commit":{"sha":"c9e00942fbeb0355aa86a9d7318fc2e22b54c9b1","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/c9e00942fbeb0355aa86a9d7318fc2e22b54c9b1"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41Ni4zLXByZS4x"},{"name":"v3.56.2-pre.1","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.56.2-pre.1","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.56.2-pre.1","commit":{"sha":"6d00cc3d0d8924ba114637aca067762c38554719","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/6d00cc3d0d8924ba114637aca067762c38554719"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41Ni4yLXByZS4x"},{"name":"v3.56.1-pre.1","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.56.1-pre.1","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.56.1-pre.1","commit":{"sha":"9e682349d6950a0460536d2520ce90df613af9f6","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/9e682349d6950a0460536d2520ce90df613af9f6"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41Ni4xLXByZS4x"},{"name":"v3.56.0-pre.0","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.56.0-pre.0","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.56.0-pre.0","commit":{"sha":"8cc35862f608c20093032bc8fb9af11da28261c2","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/8cc35862f608c20093032bc8fb9af11da28261c2"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41Ni4wLXByZS4w"},{"name":"v3.55.11","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.55.11","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.55.11","commit":{"sha":"3a5a7cde34422436a58d664e64feeed3e7164a79","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/3a5a7cde34422436a58d664e64feeed3e7164a79"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41NS4xMQ=="},{"name":"v3.55.11-pre.0","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.55.11-pre.0","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.55.11-pre.0","commit":{"sha":"7e163780ba62d06789d0ff867e0a0e37261f74e6","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/7e163780ba62d06789d0ff867e0a0e37261f74e6"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41NS4xMS1wcmUuMA=="},{"name":"v3.55.10","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.55.10","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.55.10","commit":{"sha":"6a96f1acc339aab93cea1a8613e74dfea9ad1e05","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/6a96f1acc339aab93cea1a8613e74dfea9ad1e05"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41NS4xMA=="},{"name":"v3.55.10-pre.0","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.55.10-pre.0","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.55.10-pre.0","commit":{"sha":"eae3494553c425532836a2f80ba5a5f57538d5e7","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/eae3494553c425532836a2f80ba5a5f57538d5e7"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41NS4xMC1wcmUuMA=="},{"name":"v3.55.9","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.55.9","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.55.9","commit":{"sha":"3dc5855431bfcadc145823e380999c9bc56e4d65","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/3dc5855431bfcadc145823e380999c9bc56e4d65"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41NS45"},{"name":"v3.55.9-pre.0","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.55.9-pre.0","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.55.9-pre.0","commit":{"sha":"d53c1e20bfdc47ccd553ee10b1e32ce3aaa199cd","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/d53c1e20bfdc47ccd553ee10b1e32ce3aaa199cd"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41NS45LXByZS4w"},{"name":"v3.55.8","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.55.8","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.55.8","commit":{"sha":"4fca679dd761c417681b929b59f0a8b9bfdb6daf","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/4fca679dd761c417681b929b59f0a8b9bfdb6daf"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41NS44"},{"name":"v3.55.8-pre.0","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.55.8-pre.0","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.55.8-pre.0","commit":{"sha":"a09907c5ffdeeb441ce5cb2ccaf260d4af2f4831","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/a09907c5ffdeeb441ce5cb2ccaf260d4af2f4831"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41NS44LXByZS4w"},{"name":"v3.55.8-nova.0","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.55.8-nova.0","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.55.8-nova.0","commit":{"sha":"facab4d267783e41e7c7fc948e93dc1321f0eecb","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/facab4d267783e41e7c7fc948e93dc1321f0eecb"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41NS44LW5vdmEuMA=="},{"name":"v3.55.7","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.55.7","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.55.7","commit":{"sha":"b81f7149f1687fcb13d1e4b6bc54e130070191a1","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/b81f7149f1687fcb13d1e4b6bc54e130070191a1"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41NS43"},{"name":"v3.55.7-pre.0","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.55.7-pre.0","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.55.7-pre.0","commit":{"sha":"c4e0327f4b69bf6681ab053e15e442b59bab59d7","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/c4e0327f4b69bf6681ab053e15e442b59bab59d7"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41NS43LXByZS4w"},{"name":"v3.55.6","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.55.6","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.55.6","commit":{"sha":"c48d0d98b40e5fd4f59a3fa674730a6438a62e95","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/c48d0d98b40e5fd4f59a3fa674730a6438a62e95"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41NS42"},{"name":"v3.55.6-pre.2","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.55.6-pre.2","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.55.6-pre.2","commit":{"sha":"3d1e93dd7abd4b24b8dd12030cc3bd0be3fbdd59","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/3d1e93dd7abd4b24b8dd12030cc3bd0be3fbdd59"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41NS42LXByZS4y"},{"name":"v3.55.6-pre.1","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.55.6-pre.1","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.55.6-pre.1","commit":{"sha":"4e504f4674132b2d49e9092110f19e07a10f28d0","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/4e504f4674132b2d49e9092110f19e07a10f28d0"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41NS42LXByZS4x"},{"name":"v3.55.6-pre.0","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.55.6-pre.0","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.55.6-pre.0","commit":{"sha":"78f460691195656477aa12fa5f32b33519e4df8e","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/78f460691195656477aa12fa5f32b33519e4df8e"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41NS42LXByZS4w"},{"name":"v3.55.6-nova","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.55.6-nova","tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.55.6-nova","commit":{"sha":"389276d15838480262ee3bf0b1a50ff4db5ee503","url":"https://api.github.com/repos/Fuseit/FuseTube/commits/389276d15838480262ee3bf0b1a50ff4db5ee503"},"node_id":"MDM6UmVmMTY5NTcyMDp2My41NS42LW5vdmE="}]'
-    http_version: 
-  recorded_at: Tue, 21 Jan 2020 07:20:25 GMT
-recorded_with: VCR 5.0.0
+      string: '{"url":"https://api.github.com/repos/Fuseit/FuseTube/releases/31393903","assets_url":"https://api.github.com/repos/Fuseit/FuseTube/releases/31393903/assets","upload_url":"https://uploads.github.com/repos/Fuseit/FuseTube/releases/31393903/assets{?name,label}","html_url":"https://github.com/Fuseit/FuseTube/releases/tag/v3.57.1-pre.1","id":31393903,"node_id":"MDc6UmVsZWFzZTMxMzkzOTAz","tag_name":"v3.57.1-pre.1","target_commitish":"master","name":"v3.57.1-pre.1","draft":false,"author":{"login":"Hedi84","id":37661027,"node_id":"MDQ6VXNlcjM3NjYxMDI3","avatar_url":"https://avatars3.githubusercontent.com/u/37661027?v=4","gravatar_id":"","url":"https://api.github.com/users/Hedi84","html_url":"https://github.com/Hedi84","followers_url":"https://api.github.com/users/Hedi84/followers","following_url":"https://api.github.com/users/Hedi84/following{/other_user}","gists_url":"https://api.github.com/users/Hedi84/gists{/gist_id}","starred_url":"https://api.github.com/users/Hedi84/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Hedi84/subscriptions","organizations_url":"https://api.github.com/users/Hedi84/orgs","repos_url":"https://api.github.com/users/Hedi84/repos","events_url":"https://api.github.com/users/Hedi84/events{/privacy}","received_events_url":"https://api.github.com/users/Hedi84/received_events","type":"User","site_admin":false},"prerelease":false,"created_at":"2020-09-16T11:18:33Z","published_at":"2020-09-16T11:29:19Z","assets":[],"tarball_url":"https://api.github.com/repos/Fuseit/FuseTube/tarball/v3.57.1-pre.1","zipball_url":"https://api.github.com/repos/Fuseit/FuseTube/zipball/v3.57.1-pre.1"}'
+    http_version: null
+  recorded_at: Thu, 24 Sep 2020 13:38:50 GMT
+recorded_with: VCR 5.1.0
