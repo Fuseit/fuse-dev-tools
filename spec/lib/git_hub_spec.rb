@@ -23,10 +23,25 @@ RSpec.describe GitHub, vcr: true do
   describe '.next_release_version' do
     subject(:next_release_version) { described_class.next_release_version organisation, repo, bump }
 
-    let(:previous_release_version) { Semantic::Version.new '0.1.0' }
+    let(:previous_release_version) { Semantic::Version.new '0.1.0-pre.1' }
+    let(:previous_without_pre_release_version) { Semantic::Version.new '0.1.0' }
 
     before do
       allow(described_class).to receive(:previous_release_version).and_return previous_release_version
+    end
+
+    context 'when bumping pre' do
+      let(:bump) { :pre }
+
+      it { expect(next_release_version).to eq 'v0.1.0-pre.2' }
+
+      context 'when it a pre first time' do
+        before do
+          allow(described_class).to receive(:previous_release_version).and_return previous_without_pre_release_version
+        end
+
+        it { expect(next_release_version).to eq 'v0.1.0-pre.1' }
+      end
     end
 
     context 'when bumping patch' do
