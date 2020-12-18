@@ -5,7 +5,7 @@ module FuseDevTools
   module Tasks
     class ChangelogGenerator < Thor
       desc :preview, 'Previews changelog entries based on GitHub history'
-      option 'bump', desc: 'Bump: patch, minor, major', default: 'patch'
+      option 'bump', desc: 'Bump: pre, patch, minor, major', default: 'patch'
       option 'repo', desc: 'Repo name if different than current'
       option 'version', desc: 'Full version number of the release'
       def preview
@@ -14,7 +14,7 @@ module FuseDevTools
       end
 
       desc :create, 'Creates changelog entries and prepends to CHANGELOG.MD'
-      option 'bump', desc: 'Bump: patch, minor, major', default: 'patch'
+      option 'bump', desc: 'Bump: pre, patch, minor, major', default: 'patch'
       def create
         return unless File.exist? changelog_file
 
@@ -22,7 +22,7 @@ module FuseDevTools
       end
 
       desc :next_version, 'Prints out next bumped version'
-      option 'bump', desc: 'Bump: patch, minor, major', default: 'patch'
+      option 'bump', desc: 'Bump: pre, patch, minor, major', default: 'patch'
       option 'repo', desc: 'Repo name if different than current'
       def next_version
         @repo ||= options['repo']
