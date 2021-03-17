@@ -8,7 +8,6 @@ module FuseDevTools
       option 'bump', desc: 'Bump: pre, patch, minor, major', default: 'patch'
       option 'repo', desc: 'Repo name if different than current'
       option 'version', desc: 'Full version number of the release'
-      option 'target_branch', desc: 'Git branch'
       def preview
         @repo ||= options['repo']
         puts format_changelog options['bump'].to_sym
@@ -54,13 +53,12 @@ module FuseDevTools
           GitHub.previous_release_version org, repo
         end
 
-        def commits(target_branch='HEAD')
-          GitHub.comparison_message_commits org, repo, "v#{previous_release_version}", target_branch
+        def commits
+          GitHub.comparison_message_commits org, repo, "v#{previous_release_version}", 'HEAD'
         end
 
         def format_changelog bump
-          target_branch = options['target_branch']
-          builder = ChangelogBuilder.new commits(target_branch)
+          builder = ChangelogBuilder.new commits
 
           if options['version'] && options['version'] <= previous_release_version
             raise ArgumentError, 'Please provide a version higher than the previous version'
