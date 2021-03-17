@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-usage() { echo "Usage: $0 [-a <application>] [-b <bump>]" 1>&2; exit 1; }
+usage() { echo "Usage: $0 -a <application> -b <bump> -t <target>" 1>&2; exit 1; }
 
 validate_command_exists() {
     local cmd=$1
@@ -16,21 +16,23 @@ validate_command_exists hub
 
 generate_changelog() {
     local application=$1
-    local version=$2
+    local new_version=$2
+    local target_branch=$3
     markdown_changelog=$(mktemp)
 
     echo Generating changelog...
-    RUBYOPT="-W0" ./bin/fuse-dev-tools changelog_generator preview --repo $application --version $version > $markdown_changelog
+    RUBYOPT="-W0" ./bin/fuse-dev-tools changelog_generator preview --repo $application --version $new_version --target_branch $target_branch > $markdown_changelog
 }
 
 move_to_directory_and_update() {
     local application=$1
+    local target_branch=$2
 
     echo "Moving to $application..."
     cd "../$application" || exit
     echo Stashing current changes
     git stash
-    git checkout master
+    git checkout $target_branch
     git pull -r
 }
 
@@ -44,25 +46,27 @@ prepend_changelog_and_bump_version() {
     echo "v$version" > VERSION
 }
 
-commit_to_master() {
-    local version=$1
+commit_to_branch() {
+    local target_branch=$1
+    local version=$2
 
     echo Creating a bump version commit
     git commit -a -m "chore Bump version to v$version"
-    echo Pushing to the master
+    echo Pushing to the $target_branch branch
     git push
 }
 
 tag_and_release() {
     local application=$1
     local version=$2
+    local target_branch=$3
 
     tempfile2=$(mktemp)
 
     sed "1s/.*/v$version/" $markdown_changelog > $tempfile2
 
     echo "Updating ${application} repository"
-    git checkout master
+    git checkout $target_branch
     git pull -r
 
     echo release-$version
@@ -80,22 +84,26 @@ tag_and_release() {
 
 generate_commit_tag_and_release() {
     local application=$1
-    local version=$2
+    local new_version=$2
+    local target_branch=$3
 
-    generate_changelog $application $version
-    move_to_directory_and_update $application
-    prepend_changelog_and_bump_version $version
-    commit_to_master $version
-    tag_and_release $application $version
+    generate_changelog $application $new_version $target_branch
+    move_to_directory_and_update $application $target_branch
+    prepend_changelog_and_bump_version $new_version
+    commit_to_branch $target_branch $new_version
+    tag_and_release $application $new_version $target_branch
 }
 
-while getopts "a:b:?h" o; do
+while getopts "a:b:t:?h" o; do
     case "${o}" in
         a)
             application=${OPTARG}
             ;;
         b)
             bump=${OPTARG}
+            ;;
+        t)
+            target_branch=${OPTARG}
             ;;
         h)
             usage
@@ -105,7 +113,7 @@ done
 
 shift $((OPTIND-1))
 
-if [ -z "${application}" ] || [ -z "${bump}" ]; then
+if [ -z "${application}" ] || [ -z "${bump}" ] || [ -z "${target_branch}" ]; then
     usage
 fi
 
@@ -140,20 +148,39 @@ calculate_new_version() {
     "patch")
       patch=$((patch+1))
       ;;
+    "minor-pre")
+      minor=$((minor+1))
+      patch="0-pre1"
+      echo "minor-pre bump, with resulting patch: ${patch}"
+      ;;
+    "patch-pre")
+      # Expecting patches of the form "1" or "3-pre4"
+      case $patch in
+        [1-9])
+          patch=$((${patch}+1))-pre0
+          ;;
+        *)
+          patch=${patch%%-pre*}-pre$((${patch#*-pre}+1))
+          ;;
+      esac
+      ;;
   esac
 
   local new_version="${major}.${minor}.${patch}"
   echo $new_version
 }
 
+echo "Getting current version for application $application"
 current_version=$(get_current_version $application)
+
+echo "Calculating new version"
 new_version=$(calculate_new_version $current_version $bump)
 
 echo "The application is ${application} and the version is ${new_version}"
 
 read -p "Continue (y/n)? " choice
 case "$choice" in
-    y|Y ) generate_commit_tag_and_release $application $new_version;;
+    y|Y ) generate_commit_tag_and_release $application $new_version $target_branch;;
     n|N ) exit 0;;
     * ) echo "invalid";;
 esac
