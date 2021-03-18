@@ -150,7 +150,6 @@ calculate_new_version() {
     "minor-pre")
       minor=$((minor+1))
       patch="0-pre1"
-      echo "minor-pre bump, with resulting patch: ${patch}"
       ;;
     "patch-pre")
       # Expecting patches of the form "1" or "3-pre4"

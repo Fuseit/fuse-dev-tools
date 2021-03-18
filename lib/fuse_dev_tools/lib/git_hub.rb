@@ -9,6 +9,7 @@ class GitHub
   def self.previous_release_version username, repo
     latest_release = client.latest_release("#{username}/#{repo}")[:name]
     latest_release.slice!(0)
+    latest_release.gsub!(/ .*$/, '')
     Semantic::Version.new(latest_release)
   end
 
