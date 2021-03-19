@@ -85,6 +85,7 @@ tag_and_release() {
 generate_commit_tag_and_release() {
     local application=$1
     local new_version=$2
+    local target_branch=$3
 
     generate_changelog $application $new_version $target_branch
     move_to_directory_and_update $application $target_branch
