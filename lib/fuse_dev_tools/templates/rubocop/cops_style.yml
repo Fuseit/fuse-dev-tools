@@ -41,6 +41,8 @@ Style/OptionHash:
     - args
     - params
     - parameters
+Style/SafeNavigation:
+  ConvertCodeThatCanStartToReturnNil: true
 Style/SymbolArray:
   MinSize: 1
 Style/WordArray:

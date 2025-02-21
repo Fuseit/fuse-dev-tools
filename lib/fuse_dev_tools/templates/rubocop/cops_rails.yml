@@ -11,8 +11,6 @@ Rails/Output:
 # Open to suggestion, however I do not prefer the implicitness of this cop
 Rails/RedundantReceiverInWithOptions:
   Enabled: false
-Rails/SafeNavigation:
-  ConvertTry: true
 Rails/SaveBang:
   Enabled: true
 Rails/SkipsModelValidations:

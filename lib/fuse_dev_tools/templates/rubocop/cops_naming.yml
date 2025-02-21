@@ -1,9 +1,9 @@
 # NAMING COPS
 # This file contains changes to the default config provided by Rubocop
 
-Naming/UncommunicativeBlockParamName:
+Naming/BlockParameterName:
   AllowNamesEndingInNumbers: false
-Naming/UncommunicativeMethodParamName:
+Naming/MethodParameterName:
   AllowNamesEndingInNumbers: false
 Naming/VariableNumber:
   EnforcedStyle: non_integer

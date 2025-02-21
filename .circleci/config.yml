@@ -6,7 +6,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.3.4
+      - image: circleci/ruby:2.4.10
         environment:
           RAILS_ENV: test
     steps:
@@ -15,10 +15,14 @@ jobs:
           keys:
             - fuse-dev-tools-bundle-{{ arch }}-{{ .Branch }}-{{ checksum "fuse-dev-tools.gemspec" }}
       - run:
+          name: Update system gems
+          command: sudo gem update --system 3.3.27
+      - run:
+          name: Install recent bundler
+          command: gem install -v 2.3.27 bundler
+      - run:
           name: Run bundler
           command: |
-            sudo gem uninstall bundler -a -x
-            sudo gem install bundler --version 1.16.1
             bundle install --path=vendor/bundle --retry=3
       - save_cache:
           key: fuse-dev-tools-bundle-{{ arch }}-{{ .Branch }}-{{ checksum "fuse-dev-tools.gemspec" }}

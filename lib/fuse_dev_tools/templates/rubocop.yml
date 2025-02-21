@@ -7,7 +7,9 @@ inherit_from:
   - rubocop/cops_metrics.yml
   - rubocop/cops_naming.yml
   - rubocop/cops_performance.yml
+<% if Gem.loaded_specs.has_key?('rubocop-rails') %>
   - rubocop/cops_rails.yml
+<% end %>
   - rubocop/cops_security.yml
   - rubocop/cops_style.yml
 
