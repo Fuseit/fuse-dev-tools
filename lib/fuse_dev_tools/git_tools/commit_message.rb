@@ -34,7 +34,7 @@ module FuseDevTools
       validates :type, inclusion: { in: VALID_TYPES }, unless: :skip_validations?
       validates :message, :task_description, presence: true, allow_blank: false, unless: :skip_validations?
       validate :task_id_validations, :task_description_validations, :commit_description_validations,
-        unless: :skip_validations?
+               unless: :skip_validations?
 
       def parse
         commit_message, @type, @task_id, @task_description, @commit_description = message.match(MESSAGE_REGEX).to_a
