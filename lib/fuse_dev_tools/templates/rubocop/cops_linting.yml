@@ -1,5 +1,33 @@
-# LINT COPS
+# LINTING COPS
 # This file contains changes to the default config provided by Rubocop
 
+Lint/BinaryOperatorWithIdenticalOperands:
+  Enabled: true
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+Lint/DuplicateElsifCondition:
+  Enabled: true
+Lint/DuplicateRescueException:
+  Enabled: true
+Lint/EmptyConditionalBody:
+  Enabled: true
+Lint/FloatComparison:
+  Enabled: true
+Lint/MissingSuper:
+  Enabled: true
+Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+Lint/OutOfRangeRegexpRef:
+  Enabled: true
+Lint/RaiseException:
+  Enabled: true
+Lint/SelfAssignment:
+  Enabled: true
+Lint/StructNewOverride:
+  Enabled: true
+Lint/TopLevelReturnWithArgument:
+  Enabled: true
+Lint/UnreachableLoop:
+  Enabled: true
 Lint/Void:
   CheckForMethodsWithNoSideEffects: true

@@ -2,7 +2,7 @@ require 'fuse_dev_tools/tasks/application_config'
 require 'fuse_dev_tools/tasks/database_config'
 require 'fuse_dev_tools/tasks/git_commands/base'
 require 'thor'
-Dir[File.join(__dir__, 'tasks', '*.rb')].each(&method(:require))
+Dir[File.join(__dir__, 'tasks', '*.rb')].sort.each(&method(:require))
 
 module FuseDevTools
   class CLI < Thor
@@ -20,7 +20,7 @@ module FuseDevTools
 
       config = {}
       FuseDevTools::Config::KEYS.each do |config_key|
-        config[config_key] = ask config_key + ':'
+        config[config_key] = ask "#{config_key}:"
       end
 
       create_file FuseDevTools::Config.filename, config.to_yaml

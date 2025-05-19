@@ -22,10 +22,6 @@ Metrics/ClassLength:
   Enabled: false
   Max: 100 # Default
 
-Metrics/LineLength:
-  IgnoreCopDirectives: true
-  Max: 120
-
 # Should this be enabled?
 Metrics/MethodLength:
   Enabled: true
