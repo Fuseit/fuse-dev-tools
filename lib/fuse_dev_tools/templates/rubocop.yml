@@ -1,3 +1,7 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+
 inherit_from:
   - rubocop_rspec.yml
   - rubocop/cops_bundler.yml
@@ -13,6 +17,7 @@ inherit_from:
 
 AllCops:
   DisplayCopNames: true
+  TargetRubyVersion: 2.4
   Exclude:
     - 'vendor/**/*'
     - 'tmp/**/*'

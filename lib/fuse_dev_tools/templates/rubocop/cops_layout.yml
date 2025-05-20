@@ -1,9 +1,9 @@
 # LAYOUT COPS
 # This file contains changes to the default config provided by Rubocop
 
-Layout/AlignArray:
+Layout/ArrayAlignment:
   Enabled: false
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   EnforcedStyle: with_fixed_indentation
 Layout/BlockAlignment:
   EnforcedStyleAlignWith: start_of_block
@@ -23,6 +23,8 @@ Layout/ClassStructure:
       - public_methods
       - protected_methods
       - private_methods
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
 # Appears most similar to our current implementation but could be worth another opinion...
 # http://rubocop.readthedocs.io/en/latest/cops_layout/#layoutendalignment
 Layout/EndAlignment:
@@ -43,13 +45,18 @@ Layout/FirstParameterIndentation:
   EnforcedStyle: consistent
 Layout/FirstHashElementLineBreak:
   Enabled: true
-Layout/IndentArray:
+Layout/FirstArrayElementIndentation:
   EnforcedStyle: consistent
-Layout/IndentHash:
+Layout/FirstHashElementIndentation:
   EnforcedStyle: consistent
 # This value can be overriden in projects that are not Rails projects. Alternatively, we can adopt this style everywhere...
 Layout/IndentationConsistency:
-  EnforcedStyle: rails
+  EnforcedStyle: indented_internal_methods
+Layout/IndentationStyle:
+  IndentationWidth: 2
+Layout/LineLength:
+  IgnoreCopDirectives: true
+  Max: 120
 # Open for debate, but appears to be most similar to current usage...
 Layout/MultilineArrayBraceLayout:
   EnforcedStyle: new_line
@@ -66,5 +73,5 @@ Layout/MultilineMethodDefinitionBraceLayout:
   EnforcedStyle: new_line
 Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
-Layout/Tab:
-  IndentationWidth: 2
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true

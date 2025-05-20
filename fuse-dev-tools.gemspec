@@ -6,6 +6,7 @@ require 'fuse_dev_tools/version'
 Gem::Specification.new do |spec|
   spec.name = 'fuse-dev-tools'
   spec.version = FuseDevTools::VERSION
+  spec.required_ruby_version = '>= 2.4.10'
   spec.authors = ['Ivan Garmatenko', 'Baron Bloomer']
   spec.email = %w[igarmatenko@sphereinc.com baron.bloomer@fuseuniversal.com]
 
@@ -34,9 +35,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'octokit', '~> 4.0'
   spec.add_dependency 'pry', '~> 0.11'
   spec.add_dependency 'rainbow'
-  spec.add_dependency 'rubocop', '~> 0.65.0'
-  spec.add_dependency 'rubocop-rspec', '~> 1.32.0'
-  spec.add_dependency 'rubocop-rspec-focused', '~> 1.0'
+  spec.add_dependency 'rubocop', '~> 0.89.1'
+  spec.add_dependency 'rubocop-performance', '~> 1.7.0'
+  spec.add_dependency 'rubocop-rails', '~> 2.7.0'
+  spec.add_dependency 'rubocop-rspec', '~> 1.39.0'
   spec.add_dependency 'semantic'
   spec.add_dependency 'thor', '~> 0.2'
   spec.add_dependency 'virtus'

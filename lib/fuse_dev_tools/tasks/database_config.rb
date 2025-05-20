@@ -13,8 +13,8 @@ module FuseDevTools
       desc :copy, 'Copy database config'
       def copy
         template 'database.yml.erb', 'config/database.yml',
-          application: detect_application,
-          socket: detect_mysql_socket
+                 application: detect_application,
+                 socket: detect_mysql_socket
       end
 
       no_tasks do
