@@ -40,7 +40,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rubocop-rails', '~> 2.7.0'
   spec.add_dependency 'rubocop-rspec', '~> 1.39.0'
   spec.add_dependency 'semantic'
-  spec.add_dependency 'thor', '~> 0.2'
   spec.add_dependency 'virtus'
   spec.add_development_dependency 'bundler', '~> 2.3.27'
   spec.add_development_dependency 'rake', '~> 13.2'

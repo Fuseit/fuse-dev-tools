@@ -1,14 +1,10 @@
 require 'rbconfig'
-require 'thor'
+require 'fuse_dev_tools/tasks/base'
 
 module FuseDevTools
   module Tasks
-    class DatabaseConfig < Thor
-      include Thor::Actions
-
-      def self.source_root
-        File.expand_path '../templates', __dir__
-      end
+    class DatabaseConfig < Base
+      source_root File.expand_path('../templates', __dir__)
 
       desc :copy, 'Copy database config'
       def copy
@@ -17,7 +13,8 @@ module FuseDevTools
                  socket: detect_mysql_socket
       end
 
-      no_tasks do
+      private
+
         def detect_mysql_socket
           linux? ? '/var/run/mysqld/mysqld.sock' : '/tmp/mysql.sock'
         end
@@ -33,7 +30,6 @@ module FuseDevTools
         def git_repository_name
           %x(basename -s .git `git config --get remote.origin.url`).strip
         end
-      end
     end
   end
 end

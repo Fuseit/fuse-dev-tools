@@ -1,9 +1,10 @@
+require 'fuse_dev_tools/tasks/base'
 require 'fuse_dev_tools/lib/git_hub'
 require 'fuse_dev_tools/lib/changelog_builder'
 
 module FuseDevTools
   module Tasks
-    class ChangelogGenerator < Thor
+    class ChangelogGenerator < Base
       desc :preview, 'Previews changelog entries based on GitHub history'
       option 'bump', desc: 'Bump: pre, patch, minor, major', default: 'patch'
       option 'repo', desc: 'Repo name if different than current'
@@ -37,7 +38,8 @@ module FuseDevTools
         puts previous_release_version
       end
 
-      no_tasks do
+      private
+
         def org
           'Fuseit'
         end
@@ -91,7 +93,6 @@ module FuseDevTools
           lines.each { |line| output.write line }
           output.close
         end
-      end
     end
   end
 end
