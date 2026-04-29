@@ -34,6 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'git'
   spec.add_dependency 'octokit', '~> 4.0'
   spec.add_dependency 'pry', '~> 0.11'
+  spec.add_dependency 'rack', '< 3'
   spec.add_dependency 'rainbow'
   spec.add_dependency 'rubocop', '~> 0.89.1'
   spec.add_dependency 'rubocop-performance', '~> 1.7.0'

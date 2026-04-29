@@ -53,10 +53,12 @@ RSpec.describe FuseDevTools::GitTools::PullRequestValidator do
 
       context 'when changelog diff cannot be rendered' do
         let(:branch_name) { 'feature/safe-diff' }
-        let(:parent_commit) { double('parent_commit', sha: 'parent-sha') }
-        let(:current_commit) { double('current_commit', sha: 'current-sha', parent: parent_commit) }
+        let(:parent_commit) { instance_double('Git::Object::Commit', sha: 'parent-sha') }
+        let(:current_commit) do
+          instance_double('Git::Object::Commit', sha: 'current-sha', parent: parent_commit)
+        end
         let(:stubbed_git) do
-          double('git', current_branch: branch_name, gcommit: current_commit)
+          instance_double('Git::Base', current_branch: branch_name, gcommit: current_commit)
         end
 
         before do
@@ -68,21 +70,31 @@ RSpec.describe FuseDevTools::GitTools::PullRequestValidator do
             allow(stubbed_git).to receive(:diff).with(parent_commit.sha, current_commit.sha).and_return(nil)
           end
 
-          it 'adds a safe fallback message' do
+          it 'does not raise an exception' do
             expect { validator.valid? }.not_to raise_error
+          end
+
+          it 'adds a safe fallback message' do
+            validator.valid?
             expect(validator.errors.full_messages.first).to include('<No CHANGELOG.md patch found>')
           end
         end
 
         context 'when git diff raises an error' do
+          let(:error_fallback_message) { '<Unable to render CHANGELOG.md patch: NoMethodError>' }
+
           before do
             allow(stubbed_git).to receive(:diff).with(parent_commit.sha, current_commit.sha)
               .and_raise(NoMethodError, 'undefined method [] for nil:NilClass')
           end
 
-          it 'adds a resilient error message' do
+          it 'does not raise an exception' do
             expect { validator.valid? }.not_to raise_error
-            expect(validator.errors.full_messages.first).to include('<Unable to render CHANGELOG.md patch: NoMethodError>')
+          end
+
+          it('adds a resilient error message') do
+            validator.valid?
+            expect(validator.errors.full_messages.first).to include(error_fallback_message)
           end
         end
       end

@@ -7,12 +7,12 @@ RSpec.describe 'CLI contracts', :aggregate_failures do
   let(:repo_root) { File.expand_path('../..', __dir__) }
   let(:cli_executable) { File.join(repo_root, 'bin', 'fuse-dev-tools') }
 
-  def run_cli(*args, chdir: repo_root, env: {}, stdin: '')
+  def run_cli *args, chdir: repo_root, env: {}, stdin: ''
     command = [RbConfig.ruby, cli_executable, *args]
     Open3.capture3(env, *command, stdin_data: stdin, chdir: chdir)
   end
 
-  def setup_git_repo!(path, remote_url:)
+  def setup_git_repo! path, remote_url:
     _stdout, _stderr, status = run_command(%w[git init], chdir: path)
     raise 'Failed to initialize git repo' unless status.success?
 
@@ -20,7 +20,7 @@ RSpec.describe 'CLI contracts', :aggregate_failures do
     raise 'Failed to set git remote origin' unless status.success?
   end
 
-  def run_command(command, chdir:)
+  def run_command command, chdir:
     stdout, stderr, status = Open3.capture3(*command, chdir: chdir)
     [stdout, stderr, status]
   end

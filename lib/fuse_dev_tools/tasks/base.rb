@@ -10,6 +10,7 @@ module FuseDevTools
 
       class << self
         def inherited subclass
+          super
           subclass.instance_variable_set(:@commands, {})
           subclass.instance_variable_set(:@pending_options, [])
           subclass.instance_variable_set(:@last_command_name, nil)
@@ -69,13 +70,13 @@ module FuseDevTools
         warn e.message
         say ''
         command_help(command)
-        exit 1
+        raise SystemExit, 1
       end
 
       def help
         say 'Commands:'
         self.class.commands.each_value do |command|
-          say format('  %-28s %s', command.name, command.description)
+          say format('  %<name>-28s %<description>s', name: command.name, description: command.description)
         end
       end
 
@@ -90,7 +91,12 @@ module FuseDevTools
         command.options.each do |option|
           aliases = "--#{option.name.tr('_', '-')}, --#{option.name}"
           default = option.default.nil? ? '' : " (default: #{option.default})"
-          say format('  %-36s %s%s', aliases, option.description, default)
+          say format(
+            '  %<aliases>-36s %<description>s%<default>s',
+            aliases: aliases,
+            description: option.description,
+            default: default
+          )
         end
       end
 
@@ -125,47 +131,58 @@ module FuseDevTools
         end
 
         def parse_options argv, option_definitions
-          defaults = option_definitions.each_with_object({}) do |option, parsed|
-            parsed[option.name] = option.default
-            parsed[option.name.to_sym] = option.default
-          end
-          names = option_definitions.map(&:name)
-          aliases = names.each_with_object({}) do |name, all_aliases|
-            all_aliases[name] = name
-            all_aliases[name.tr('_', '-')] = name
-          end
-
-          parsed = defaults.dup
-          index = 0
-          while index < argv.length
-            argument = argv[index]
-            unless argument.start_with?('--')
-              raise OptionParsingError, "Unexpected argument: #{argument}"
-            end
-
-            raw_name, value = argument.sub(/\A--/, '').split('=', 2)
-            name = aliases[raw_name]
-            raise OptionParsingError, "Unknown option: --#{raw_name}" unless name
-
-            if value.nil?
-              index += 1
-              value = argv[index]
-            end
-
-            raise OptionParsingError, "Missing value for --#{raw_name}" if value.nil? || value.start_with?('--')
-
-            parsed[name] = value
-            parsed[name.to_sym] = value
-            index += 1
-          end
-
+          option_aliases = aliases_for(option_definitions.map(&:name))
+          parsed = defaults_for(option_definitions)
+          parse_option_arguments!(argv, option_aliases, parsed)
           parsed
         end
 
         def unknown_command command_name
           warn "Unknown command: #{command_name}"
           help
-          exit 1
+          raise SystemExit, 1
+        end
+
+        def defaults_for option_definitions
+          option_definitions.each_with_object({}) do |option, parsed|
+            parsed[option.name] = option.default
+            parsed[option.name.to_sym] = option.default
+          end
+        end
+
+        def aliases_for names
+          names.each_with_object({}) do |name, all_aliases|
+            all_aliases[name] = name
+            all_aliases[name.tr('_', '-')] = name
+          end
+        end
+
+        def parse_option_arguments! argv, option_aliases, parsed
+          index = 0
+          index += parse_option_argument!(argv, index, option_aliases, parsed) while index < argv.length
+        end
+
+        def parse_option_argument! argv, index, option_aliases, parsed
+          argument = argv[index]
+          raise OptionParsingError, "Unexpected argument: #{argument}" unless argument.start_with?('--')
+
+          raw_name, value = argument.sub(/\A--/, '').split('=', 2)
+          canonical_name = option_aliases[raw_name]
+          raise OptionParsingError, "Unknown option: --#{raw_name}" unless canonical_name
+
+          value, consumed_next_value = read_option_value(argv, index, value, raw_name)
+          parsed[canonical_name] = value
+          parsed[canonical_name.to_sym] = value
+          consumed_next_value ? 2 : 1
+        end
+
+        def read_option_value argv, index, existing_value, raw_name
+          return [existing_value, false] if existing_value
+
+          next_value = argv[index + 1]
+          raise OptionParsingError, "Missing value for --#{raw_name}" if next_value.nil? || next_value.start_with?('--')
+
+          [next_value, true]
         end
     end
   end
