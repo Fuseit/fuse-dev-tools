@@ -49,9 +49,13 @@ module FuseDevTools
         end
 
         def changelog_diff earlier_commit_sha, latter_commit_sha
-          git.diff(earlier_commit_sha, latter_commit_sha) \
-            .entries.select { |e| e.path == 'CHANGELOG.md' } \
-            .first&.patch || '<No CHANGELOG.md patch found>'
+          diff = git.diff(earlier_commit_sha, latter_commit_sha)
+          return '<No CHANGELOG.md patch found>' if diff.nil?
+
+          changelog_entry = diff.entries.find { |entry| entry.path == 'CHANGELOG.md' }
+          changelog_entry&.patch || '<No CHANGELOG.md patch found>'
+        rescue StandardError => e
+          "<Unable to render CHANGELOG.md patch: #{e.class}>"
         end
     end
   end
