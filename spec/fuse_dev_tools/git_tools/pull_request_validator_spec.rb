@@ -50,6 +50,54 @@ RSpec.describe FuseDevTools::GitTools::PullRequestValidator do
 
         it { is_expected.to be_truthy }
       end
+
+      context 'when changelog diff cannot be rendered' do
+        let(:branch_name) { 'feature/safe-diff' }
+        let(:parent_commit) { instance_double('Git::Object::Commit', sha: 'parent-sha') }
+        let(:current_commit) do
+          instance_double('Git::Object::Commit', sha: 'current-sha', parent: parent_commit)
+        end
+        let(:stubbed_git) do
+          instance_double('Git::Base', current_branch: branch_name, gcommit: current_commit)
+        end
+
+        before do
+          allow(validator).to receive(:git).and_return(stubbed_git)
+        end
+
+        context 'when git returns nil diff' do
+          before do
+            allow(stubbed_git).to receive(:diff).with(parent_commit.sha, current_commit.sha).and_return(nil)
+          end
+
+          it 'does not raise an exception' do
+            expect { validator.valid? }.not_to raise_error
+          end
+
+          it 'adds a safe fallback message' do
+            validator.valid?
+            expect(validator.errors.full_messages.first).to include('<No CHANGELOG.md patch found>')
+          end
+        end
+
+        context 'when git diff raises an error' do
+          let(:error_fallback_message) { '<Unable to render CHANGELOG.md patch: NoMethodError>' }
+
+          before do
+            allow(stubbed_git).to receive(:diff).with(parent_commit.sha, current_commit.sha)
+              .and_raise(NoMethodError, 'undefined method [] for nil:NilClass')
+          end
+
+          it 'does not raise an exception' do
+            expect { validator.valid? }.not_to raise_error
+          end
+
+          it('adds a resilient error message') do
+            validator.valid?
+            expect(validator.errors.full_messages.first).to include(error_fallback_message)
+          end
+        end
+      end
     end
   end
 end

@@ -28,6 +28,16 @@ RSpec/ImplicitBlockExpectation:
   Exclude:
     - 'spec/fuse_dev_tools/tasks/git_commands/base_spec.rb'
 
+# Offense count: 1
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/integration/cli_contract_spec.rb'
+
+# Offense count: 7
+RSpec/ExampleLength:
+  Exclude:
+    - 'spec/integration/cli_contract_spec.rb'
+
 # Offense count: 4
 # Configuration parameters: Include.
 # Include: app/**/*.rb, config/**/*.rb, lib/**/*.rb

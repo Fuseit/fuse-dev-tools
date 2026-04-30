@@ -1,9 +1,9 @@
-require 'thor'
+require 'fuse_dev_tools/tasks/base'
 require 'fuse_dev_tools/application_config'
 
 module FuseDevTools
   module Tasks
-    class ApplicationConfig < Thor
+    class ApplicationConfig < Base
       desc :download, 'Downloads config file from AWS S3'
       option 'config_name', desc: 'Config name', default: 'application.yml'
       option 'application_name', desc: 'Application name', default: 'fuse_dev'
@@ -23,11 +23,13 @@ module FuseDevTools
         puts "Config was saved to #{path}" if config.download(download_options)
       end
 
-      no_tasks do
+      private
+
         def build_application_config options
-          FuseDevTools::ApplicationConfig.new \
+          FuseDevTools::ApplicationConfig.new(
             bucket_region: options['bucket_region'],
             bucket_name: options['bucket_name']
+          )
         end
 
         def build_download_options options
@@ -37,7 +39,6 @@ module FuseDevTools
             destination: options[:download_dir]
           }
         end
-      end
     end
   end
 end

@@ -1,7 +1,6 @@
 require 'fuse_dev_tools/git_tools/pull_request_validator'
 require 'active_support'
 require 'rainbow'
-require 'thor'
 
 module FuseDevTools
   module Tasks
