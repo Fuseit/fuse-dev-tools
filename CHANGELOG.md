@@ -1,3 +1,10 @@
+## v0.9.0
+
+### Technical improvements
+
+* Remove the use of the thor gem as a dependency and lock rack dev dependency version
+
+
 ## v0.8.0
 
 ### Technical improvements
